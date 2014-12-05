@@ -79,7 +79,7 @@ lr.addEventListener('rendered', function(){
 });
 lr.init('./data/flanagan/content.json', './data/dickinson/content.json');
 //lr.force('./data/flanagan/Insubstantial_Stuff_of_Pure_Being_.xml', './data/dickinson/OneSeries-IX.xml');
-lr.force();
+// lr.force();
 
 var World = World || {};
 World.animList = [];
@@ -103,23 +103,44 @@ World.setGravity = function(g){
 var frameTime = 0, lastLoop = new Date, thisLoop;
 var count = 0;
 
-World.wordClass = "NN";
+World.wordClassIndex = 0;
+World.wordClasses = ['NN', 'DT', 'IN', 'NNP', 'JJ', 'NNS', 'PRP', 'VBZ', 'RB', 'VBP', 'VB', 'CC', 'PRP$', 'TO', 'VBD', 'VBN', 'VBG', 'WRB', 'MD', 'CD', 'WP', 'EX', 'RP', 'JJR', 'WDT', 'JJS', 'RBR', 'WP$'];
+
+World.nextClass = function() {
+
+    console.log(this);
+    if(this.wordClassIndex < this.wordClasses.length){
+        this.wordClassIndex++;
+        console.log('next class', this.wordClasses[this.wordClassIndex]);
+        this.next();
+    } else {
+        console.log('fin');
+    }
+
+}
 World.next = function(lastSource) {
 
     var tmpSource = this.sourcePoem,
-        tmpTarget = this.targetPoem;
+        tmpTarget = this.targetPoem,
+        wordClass = this.wordClasses[this.wordClassIndex];
 
     this.sourcePoem = tmpTarget || lr.poem1 || document.querySelector('.poem1');
     this.targetPoem = tmpSource || lr.poem2 || document.querySelector('.poem2');
 
-    var source = this.sourcePoem.querySelector('.line:not(.swapped):not(.swapping) span[data-tag="'+this.wordClass+'"]');
-    var target = lastSource || this.targetPoem.querySelector('span[data-tag="'+this.wordClass+'"]');
+    var source = this.sourcePoem.querySelector('.line:not(.swapped):not(.swapping) span[data-tag="'+wordClass+'"]');
+    var target = lastSource || this.targetPoem.querySelector('span[data-tag="'+wordClass+'"]');
 
-    if(!source){
-        move(lastSource)
-            .set('opacity', 1)
-            .duration(250)
-            .end();
+    if(!source || !target){
+        if(lastSource){
+            move(lastSource)
+                .set('opacity', 1)
+                .duration(250)
+                .end(function(){
+                    World.nextClass.call(World);
+                });
+        } else {
+            World.nextClass();
+        }
         return;
     }
 
