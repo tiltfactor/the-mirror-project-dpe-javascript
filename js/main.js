@@ -44,7 +44,27 @@ Utils.getChildren = function(childNodes){
     }
 
     return children;
-}
+};
+
+
+Utils.initSlider = function(slider, config){
+    var input = slider.querySelector('input[type="range"]'),
+        val   = slider.querySelector('.slider-value'),
+        label   = slider.getElementsByTagName('label')[0];
+
+    input.setAttribute('min', config.min);
+    input.setAttribute('max', config.max);
+    input.setAttribute('value', config.value);
+    input.setAttribute('step', config.step);
+
+    val.innerHTML = config.value;
+    label.innerHTML = config.title;
+
+    input.addEventListener('input', function(e){
+        config.cb.call(World, this.value); 
+        val.innerHTML = this.value;
+    });
+};
 
 var lr = new LoadRender();
 lr.addEventListener('rendered', function(){
@@ -58,26 +78,30 @@ lr.addEventListener('rendered', function(){
     
 });
 lr.init('./data/flanagan/content.json', './data/dickinson/content.json');
-// lr.force();
+//lr.force('./data/flanagan/Insubstantial_Stuff_of_Pure_Being_.xml', './data/dickinson/OneSeries-IX.xml');
+lr.force();
 
 var World = World || {};
 World.animList = [];
-World.g = 0.025;
+World.g = 0.035;
+World.arcHeight = 200;
+World.arcVariant = 10;
+
+World.setArcVariant = function(h){
+    this.arcVariant = parseInt(h);
+}
+
+World.setArcHeight = function(h){
+    this.arcHeight = parseInt(h);
+}
+
+World.setGravity = function(g){
+    this.g = parseFloat(g);
+}
 
 // FPS calc.
 var frameTime = 0, lastLoop = new Date, thisLoop;
 var count = 0;
-
-var order = [
-//  ['s',  't',]
-    ['l1', 'r1'],
-    ['r2', 'l1'],
-    ['l2', 'r2'],
-    ['r3', 'l2'],
-    ['l3', 'r3'],
-    ['r4', 'l3'],
-    ['r4', 'r4'],
-];
 
 World.wordClass = "NN";
 World.next = function(lastSource) {
@@ -141,10 +165,23 @@ World.draw = function() {
 World.start = function(){
     document.querySelector('.choose').style.display = 'none';
     document.querySelector('.world').style.display = 'block';
+    document.querySelector('.controls').classList.remove('is-active');
     World.next();
     World.animate();
 };
 
+var slidersConfig = [
+    { title:"Gravity", cb: World.setGravity, value: World.g, min: 0.01, max : 0.2, step: 0.005 },
+    { title:"Arc height", cb: World.setArcHeight, value: World.arcHeight, min: 50, max : 300, step: 1 },
+    { title:"Arc height variant", cb: World.setArcVariant, value: World.arcVariant, min: 0, max : 50, step: 1 } 
+];
 
-// setTimout(World.start, 500);
-// World.start();
+var sliderTemplate = document.querySelector('.slider'),
+    controls = document.querySelector('.controls');
+
+[].forEach.call(slidersConfig, function(config){
+    var clone = sliderTemplate.cloneNode(true);
+    controls.appendChild(clone);
+    Utils.initSlider(clone, config);
+});
+
