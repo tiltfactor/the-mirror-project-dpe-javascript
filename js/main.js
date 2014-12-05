@@ -32,6 +32,20 @@ Utils.centreColumnContent = function(el){
     el.style.width = max + "px";
 };
 
+
+// Polyfill for safari, which doesn't seem to support Node.children.
+Utils.getChildren = function(childNodes){
+    var children = [];
+    for(var i = 0, len = childNodes.length; i < len; i++){
+        // Collect only nodes that are not text, i.e. are another node.
+        if(childNodes[i].nodeName !== '#text'){
+            children.push(childNodes[i]);
+        }
+    }
+
+    return children;
+}
+
 var lr = new LoadRender();
 lr.addEventListener('rendered', function(){
     // setTimeout(World.start, 1000);

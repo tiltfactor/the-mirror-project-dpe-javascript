@@ -65,6 +65,10 @@ function PhysicsObject(el, initVy){
         gravEl.style.transform = "translate3d("
             + this.x + "px,"
             + this.y + "px, 0)";
+
+        gravEl.style.webkitTransform = "translate3d("
+            + this.x + "px,"
+            + this.y + "px, 0)";
     };
 }
 

@@ -77,6 +77,7 @@ function TargetLine(target, rtl){
         for(var j = 0, len = nodesToRight.length; j < len; j++){
             line.removeChild(nodesToRight[j]);
         }
+        span.style.display = "inline-block";
 
         // Animate
         setTimeout(function(){
@@ -84,11 +85,7 @@ function TargetLine(target, rtl){
             move(span)
                 .translate(0-difference, 0)
                 .duration(duration)
-                .end(function(){
-                    span.style.position = 'relative';
-                    span.style.left = (0-difference) + 'px';
-                    complete();
-                });
+                .end(complete);
         }, 1);
 
     };

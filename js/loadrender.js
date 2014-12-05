@@ -144,13 +144,13 @@ function LoadRender(){
     function renderPoem(output, isLeft){
 
         var container = document.querySelector((isLeft)?'.poem1':'.poem2'),
-            lines = output.children,
+            lines = Utils.getChildren(output.childNodes),
             lineEl, original, tags;
 
         container.innerHTML = "";
         [].forEach.call(lines, function(line, index){
             original = line.getElementsByTagName('original')[0];
-            tags = line.getElementsByTagName('tags')[0].children;
+            tags = Utils.getChildren(line.getElementsByTagName('tags')[0].childNodes);
             lineEl = document.createElement('span');
             lineEl.classList.add('line');
             lineEl.textContent = original.textContent || "&nbsp;";
