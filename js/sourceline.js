@@ -6,7 +6,7 @@ function SourceLine(source, duplicate){
         duplicateOffsetLeft,
         duplicateChildren = [],
         sourceBbox,
-        delayMs = 250,
+        delayMs = 250, variant = 0,
         thr;
 
     document.body.appendChild(duplicate);
@@ -35,7 +35,8 @@ function SourceLine(source, duplicate){
             var gravity = new Gravity(World.g);
             box.addAction(gravity);
 
-            thr = new Throw(World.g, hDistance, vDistance1, vDistance2);
+            variant = Math.random()*World.arcVariant;
+            thr = new Throw(World.g, hDistance, vDistance1+variant, vDistance2+variant);
             // Call once not on every frame.
             thr.behave(box);
 

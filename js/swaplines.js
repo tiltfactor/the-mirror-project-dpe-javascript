@@ -5,7 +5,7 @@ function SwapLines(source, target){
     var self = this,
         targetDup,
         sourceBbox, targetBbox,
-        delayMs = 250, arcHeight = 200,
+        delayMs = 250, arcHeight = World.arcHeight,
         rtl;
 
     sourceBbox = source.getBoundingClientRect();
