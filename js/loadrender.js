@@ -6,8 +6,8 @@ function LoadRender(){
         selectedFiles = [];
 
     this.force = function(file1, file2){
-        file1 = file1 || {fullpath:'data/flanagan/Insist__________repeat_.xml'};
-        file2 = file2 || {fullpath:'data/dickinson/OneSeries-IX.xml'};
+        file1 = {fullpath:file1 || 'data/flanagan/Insist__________repeat_.xml'};
+        file2 = {fullpath:file2 || 'data/dickinson/OneSeries-IX.xml'};
         start(file1, file2);
     };
 
