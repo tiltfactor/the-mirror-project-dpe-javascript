@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link rel="stylesheet" type="text/css" href="bower_components/normalize.css/normalize.css">
+    <style>
+
+        @font-face {
+            font-family: 'fenixregular';
+            src: url('font/fenix/fenix-regular-webfont.eot');
+            src: url('font/fenix/fenix-regular-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('font/fenix/fenix-regular-webfont.woff2') format('woff2'),
+                 url('font/fenix/fenix-regular-webfont.woff') format('woff'),
+                 url('font/fenix/fenix-regular-webfont.ttf') format('truetype'),
+                 url('font/fenix/fenix-regular-webfont.svg#fenixregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'fenixregular';
+        }
+
+        body {
+            display: block;
+            position: relative;
+            overflow: auto;
+            font-size: 25px;
+        }
+
+
+        .start-btn {
+            margin: 20px;
+        }
+
+        .start-btn button {
+            width: 100%;
+        }
+
+        .world {
+            display: none;
+            position: absolute;
+            width: 100%;
+            top: 0;
+        }
+
+        .world-start button:disabled {
+            opacity: 0.5;
+        }
+
+        .line {
+            display: block;
+            line-height: 1.25em;
+            white-space: pre;
+        }
+
+        .poem-container {
+            margin-top:200px;
+            width: 50%;
+            float: left;
+        }
+
+        .poem1, .poem2 {
+            margin: 0 auto;
+        }
+
+        .grav-item {
+           position: absolute;
+           display: block;
+        }
+
+        .box {
+            width: 10px;
+            height: 10px;
+            background: #ff00ff;
+            position: absolute;
+            top: auto;
+            left: 200px;
+        }
+
+        .choose {
+            display: block;
+            line-height: 1.5em;
+        }
+
+        .choose-start button:disabled {
+            opacity: 0.5;
+        }
+
+        .choose .right,
+        .choose .left {
+            float: left;
+            width: 50%;
+            display: block;
+        }
+
+        .choose .right ul,
+        .choose .left ul{
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        .choose input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .choose.complete li:not(.selected) {
+            opacity: 0.5;
+        }
+        
+    </style>
+   
+</head>
+<body>
+    <section class="world">
+        <div class="world-start start-btn">
+            <button disabled="disabled" type="button">Start</button>
+        </div>
+        <div class="poem-container">
+            <p class="poem1">
+                <span class="line">pur <span data-tag="NN">mean</span> the place where</span>
+                <span class="line">a <span data-tag="NN">goddess</span> resides</span>
+                <span class="line">stretch <span data-tag="NN">marks</span> the sky in a colour of war</span>
+                <span class="line">we pull on <span data-tag="NN">either</span> end</span>
+            </p>
+        </div>
+        <div class="poem-container">
+        <p class="poem2">
+            <span class="line">I am the <span data-tag="NN" data-text="seasoness">seasoness</span>. I hold the Land.</span>
+            <span class="line">as one <span data-tag="NN" data-text="holds">holds</span> an apple in his hand.</span>
+            <span class="line">Hold it fast with <span data-tag="NN" data-text="sleepless">sleepless</span> eyes</span>
+            <span class="line">Watching the <span data-tag="NN">continent</span> sink and rise.</span>
+        </p>
+        </div>
+    </section>
+
+    <section class="choose">
+        <div class="choose-start start-btn">
+            <button disabled="disabled" type="button">Start</button>
+        </div>
+        <div class="left">
+        </div>
+        <div class="right">
+        </div>
+    </section>
+
+	<script src="js/vendor/eventdispatcher/EventDispatcher.js"></script>
+	<script src="js/vendor/move.js/move.min.js"></script>
+
+	<script src="js/loadrender.js"></script>
+	<script src="js/physics.js"></script>
+	<script src="js/sourceline.js"></script>
+	<script src="js/targetline.js"></script>
+	<script src="js/swaplines.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

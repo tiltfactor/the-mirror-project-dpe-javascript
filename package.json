@@ -1,0 +1,19 @@
+{
+  "name": "the-mirror-project-dpe-js-002",
+  "version": "0.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@garethfoote",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.9.0",
+    "gulp": "^3.8.10",
+    "map-stream": "0.0.5",
+    "vinyl-fs": "^0.3.13",
+    "glob": "^4.3.1"
+  }
+}
