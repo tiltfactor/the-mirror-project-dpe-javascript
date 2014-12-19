@@ -94,7 +94,7 @@ function LoadRender(){
         chooseStart = document.querySelector('.choose-start button');
         if(selectedFiles.length >= 2){
             document.querySelector('.choose').classList.add('complete');
-            inputs = document.querySelectorAll('input[type="checkbox"]:not(:checked)');
+            inputs = document.querySelectorAll('.choose input[type="checkbox"]:not(:checked)');
             [].forEach.call(inputs, function(el) {
                 el.disabled = "disabled";
             });
@@ -102,7 +102,7 @@ function LoadRender(){
             chooseStart.addEventListener('click', startHandler);
         } else {
             document.querySelector('.choose').classList.remove('complete');
-            inputs = document.querySelectorAll('input[type="checkbox"]');
+            inputs = document.querySelectorAll('.choose input[type="checkbox"]');
             [].forEach.call(inputs, function(el) {
                 el.disabled = false;
             });
