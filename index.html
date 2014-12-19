@@ -131,6 +131,18 @@
             opacity: 1;
         }
 
+        .controls--poem {
+            right:0;
+        }
+
+        .controls .wc-checkbox:first-child {
+            display: none;
+        }
+
+        .controls .wc-checkbox {
+            display: block;
+        }
+
         .slider:first-child {
             display: none;
         }
@@ -153,13 +165,26 @@
         <div class="world-start start-btn">
             <button disabled="disabled" type="button">Start</button>
         </div>
-        <div class="controls is-active">
+        <div class="controls controls--flight is-active">
             <div class="slider">
                 <label class="slider-title"></label>
                 <input type="range" />
                 <span class="slider-value"></span>
             </div>
         </div>
+        <div class="controls controls--poem is-active">
+            <div class="word-classes">
+                <label class="wc-checkbox">
+                    <input type="checkbox" />
+                </label>
+            </div>
+        </div>
+        <!--
+        <dl class="debug">
+            <dt>Current class</dt>
+            <dd data-target="class"></dd>
+        </dl>
+        -->
         <div class="poem-container">
             <p class="poem1">
                 <span class="line">pur <span data-tag="NN">mean</span> the place where</span>
@@ -187,7 +212,7 @@
         <div class="right">
         </div>
     </section>
-
+    
 	<script src="js/vendor/eventdispatcher/EventDispatcher.js"></script>
 	<script src="js/vendor/move.js/move.min.js"></script>
 

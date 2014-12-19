@@ -135,7 +135,7 @@ function LoadRender(){
             self.poem2 = renderPoem(data.firstChild, false);
             rendered.push(true);
             if(rendered.length >= 2){
-                self.dispatchEvent({type:'rendered'});
+                self.dispatchEvent({type:'rendered', files: [file1, file2]});
             }
         }, 
         function(err){console.error("Couldn't load" + err)});

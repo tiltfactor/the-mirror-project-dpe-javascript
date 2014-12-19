@@ -66,8 +66,46 @@ Utils.initSlider = function(slider, config){
     });
 };
 
+Utils.initPoemControls = function(all, selected, el, callback){
+
+    // Word classes.
+    var tpl = el.querySelector('.wc-checkbox'),
+        wcEl = el.querySelector('.word-classes'),
+        clone, cb, label;
+
+    all.forEach(function(cl){
+        clone = tpl.cloneNode(true);
+        cb = clone.querySelector('input[type="checkbox"]');
+
+        clone.setAttribute('for', cl);
+        // clone.insertBefore(document.createTextNode(cl), clone.firstChild);
+        clone.appendChild(document.createTextNode(cl));
+
+        cb.name = cl;
+        cb.value = cl;
+        cb.id = cl;
+        if(selected.indexOf(cl) >= 0){
+            cb.checked = true;
+        }
+        wcEl.appendChild(clone);
+
+        cb.addEventListener('change', function(e){
+            callback.call(World, e.target.id, e.target.checked);
+        });
+    });
+};
+
+Utils.setHistory = function(files){
+    console.log(encodeURIComponent(files[0].fullpath));
+    var stateObj = files;
+    history.pushState(stateObj, "", encodeURIComponent(files[0].fullpath)+'/'+encodeURIComponent(files[1].fullpath));
+};
+
 var lr = new LoadRender();
-lr.addEventListener('rendered', function(){
+lr.addEventListener('rendered', function(data){
+    // console.log(data);
+    // Utils.setHistory(data.files);
+
     // setTimeout(World.start, 1000);
     var startBtn = document.querySelector('.world-start button');
     startBtn.disabled = false;
@@ -77,8 +115,10 @@ lr.addEventListener('rendered', function(){
     });
     
 });
+
+
 lr.init('./data/flanagan/content.json', './data/dickinson/content.json');
-//lr.force('./data/flanagan/Insubstantial_Stuff_of_Pure_Being_.xml', './data/dickinson/OneSeries-IX.xml');
+lr.force('./data/flanagan/A_Pure_Subjective_Commitment_is_Possible_.xml', './data/dickinson/OneSeries-IX.xml');
 // lr.force();
 
 var World = World || {};
@@ -86,6 +126,15 @@ World.animList = [];
 World.g = 0.035;
 World.arcHeight = 200;
 World.arcVariant = 10;
+
+World.setWordClass = function(wc, checked){
+    if(checked === false){
+        this.wordClasses.splice(this.wordClasses.indexOf(wc));
+    } else {
+        this.wordClasses.push(wc);
+    }
+    console.log(this.wordClasses);
+}
 
 World.setArcVariant = function(h){
     this.arcVariant = parseInt(h);
@@ -104,33 +153,50 @@ var frameTime = 0, lastLoop = new Date, thisLoop;
 var count = 0;
 
 World.wordClassIndex = 0;
-World.wordClasses = ['NN', 'DT', 'IN', 'NNP', 'JJ', 'NNS', 'PRP', 'VBZ', 'RB', 'VBP', 'VB', 'CC', 'PRP$', 'TO', 'VBD', 'VBN', 'VBG', 'WRB', 'MD', 'CD', 'WP', 'EX', 'RP', 'JJR', 'WDT', 'JJS', 'RBR', 'WP$'];
+World.allWordClasses = ['NN', 'DT', 'IN', 'NNP', 'JJ', 'NNS', 'PRP', 'VBZ', 'RB', 'VBP', 'VB', 'CC', 'PRP$', 'TO', 'VBD', 'VBN', 'VBG', 'WRB', 'MD', 'CD', 'WP', 'EX', 'RP', 'JJR', 'WDT', 'JJS', 'RBR', 'WP$'];
+World.wordClasses = ['NN', 'DT', 'IN'];
 
 World.nextClass = function() {
 
-    console.log(this);
+    // Resetting lines for next pass/class.
+    var lines = document.querySelectorAll('.world .line');
+    console.log(lines);
+    [].forEach.call(lines, function(line){
+        console.log(line);
+        line.classList.remove('swapped', 'swapping');
+    });
+
+    // Are there any more classes?
     if(this.wordClassIndex < this.wordClasses.length){
         this.wordClassIndex++;
-        console.log('next class', this.wordClasses[this.wordClassIndex]);
+        console.info('Next class: ', this.wordClasses[this.wordClassIndex]);
         this.next();
     } else {
+        // No? Then we stop.
         console.log('fin');
+        // TODO - Store resulting poems or offer PDF download.
     }
+};
 
-}
 World.next = function(lastSource) {
 
     var tmpSource = this.sourcePoem,
         tmpTarget = this.targetPoem,
-        wordClass = this.wordClasses[this.wordClassIndex];
+        wordClass = this.wordClasses[this.wordClassIndex],
+        source, target, swap;
 
+    // Swap source and target or set them in the first instance.
     this.sourcePoem = tmpTarget || lr.poem1 || document.querySelector('.poem1');
     this.targetPoem = tmpSource || lr.poem2 || document.querySelector('.poem2');
 
-    var source = this.sourcePoem.querySelector('.line:not(.swapped):not(.swapping) span[data-tag="'+wordClass+'"]');
-    var target = lastSource || this.targetPoem.querySelector('span[data-tag="'+wordClass+'"]');
+    // Get the next source that hasn't been swapped during this pass/class.
+    source = this.sourcePoem.querySelector('.line:not(.swapped):not(.swapping) span[data-tag="'+wordClass+'"]');
+    target = lastSource || this.targetPoem.querySelector('span[data-tag="'+wordClass+'"]');
 
+    // Do we have a viable swap? (we need both source and target, fo' sho').
     if(!source || !target){
+        // If we have no swap and have the previous source we fade that
+        // back in and then start the process with a new class.
         if(lastSource){
             move(lastSource)
                 .set('opacity', 1)
@@ -139,13 +205,21 @@ World.next = function(lastSource) {
                     World.nextClass.call(World);
                 });
         } else {
+            // console.log('nextClass', source, target);
+            // If there is no last source then we may have just
+            // started a new class and immediately found no viable swaps.
+            console.info('Nothing found for: ', wordClass);
             World.nextClass();
         }
         return;
     }
 
-    var instance = new SwapLines(source, target);
-    instance.addEventListener('complete', function(){
+    // Instance of a line swap. Listening for completion.
+    swap = new SwapLines(source, target);
+    swap.addEventListener('complete', function(){
+        // We recursively call next() here and pass the last source
+        // incase we discover there is no viable swap and need to fade
+        // the last source back in.
         World.next(source);
     });
 
@@ -184,9 +258,15 @@ World.draw = function() {
 }
 
 World.start = function(){
+
+    var controls = document.querySelectorAll('.controls');
+    [].forEach.call(controls, function(el){
+       el.classList.remove('is-active'); 
+    });
+
     document.querySelector('.choose').style.display = 'none';
     document.querySelector('.world').style.display = 'block';
-    document.querySelector('.controls').classList.remove('is-active');
+
     World.next();
     World.animate();
 };
@@ -198,11 +278,14 @@ var slidersConfig = [
 ];
 
 var sliderTemplate = document.querySelector('.slider'),
-    controls = document.querySelector('.controls');
+    controlsFlight = document.querySelector('.controls--flight'),
+    controlsPoem = document.querySelector('.controls--poem');
 
 [].forEach.call(slidersConfig, function(config){
     var clone = sliderTemplate.cloneNode(true);
-    controls.appendChild(clone);
+    controlsFlight.appendChild(clone);
     Utils.initSlider(clone, config);
 });
+
+Utils.initPoemControls(World.allWordClasses, World.wordClasses, controlsPoem, World.setWordClass);
 
