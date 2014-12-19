@@ -133,7 +133,6 @@ World.setWordClass = function(wc, checked){
     } else {
         this.wordClasses.push(wc);
     }
-    console.log(this.wordClasses);
 }
 
 World.setArcVariant = function(h){
