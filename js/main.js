@@ -118,7 +118,7 @@ lr.addEventListener('rendered', function(data){
 
 
 lr.init('./data/flanagan/content.json', './data/dickinson/content.json');
-lr.force('./data/flanagan/A_Pure_Subjective_Commitment_is_Possible_.xml', './data/dickinson/OneSeries-IX.xml');
+// lr.force('./data/flanagan/A_Pure_Subjective_Commitment_is_Possible_.xml', './data/dickinson/OneSeries-IX.xml');
 // lr.force();
 
 var World = World || {};
