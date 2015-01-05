@@ -1,5 +1,16 @@
 "use strict";
 
+function log() {
+    if (window.options.logging && window.console && window.console.log) {
+        Function.prototype.bind.call(window.console.log, (window.console)).apply(window.console, [(Date.now() - window.logStart) + "ms", "dpe:"].concat([].slice.call(arguments, 0)));
+    }
+}
+
+if(window.options && window.options.logging){
+    window.logging = true;
+    window.logStart = Date.now();
+}
+
 var Utils = Utils || {
     duplicate : function(el){
         // Duplicate outer node to retain attributes. Then empty.
@@ -29,7 +40,7 @@ Utils.centreColumnContent = function(el){
     });
 
     max = Math.min(max, viewportW);
-    el.style.width = max + "px";
+    el.style['width'] = max + "px";
 };
 
 
@@ -96,14 +107,14 @@ Utils.initPoemControls = function(all, selected, el, callback){
 };
 
 Utils.setHistory = function(files){
-    console.log(encodeURIComponent(files[0].fullpath));
+    log(encodeURIComponent(files[0].fullpath));
     var stateObj = files;
     history.pushState(stateObj, "", encodeURIComponent(files[0].fullpath)+'/'+encodeURIComponent(files[1].fullpath));
 };
 
 var lr = new LoadRender();
 lr.addEventListener('rendered', function(data){
-    // console.log(data);
+    // log(data);
     // Utils.setHistory(data.files);
 
     // setTimeout(World.start, 1000);
@@ -118,7 +129,7 @@ lr.addEventListener('rendered', function(data){
 
 
 lr.init('./data/flanagan/content.json', './data/dickinson/content.json');
-// lr.force('./data/flanagan/A_Pure_Subjective_Commitment_is_Possible_.xml', './data/dickinson/OneSeries-IX.xml');
+lr.force('./data/flanagan/Insubstantial_Stuff_of_Pure_Being_.xml', './data/dickinson/OneSeries-IX.xml');
 // lr.force();
 
 var World = World || {};
@@ -128,6 +139,7 @@ World.arcHeight = 200;
 World.arcVariant = 10;
 
 World.setWordClass = function(wc, checked){
+    log(wc, checked);
     if(checked === false){
         this.wordClasses.splice(this.wordClasses.indexOf(wc));
     } else {
@@ -159,20 +171,20 @@ World.nextClass = function() {
 
     // Resetting lines for next pass/class.
     var lines = document.querySelectorAll('.world .line');
-    console.log(lines);
+    log(lines);
     [].forEach.call(lines, function(line){
-        console.log(line);
+        log(line);
         line.classList.remove('swapped', 'swapping');
     });
 
     // Are there any more classes?
     if(this.wordClassIndex < this.wordClasses.length){
         this.wordClassIndex++;
-        console.info('Next class: ', this.wordClasses[this.wordClassIndex]);
+        log('Next class: ', this.wordClasses[this.wordClassIndex]);
         this.next();
     } else {
         // No? Then we stop.
-        console.log('fin');
+        log('fin');
         // TODO - Store resulting poems or offer PDF download.
     }
 };
@@ -183,6 +195,7 @@ World.next = function(lastSource) {
         tmpTarget = this.targetPoem,
         wordClass = this.wordClasses[this.wordClassIndex],
         source, target, swap;
+    log(this.wordClasses);
 
     // Swap source and target or set them in the first instance.
     this.sourcePoem = tmpTarget || lr.poem1 || document.querySelector('.poem1');
@@ -204,10 +217,10 @@ World.next = function(lastSource) {
                     World.nextClass.call(World);
                 });
         } else {
-            // console.log('nextClass', source, target);
+            // log('nextClass', source, target);
             // If there is no last source then we may have just
             // started a new class and immediately found no viable swaps.
-            console.info('Nothing found for: ', wordClass);
+            log('Nothing found for: ', wordClass);
             World.nextClass();
         }
         return;
@@ -227,7 +240,7 @@ World.next = function(lastSource) {
 
 /*
 setInterval(function(){
-    console.log((1000/frameTime).toFixed(1));
+    log((1000/frameTime).toFixed(1));
 },250); 
 */
 
