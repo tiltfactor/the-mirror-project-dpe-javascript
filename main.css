@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'fenixregular';
+    src: url('font/fenix/fenix-regular-webfont.eot');
+    src: url('font/fenix/fenix-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/fenix/fenix-regular-webfont.woff2') format('woff2'),
+         url('font/fenix/fenix-regular-webfont.woff') format('woff'),
+         url('font/fenix/fenix-regular-webfont.ttf') format('truetype'),
+         url('font/fenix/fenix-regular-webfont.svg#fenixregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'fenixregular';
+}
+
+body {
+    display: block;
+    position: relative;
+    overflow: auto;
+    font-size: 25px;
+}
+
+
+.start-btn {
+    margin: 20px;
+}
+
+.start-btn button {
+    width: 100%;
+    height: 30px;
+}
+
+.world {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.world-start button:disabled {
+    opacity: 0.5;
+}
+
+.line {
+    display: inline-block;
+    line-height: 1.25em;
+    white-space: pre;
+    min-width: 100%;
+}
+
+.poem-container {
+    margin-top:200px;
+    width: 50%;
+    float: left;
+}
+
+.poem1, .poem2 {
+    margin: 0 auto;
+}
+
+.grav-item {
+   position: absolute;
+   display: block;
+}
+
+.box {
+    width: 10px;
+    height: 10px;
+    background: #ff00ff;
+    position: absolute;
+    top: auto;
+    left: 200px;
+}
+
+.choose {
+    display: block;
+    line-height: 1.5em;
+}
+
+.choose-start button:disabled {
+    opacity: 0.5;
+}
+
+.choose .right,
+.choose .left {
+    float: left;
+    width: 50%;
+    display: block;
+}
+
+.choose .right ul,
+.choose .left ul{
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.choose input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.choose.complete li:not(.selected) {
+    opacity: 0.5;
+}
+
+.controls {
+    position: absolute;
+    font-size: 13px;
+    top: 70px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.controls.is-active {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.controls--poem {
+    right:0;
+}
+
+.controls .cb-template {
+    display: none;
+}
+
+.controls .checkbox {
+    display: block;
+}
+
+.controls .checkbox {
+    display: block;
+}
+
+.controls--poem:not(.is-active){
+    opacity: 1;
+}
+
+.controls--poem:not(.is-active) .checkbox {
+    opacity: 0.5;
+}
+
+.controls--poem:not(.is-active) .checkbox input {
+    display: none;
+}
+
+.controls--poem .checkbox {
+    transition: transform 500ms, opacity 500ms;
+}
+
+.controls--poem .checkbox.is-unused {
+    transform: translate(50px, 0);
+}
+
+.controls--poem .checkbox.is-active {
+    transform: translate(-20px, 0);
+    opacity: 1;
+}
+
+.slider:first-child {
+    display: none;
+}
+
+.slider input[type="range"] {
+    position: relative;
+    top: 8px;
+}
+
+.slider-title {
+    min-width: 100px;
+    display: inline-block;
+}
+
