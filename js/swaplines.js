@@ -5,7 +5,8 @@ function SwapLines(source, target){
     var self = this,
         targetDup,
         sourceBbox, targetBbox,
-        delayMs = 250, arcHeight = World.arcHeight,
+        world = World.getInstance(),
+        delayMs = 250, arcHeight = world.arcHeight,
         rtl;
 
     sourceBbox = source.getBoundingClientRect();
@@ -50,7 +51,7 @@ function SwapLines(source, target){
     }
 
     function targetLineAnimations(framesRemaining){
-        var fps = (1000/frameTime).toFixed(1),
+        var fps = (1000/world.frameTime).toFixed(1),
             flightTimeRemaining = (framesRemaining/fps)*1000,
             difference = targetBbox.width-sourceBbox.width;
 

@@ -7,7 +7,7 @@ function SourceLine(source, duplicate){
         duplicateChildren = [],
         sourceBbox,
         delayMs = 250, variant = 0,
-        thr;
+        thr, world = World.getInstance();
 
     document.body.appendChild(duplicate);
     sourceBbox = source.getBoundingClientRect();
@@ -32,11 +32,11 @@ function SourceLine(source, duplicate){
             box.x =  sourceBbox.left + letterOffsetLeft
             box.y =  sourceBbox.top;
             box.draw();
-            var gravity = new Gravity(World.g);
+            var gravity = new Gravity(world.g);
             box.addAction(gravity);
 
-            variant = Math.random()*World.arcVariant;
-            thr = new Throw(World.g, hDistance, vDistance1+variant, vDistance2+variant);
+            variant = Math.random()*world.arcVariant;
+            thr = new Throw(world.g, hDistance, vDistance1+variant, vDistance2+variant);
             // Call once not on every frame.
             thr.behave(box);
 
@@ -54,7 +54,7 @@ function SourceLine(source, duplicate){
             delay = (rtl === true) ? delayMs*(total-i) : delayMs*i;
             (function(box){
                 setTimeout(function(){
-                    World.animList.push(box);
+                    world.animList.push(box);
                 }, delay);
             }(box));
 

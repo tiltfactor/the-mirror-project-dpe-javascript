@@ -58,9 +58,10 @@
         }
 
         .line {
-            display: block;
+            display: inline-block;
             line-height: 1.25em;
             white-space: pre;
+            min-width: 100%;
         }
 
         .poem-container {
@@ -135,11 +136,11 @@
             right:0;
         }
 
-        .controls .wc-checkbox:first-child {
+        .controls .cb-template {
             display: none;
         }
 
-        .controls .wc-checkbox {
+        .controls .checkbox {
             display: block;
         }
 
@@ -174,7 +175,7 @@
         </div>
         <div class="controls controls--poem is-active">
             <div class="word-classes">
-                <label class="wc-checkbox">
+                <label class="cb-template">
                     <input type="checkbox" />
                 </label>
             </div>
@@ -213,6 +214,10 @@
         </div>
     </section>
     
+    <script>
+        window.options = { logging : true };
+    </script>
+
 	<script src="js/vendor/eventdispatcher/EventDispatcher.js"></script>
 	<script src="js/vendor/move.js/move.min.js"></script>
 
@@ -221,6 +226,8 @@
 	<script src="js/sourceline.js"></script>
 	<script src="js/targetline.js"></script>
 	<script src="js/swaplines.js"></script>
+	<script src="js/utils.js"></script>
+	<script src="js/world.js"></script>
 	<script src="js/main.js"></script>
 
 </body>

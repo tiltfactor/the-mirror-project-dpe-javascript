@@ -1,0 +1,188 @@
+"use strict";
+
+var World = (function(){
+
+    function Singleton( options )  {
+        // Set options to the options supplied
+        // or an empty object if none are provided.
+        options = options || {};
+     
+        // FPS calc.
+        var lastLoop = new Date, thisLoop;
+        var count = 0;
+
+        // Options.
+        this.g = options.g || 0.035;
+        this.arcHeight = options.arcHeight || 200;
+        this.arcVariant = options.arcVariant || 10;
+
+        this.frameTime = 0;
+        this.animList = [];
+
+        this.wordClassIndex = 0;
+        this.allWordClasses = ['NN', 'DT', 'IN', 'NNP', 'JJ', 'NNS', 'PRP', 'VBZ', 'RB', 'VBP', 'VB', 'CC', 'PRP$', 'TO', 'VBD', 'VBN', 'VBG', 'WRB', 'MD', 'CD', 'WP', 'EX', 'RP', 'JJR', 'WDT', 'JJS', 'RBR', 'WP$'];
+        this.wordClasses = ['NN', 'DT', 'IN'];
+
+        this.setWordClass = function(){
+            log(wc, checked);
+            if(checked === false){
+                this.wordClasses.splice(this.wordClasses.indexOf(wc), 1);
+            } else {
+                this.wordClasses.push(wc);
+            }
+        }
+
+        this.nextClass = function() {
+
+            // Resetting lines for next pass/class.
+            var lines = document.querySelectorAll('.world .line');
+            log(lines);
+            [].forEach.call(lines, function(line){
+                log(line);
+                line.classList.remove('swapped', 'swapping');
+            });
+
+            // Are there any more classes?
+            if(this.wordClassIndex < this.wordClasses.length){
+                this.wordClassIndex++;
+                log('Next class: ', this.wordClasses[this.wordClassIndex]);
+                this.next();
+            } else {
+                // No? Then we stop.
+                log('fin');
+                // TODO - Store resulting poems or offer PDF download.
+            }
+        };
+
+        this.next = function(lastSource) {
+
+            var tmpSource = this.sourcePoem,
+                tmpTarget = this.targetPoem,
+                wordClass = this.wordClasses[this.wordClassIndex],
+                source, target, swap;
+            log(this.wordClasses);
+
+            // Swap source and target or set them in the first instance.
+            this.sourcePoem = tmpTarget || lr.poem1 || document.querySelector('.poem1');
+            this.targetPoem = tmpSource || lr.poem2 || document.querySelector('.poem2');
+
+            // Get the next source that hasn't been swapped during this pass/class.
+            source = this.sourcePoem.querySelector('.line:not(.swapped):not(.swapping) span[data-tag="'+wordClass+'"]');
+            target = lastSource || this.targetPoem.querySelector('span[data-tag="'+wordClass+'"]');
+
+            // Do we have a viable swap? (we need both source and target, fo' sho').
+            if(!source || !target){
+                // If we have no swap and have the previous source we fade that
+                // back in and then start the process with a new class.
+                if(lastSource){
+                    move(lastSource)
+                        .set('opacity', 1)
+                        .duration(250)
+                        .end(function(){
+                            // FIX
+                            this.nextClass.call(this);
+                        });
+                } else {
+                    // log('nextClass', source, target);
+                    // If there is no last source then we may have just
+                    // started a new class and immediately found no viable swaps.
+                    log('Nothing found for: ', wordClass);
+                    this.nextClass();
+                }
+                return;
+            }
+
+            // Instance of a line swap. Listening for completion.
+            swap = new SwapLines(source, target);
+            swap.addEventListener('complete', function(){
+                // We recursively call next() here and pass the last source
+                // incase we discover there is no viable swap and need to fade
+                // the last source back in.
+                world.next(source);
+            });
+
+        };
+
+
+        /*
+        setInterval(function(){
+            log((1000/frameTime).toFixed(1));
+        },250); 
+        */
+
+        this.animate = function() {
+            // FPS calc.
+            var thisFrameTime = (thisLoop=new Date) - lastLoop;
+            this.frameTime += (thisFrameTime - this.frameTime) / 25;
+            lastLoop = thisLoop;
+            count++;
+
+            requestAnimationFrame( this.animate.bind(this) );
+            this.draw();
+        }
+
+        this.draw = function() {
+            for (var i = 0, len = this.animList.length; i < len; i++) {
+                this.animList[i].behaveAll(count);
+                this.animList[i].draw();
+            }
+
+            var j = this.animList.length;
+            while(j--){
+                if(this.animList[j].detach){
+                    this.animList.splice(j, 1);
+                }
+            }
+        }
+
+        this.start = function(){
+
+            var controls = document.querySelectorAll('.controls');
+            [].forEach.call(controls, function(el){
+               el.classList.remove('is-active'); 
+            });
+
+            document.querySelector('.choose').style.display = 'none';
+            document.querySelector('.world').style.display = 'block';
+
+            this.next();
+            this.animate();
+        };
+
+        this.setArcVariant = function(h){
+            this.arcVariant = parseInt(h);
+        }
+
+        this.setArcHeight = function(h){
+            this.arcHeight = parseInt(h);
+        }
+
+        this.setGravity = function(g){
+            this.g = parseFloat(g);
+        }
+    }
+
+    // The instance holder
+    var instance;
+
+    // An emulation of static variables and methods
+    var _static  = {
+
+        name:  "World",
+
+        // Method for getting an instance. It returns
+        // a singleton instance of a singleton object
+        getInstance:  function( options ) {
+            if( instance  ===  undefined )  {
+                instance = new Singleton( options );
+            }
+
+            return  instance;
+
+        }
+    };
+
+    return  _static;
+
+})();
+
