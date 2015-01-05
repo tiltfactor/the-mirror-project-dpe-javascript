@@ -1,6 +1,9 @@
 "use strict";
 
 var world = World.getInstance();
+world.addEventListener('classchange', function(data){
+    Utils.setActiveCb(data.newClass);
+});
 
 var lr = new LoadRender();
 lr.addEventListener('rendered', function(data){
@@ -10,8 +13,10 @@ lr.addEventListener('rendered', function(data){
     startBtn.addEventListener('click', function(e){
         e.currentTarget.disabled = 'disabled';
         world.start();
+        log(world.allWordClasses.diff(world.wordClasses));
+        Utils.hideUnusedCb(world.allWordClasses.diff(world.wordClasses));
+        Utils.setActiveCb(world.wordClasses[0]);
     });
-    
 });
 
 lr.init('./data/flanagan/content.json', './data/dickinson/content.json');

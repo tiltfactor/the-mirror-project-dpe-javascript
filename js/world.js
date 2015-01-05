@@ -2,7 +2,7 @@
 
 var World = (function(){
 
-    function Singleton( options )  {
+    function WorldObject( options )  {
         // Set options to the options supplied
         // or an empty object if none are provided.
         options = options || {};
@@ -42,9 +42,10 @@ var World = (function(){
             });
 
             // Are there any more classes?
-            if(this.wordClassIndex < this.wordClasses.length){
+            if(this.wordClassIndex < this.wordClasses.length-1){
                 this.wordClassIndex++;
                 log('Next class: ', this.wordClasses[this.wordClassIndex]);
+                this.dispatchEvent({type:'classchange', newClass: this.wordClasses[this.wordClassIndex] });
                 this.next();
             } else {
                 // No? Then we stop.
@@ -169,7 +170,8 @@ var World = (function(){
         // a singleton instance of a singleton object
         getInstance:  function( options ) {
             if( instance  ===  undefined )  {
-                instance = new Singleton( options );
+                EventDispatcher.prototype.apply( WorldObject.prototype );
+                instance = new WorldObject( options );
             }
 
             return  instance;

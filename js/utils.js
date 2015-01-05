@@ -1,5 +1,9 @@
 "use strict";
 
+Array.prototype.diff = function(a) {
+    return this.filter(function(i) {return a.indexOf(i) < 0;});
+};
+
 function log() {
     if (window.options.logging && window.console && window.console.log) {
         Function.prototype.bind.call(window.console.log, (window.console)).apply(window.console, [(Date.now() - window.logStart) + "ms", "dpe:"].concat([].slice.call(arguments, 0)));
@@ -114,3 +118,27 @@ Utils.setHistory = function(files){
     var stateObj = files;
     history.pushState(stateObj, "", encodeURIComponent(files[0].fullpath)+'/'+encodeURIComponent(files[1].fullpath));
 };
+
+Utils.hideUnusedCb = function(activeClasses){
+
+    activeClasses.forEach(function(cl){
+        var label = document.querySelector('.controls--poem label[for="'+cl+'"]');
+        label.classList.add('is-unused');
+    });
+
+};
+
+Utils.setActiveCb = function(newClass){
+
+    var activeLabel = document.querySelector('.controls--poem label.is-active'),
+        label = document.querySelector('.controls--poem label[for="'+newClass+'"]');
+
+    if(activeLabel){
+        activeLabel.classList.remove('is-active');
+    }
+
+    label.classList.add('is-active');
+    log( newClass, label);
+
+};
+
