@@ -72,7 +72,7 @@ Utils.initSlider = function(slider, config){
     label.innerHTML = config.title;
 
     input.addEventListener('input', function(e){
-        config.cb.call(World, this.value); 
+        config.cb(this.value); 
         val.innerHTML = this.value;
     });
 };
@@ -104,7 +104,7 @@ Utils.initCheckboxes = function(all, selected, container, callback){
         container.appendChild(clone);
 
         cb.addEventListener('change', function(e){
-            callback.call(World, e.target.id, e.target.checked);
+            callback(e.target.id, e.target.checked);
         });
     });
 };

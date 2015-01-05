@@ -8,8 +8,10 @@ var World = (function(){
         options = options || {};
      
         // FPS calc.
-        var lastLoop = new Date, thisLoop;
-        var count = 0;
+        var self = this, 
+            lastLoop = new Date, 
+            thisLoop,
+            count = 0;
 
         // Options.
         this.g = options.g || 0.035;
@@ -23,8 +25,7 @@ var World = (function(){
         this.allWordClasses = ['NN', 'DT', 'IN', 'NNP', 'JJ', 'NNS', 'PRP', 'VBZ', 'RB', 'VBP', 'VB', 'CC', 'PRP$', 'TO', 'VBD', 'VBN', 'VBG', 'WRB', 'MD', 'CD', 'WP', 'EX', 'RP', 'JJR', 'WDT', 'JJS', 'RBR', 'WP$'];
         this.wordClasses = ['NN', 'DT', 'IN'];
 
-        this.setWordClass = function(){
-            log(wc, checked);
+        this.setWordClass = function(wc, checked){
             if(checked === false){
                 this.wordClasses.splice(this.wordClasses.indexOf(wc), 1);
             } else {
@@ -36,9 +37,7 @@ var World = (function(){
 
             // Resetting lines for next pass/class.
             var lines = document.querySelectorAll('.world .line');
-            log(lines);
             [].forEach.call(lines, function(line){
-                log(line);
                 line.classList.remove('swapped', 'swapping');
             });
 
@@ -60,7 +59,6 @@ var World = (function(){
                 tmpTarget = this.targetPoem,
                 wordClass = this.wordClasses[this.wordClassIndex],
                 source, target, swap;
-            log(this.wordClasses);
 
             // Swap source and target or set them in the first instance.
             this.sourcePoem = tmpTarget || lr.poem1 || document.querySelector('.poem1');
@@ -78,10 +76,7 @@ var World = (function(){
                     move(lastSource)
                         .set('opacity', 1)
                         .duration(250)
-                        .end(function(){
-                            // FIX
-                            this.nextClass.call(this);
-                        });
+                        .end(this.nextClass.bind(this));
                 } else {
                     // log('nextClass', source, target);
                     // If there is no last source then we may have just
@@ -98,7 +93,7 @@ var World = (function(){
                 // We recursively call next() here and pass the last source
                 // incase we discover there is no viable swap and need to fade
                 // the last source back in.
-                world.next(source);
+                self.next.call(self, source);
             });
 
         };
