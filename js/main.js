@@ -141,7 +141,7 @@ World.arcVariant = 10;
 World.setWordClass = function(wc, checked){
     log(wc, checked);
     if(checked === false){
-        this.wordClasses.splice(this.wordClasses.indexOf(wc));
+        this.wordClasses.splice(this.wordClasses.indexOf(wc), 1);
     } else {
         this.wordClasses.push(wc);
     }
