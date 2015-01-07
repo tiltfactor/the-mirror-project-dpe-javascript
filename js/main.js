@@ -26,6 +26,11 @@ setTimeout(function(){
 // lr.force();
 
 
+/*
+ * CONTROLS and SETTINGS
+ */
+
+// Physics and animation config.
 var setGravity = world.setGravity.bind(world),
     setArcHeight = world.setArcHeight.bind(world),
     setArcVariant = world.setArcVariant.bind(world),
@@ -35,6 +40,14 @@ var setGravity = world.setGravity.bind(world),
         { title:"Arc height variant", cb: setArcVariant, value: world.arcVariant, min: 0, max : 50, step: 1 } 
 ];
 
+// Animation mode.
+var animModes = ['dom', 'canvas:copy', 'canvas:text'],
+    controlsAnimMode = document.querySelector('.controls--anim-mode .anim-mode');
+Utils.initCheckboxes(animModes, options.animationMode, controlsAnimMode, function(target){
+    options.animationMode = target.value;
+});
+
+// Word classes.
 var setWordClass = world.setWordClass.bind(world),
     sliderTemplate = document.querySelector('.slider'),
     controlsFlight = document.querySelector('.controls--flight'),
@@ -45,6 +58,6 @@ var setWordClass = world.setWordClass.bind(world),
     controlsFlight.appendChild(clone);
     Utils.initSlider(clone, config);
 });
-
 Utils.initCheckboxes(world.allWordClasses, world.wordClasses, controlsWordClasses, setWordClass);
+
 

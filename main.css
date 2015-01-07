@@ -130,7 +130,11 @@ body {
     padding-left: 100px;
 }
 
-.controls .cb-template {
+.controls--anim-mode {
+    top: 160px;
+}
+
+.controls .input-template {
     display: none;
 }
 

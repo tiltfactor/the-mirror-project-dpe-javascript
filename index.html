@@ -27,9 +27,16 @@
                 <span class="slider-value"></span>
             </div>
         </div>
+        <div class="controls controls--anim-mode is-active">
+            <div class="anim-mode">
+                <label class="input-template">
+                    <input name="anim-mode" type="radio" />
+                </label>
+            </div>
+        </div>
         <div class="controls controls--poem is-active">
             <div class="word-classes">
-                <label class="cb-template">
+                <label class="input-template">
                     <input type="checkbox" />
                 </label>
             </div>
@@ -71,7 +78,7 @@
     <script>
         window.options = {
             logging : true,
-            animationMode: 'dom',
+            animationMode: 'canvas:text',
             world : {
                 g : 0.035,
                 arcHeight : 200,

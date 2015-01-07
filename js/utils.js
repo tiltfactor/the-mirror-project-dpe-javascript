@@ -81,34 +81,41 @@ Utils.initSlider = function(slider, config){
     });
 };
 
+Utils.cloneInputs = function(all, selected, container, callback){
+
+};
+
+
 Utils.initCheckboxes = function(all, selected, container, callback){
 
     // Word classes.
-    var tpl = container.querySelector('.cb-template'),
-        clone, cb, label;
+    var tpl = container.querySelector('.input-template'),
+        clone, input, label;
 
     all.forEach(function(cl){
         clone = tpl.cloneNode(true);
 
-        clone.classList.remove('cb-template');
-        clone.classList.add('checkbox');
+        input = clone.querySelector('input');
 
-        cb = clone.querySelector('input[type="checkbox"]');
+        clone.classList.remove('input-template');
+        clone.classList.add(input.getAttribute('type'));
 
         clone.setAttribute('for', cl);
         // clone.insertBefore(document.createTextNode(cl), clone.firstChild);
         clone.appendChild(document.createTextNode(cl));
 
-        cb.name = cl;
-        cb.value = cl;
-        cb.id = cl;
+        if(input.getAttribute('type') === "checkbox"){
+            input.name = cl;
+        }
+        input.value = cl;
+        input.id = cl;
         if(selected.indexOf(cl) >= 0){
-            cb.checked = true;
+            input.checked = true;
         }
         container.appendChild(clone);
 
-        cb.addEventListener('change', function(e){
-            callback(e.target.id, e.target.checked);
+        input.addEventListener('change', function(e){
+            callback(e.target);
         });
     });
 };
