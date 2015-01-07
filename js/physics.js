@@ -20,11 +20,12 @@ function PhysicsObject(el, options){
     },
 
     createCanvasText = function(el){
+        var boxCtx;
         // Create element dynamically.
-        this.canvas = document.createElement('canvas');
-        this.canvas.width = boundBox.width;
-        this.canvas.height = boundBox.height;
-        var boxCtx = this.canvas.getContext('2d');
+        self.canvas = document.createElement('canvas');
+        self.canvas.width = boundBox.width;
+        self.canvas.height = boundBox.height;
+        boxCtx = self.canvas.getContext('2d');
 
         boxCtx.textBaseline="bottom"; 
         boxCtx.translate(0, boundBox.height);
@@ -112,8 +113,8 @@ function PhysicsObject(el, options){
             ctx = world.getAnimContext();
         } else if(mode.toLowerCase() === "canvas:text"){
             ctx = world.getAnimContext();
-            thesholdW = 1;
-            thesholdH = 2;
+            thresholdW = 1;
+            thresholdH = 2;
         }
 
         // If this is canvas mode and canvas exists.
