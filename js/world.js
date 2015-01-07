@@ -51,8 +51,7 @@ var World = (function(){
                 this.next();
             } else {
                 // No? Then we stop.
-                log('fin');
-                // TODO - Store resulting poems or offer PDF download.
+                this.dispatchEvent({type:'complete'});
             }
         };
 

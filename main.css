@@ -134,6 +134,12 @@ body {
     top: 160px;
 }
 
+.controls--pdf {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+}
+
 .controls .input-template {
     display: none;
 }

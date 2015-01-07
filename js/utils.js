@@ -149,3 +149,34 @@ Utils.setActiveCb = function(newClass){
 
 };
 
+Utils.downloadPDF = function(){
+
+    var doc = new jsPDF(),
+        poem1 = document.querySelector('.poem1'),
+        poem2 = document.querySelector('.poem2'),
+        poem1Lines = poem1.querySelectorAll('.poem1 .line'),
+        poem2Lines = poem2.querySelectorAll('.poem2 .line'),
+        poemStr = '';
+
+    doc.setFont("times", "normal");
+
+    console.log(poem1.dataset.filename+poem2.dataset.filename);
+
+    doc.text(20, 20, poem1.dataset.filename+" and "+poem2.dataset.filename);
+    doc.addPage();
+
+    [].forEach.call(poem1Lines, function(el){
+        poemStr += el.textContent + "\n";
+    });
+    doc.text(20, 20, poemStr);
+    doc.addPage();
+
+    poemStr = '';
+    [].forEach.call(poem2Lines, function(el){
+        poemStr += el.textContent + "\n";
+    });
+    doc.text(20, 20, poemStr);
+
+    doc.save(poem1.dataset.filename+poem2.dataset.filename+'.pdf');
+
+};

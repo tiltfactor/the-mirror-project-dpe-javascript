@@ -5,6 +5,11 @@ world.addEventListener('classchange', function(data){
     Utils.setActiveCb(data.newClass);
 });
 
+world.addEventListener('complete', function(){
+    var controlsPDF = document.querySelector('.controls--pdf');
+    controlsPDF.classList.add('is-active');
+});
+
 var lr = new LoadRender();
 lr.addEventListener('rendered', function(data){
     // Utils.setHistory(data.files);
@@ -21,12 +26,14 @@ lr.addEventListener('rendered', function(data){
 
 lr.init('./data/flanagan/content.json', './data/dickinson/content.json');
 setTimeout(function(){
+    // lr.force('./data/flanagan/Insist__________repeat_.xml', './data/dickinson/OneSeries-IX.xml');
     // lr.force('./data/flanagan/Insubstantial_Stuff_of_Pure_Being_.xml', './data/dickinson/OneSeries-IX.xml');
 }, 500);
 
 
 /*
- * CONTROLS and SETTINGS
+ * CONTROLS and SETTINGS 
+ * TODO: Move to seperate module.
  */
 
 // Physics and animation config.
@@ -59,4 +66,9 @@ var setWordClass = world.setWordClass.bind(world),
 });
 Utils.initCheckboxes(world.allWordClasses, world.wordClasses, controlsWordClasses, setWordClass);
 
-
+// Download PDF
+var downloadBtn = document.getElementById('pdf-download');
+downloadBtn.addEventListener('click', function(){
+    this.parentNode.classList.remove('is-active');
+    Utils.downloadPDF();
+});

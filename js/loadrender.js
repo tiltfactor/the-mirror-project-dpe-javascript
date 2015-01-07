@@ -123,7 +123,9 @@ function LoadRender(){
         document.querySelector('.world').style.display = 'block';
 
         load(file1.fullpath, false, function(data){
+            var fileName = file1.fullpath.split('/').pop();
             self.poem1 = renderPoem(data.firstChild, true);
+            self.poem1.setAttribute('data-filename', fileName.replace('.xml', ''));
             rendered.push(true);
             if(rendered.length >= 2){
                 self.dispatchEvent({type:'rendered'});
@@ -132,7 +134,9 @@ function LoadRender(){
         function(err){console.error("Couldn't load" + err)});
 
         load(file2.fullpath, false, function(data){
+            var fileName = file2.fullpath.split('/').pop();
             self.poem2 = renderPoem(data.firstChild, false);
+            self.poem2.setAttribute('data-filename', fileName.replace('.xml', ''));
             rendered.push(true);
             if(rendered.length >= 2){
                 self.dispatchEvent({type:'rendered', files: [file1, file2]});
