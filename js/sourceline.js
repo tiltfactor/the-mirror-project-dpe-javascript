@@ -14,7 +14,7 @@ function SourceLine(source, duplicate){
     source.style.opacity = 0.5;
 
     this.throwDuplicate = function(rtl, hDistance, vDistance1, vDistance2, groundY){
-        // Create array.
+        // Create array in order to reverse;.
         duplicateChildren = [].map.call(duplicate.childNodes, function(element) {
             return element;
         });
@@ -28,7 +28,7 @@ function SourceLine(source, duplicate){
                 total = duplicateChildren.length,
                 delay;
 
-            box = new PhysicsObject(l);
+            box = new PhysicsObject(l, options);
             box.x =  sourceBbox.left + letterOffsetLeft
             box.y =  sourceBbox.top;
             box.draw();

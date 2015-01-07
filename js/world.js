@@ -11,7 +11,8 @@ var World = (function(){
         var self = this, 
             lastLoop = new Date, 
             thisLoop,
-            count = 0;
+            count = 0,
+            animContext;
 
         // Options.
         this.g = options.g || 0.035;
@@ -118,9 +119,14 @@ var World = (function(){
         }
 
         this.draw = function() {
+
             for (var i = 0, len = this.animList.length; i < len; i++) {
+
+                // Apply all behaviours to items in animList.
                 this.animList[i].behaveAll(count);
+                // Draw. Currently only making calculations.
                 this.animList[i].draw();
+
             }
 
             var j = this.animList.length;
@@ -156,6 +162,17 @@ var World = (function(){
         this.setGravity = function(g){
             this.g = parseFloat(g);
         }
+
+        this.getAnimContext = function(){
+            var canvas;
+            if(!animContext){
+                canvas = document.getElementById('animations');
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                animContext = canvas.getContext('2d');
+            }
+            return animContext;
+        };
     }
 
     // The instance holder

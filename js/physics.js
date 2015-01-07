@@ -1,17 +1,64 @@
 "use strict";
-function PhysicsObject(el, initVy){
 
-    var gravEl = el,
+function PhysicsObject(el, options){
+
+    var self = this,
         boundBox = el.getBoundingClientRect(),
         actions = [],
-        actionsToRemove = [];
+        actionsToRemove = [],
+        mode = options.animationMode || "dom";
+
+    var createCanvasHTMLCopy = function(el){
+        // Use handy library for copy any HTML element to canvas.
+        html2canvas(el, {
+            onrendered: function(canvas){
+                self.canvas = canvas;
+                // Hide duplicate el.
+                el.style.opacity = 0;
+            }
+        });
+    },
+
+    createCanvasText = function(el){
+        // Create element dynamically.
+        this.canvas = document.createElement('canvas');
+        this.canvas.width = boundBox.width;
+        this.canvas.height = boundBox.height;
+        var boxCtx = this.canvas.getContext('2d');
+
+        boxCtx.textBaseline="bottom"; 
+        boxCtx.translate(0, boundBox.height);
+        boxCtx.clearRect(0,0, boundBox.width, boundBox.height);
+        // TODO - Get this from CSS.
+        boxCtx.font = "25px fenixregular";
+        boxCtx.fillStyle = "Black";
+        boxCtx.fillText(el.textContent, 0, 0);
+
+        // DEBUG:
+        // boxCtx.fillStyle = '#09F';
+        // boxCtx.fillRect(0, 0, boundBox.width, boundBox.height);
+        
+        // Hide duplicate el.
+        el.style.opacity = 0;
+
+    };
+
     
     this.x = boundBox.left;
     this.y = boundBox.top;
     this.vx = 0;
-    this.vy = initVy || 0;
-    gravEl.classList.add('grav-item');
-    
+    this.vy = 0;
+
+    el.classList.add('grav-item');
+
+    // If this is either of canvas modes then we prerender canvas 
+    // once at the start and copy it later for performance.
+    if(mode.toLowerCase() === "canvas:copy"){
+        createCanvasHTMLCopy(el);
+    } else if(mode.toLowerCase() === "canvas:text"){
+        createCanvasText(el);
+    }
+
     this.el = function(){
         return el;
     };
@@ -59,16 +106,41 @@ function PhysicsObject(el, initVy){
 
     this.draw = function(){
 
+        var ctx, thresholdW = 0, thresholdH = 0;
+
+        if(mode.toLowerCase() === "canvas:copy"){
+            ctx = world.getAnimContext();
+        } else if(mode.toLowerCase() === "canvas:text"){
+            ctx = world.getAnimContext();
+            thesholdW = 1;
+            thesholdH = 2;
+        }
+
+        // If this is canvas mode and canvas exists.
+        if(mode.split(":")[0].toLowerCase() === "canvas" && this.canvas){
+            // Clear previous canvas area.
+            ctx.clearRect(this.x-thresholdW, this.y-thresholdH, this.canvas.width+(2*thresholdW), this.canvas.height+(2*thresholdH));
+        }
+
+        // Calculate position based on velocity.
         this.y += this.vy;
         this.x += this.vx;
 
-        gravEl.style.transform = "translate3d("
-            + this.x + "px,"
-            + this.y + "px, 0)";
+        if(mode.split(":")[0].toLowerCase() === "canvas" && this.canvas){
+            // Draw new image position.
+            ctx.drawImage(this.canvas, (0.5 + this.x) | 0 , (0.5 +  this.y) | 0);
+        }
 
-        gravEl.style.webkitTransform = "translate3d("
-            + this.x + "px,"
-            + this.y + "px, 0)";
+        // If we aren't using canvas we assume DOM manipulation.
+        if(mode.split(":")[0].toLowerCase() !== "canvas"){
+            el.style.transform = "translate3d("
+                + this.x + "px,"
+                + this.y + "px, 0)";
+
+            el.style.webkitTransform = "translate3d("
+                + this.x + "px,"
+                + this.y + "px, 0)";
+        }
     };
 }
 
@@ -143,7 +215,7 @@ function Throw(g, hDistance, vDistance1, vDistance2){
 
         pO.vx = vx;
         pO.vy = 0-vy;
-
+        
     };
 
 };

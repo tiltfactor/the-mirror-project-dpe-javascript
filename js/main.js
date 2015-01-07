@@ -1,6 +1,6 @@
 "use strict";
 
-var world = World.getInstance();
+var world = World.getInstance(options.world);
 world.addEventListener('classchange', function(data){
     Utils.setActiveCb(data.newClass);
 });
@@ -13,7 +13,7 @@ lr.addEventListener('rendered', function(data){
     startBtn.addEventListener('click', function(e){
         e.currentTarget.disabled = 'disabled';
         world.start();
-        log(world.allWordClasses.diff(world.wordClasses));
+        // log(world.allWordClasses.diff(world.wordClasses));
         Utils.hideUnusedCb(world.allWordClasses.diff(world.wordClasses));
         Utils.setActiveCb(world.wordClasses[0]);
     });
@@ -21,7 +21,7 @@ lr.addEventListener('rendered', function(data){
 
 lr.init('./data/flanagan/content.json', './data/dickinson/content.json');
 setTimeout(function(){
-    // lr.force('./data/flanagan/Insubstantial_Stuff_of_Pure_Being_.xml', './data/dickinson/OneSeries-IX.xml');
+    lr.force('./data/flanagan/Insubstantial_Stuff_of_Pure_Being_.xml', './data/dickinson/OneSeries-IX.xml');
 }, 500);
 // lr.force();
 
