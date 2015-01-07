@@ -21,9 +21,8 @@ lr.addEventListener('rendered', function(data){
 
 lr.init('./data/flanagan/content.json', './data/dickinson/content.json');
 setTimeout(function(){
-    lr.force('./data/flanagan/Insubstantial_Stuff_of_Pure_Being_.xml', './data/dickinson/OneSeries-IX.xml');
+    // lr.force('./data/flanagan/Insubstantial_Stuff_of_Pure_Being_.xml', './data/dickinson/OneSeries-IX.xml');
 }, 500);
-// lr.force();
 
 
 /*
