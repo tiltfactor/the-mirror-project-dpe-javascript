@@ -6,18 +6,36 @@ function TargetLine(target, rtl){
         line = target.parentNode,
         complete = function(){
             self.dispatchEvent({type:'complete'});
+        },
+            
+        replaceTarget = function(sourceStr){
+            
+            // Remove content of target (letters surrounded by spans)...
+            while (target.firstChild) {
+                target.removeChild(target.firstChild);
+            }
+            //...and replace with the source string.
+            target.innerHTML = sourceStr;
+            
         };
 
     line.classList.add('swapping');
 
-    this.swap = function(sourceStr){
-        // Remove content of target (letters surrounded by spans)...
-        while (target.firstChild) {
-            target.removeChild(target.firstChild);
+    this.swap = function(sourceStr, replacementStr){
+
+        // Replace with word in flight.
+        replaceTarget(sourceStr);
+
+        // If word is being replaced then hide now...
+        if(sourceStr !== replacementStr){
+            // ... and wait for transition to end.
+            target.classList.add('is-replacing');
+            target.addEventListener('transitionend', function(){
+                replaceTarget(replacementStr);
+                target.classList.remove('is-replacing');
+            });
         }
-        //...and replace with the source string.
-        target.innerHTML = sourceStr;
-        target.style.opacity = 1;
+
         line.classList.remove('swapping');
         line.classList.add('swapped');
 

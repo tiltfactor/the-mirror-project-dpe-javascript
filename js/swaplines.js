@@ -12,6 +12,11 @@ function SwapLines(source, target){
     sourceBbox = source.getBoundingClientRect();
     targetBbox = target.getBoundingClientRect();
 
+    var firstLetterSource = source.textContent.substr(0,1),
+        firstLetterTarget = target.textContent.substr(0,1),
+        isSourceCapitalised = firstLetterSource === firstLetterSource.toUpperCase(),
+        isTargetCapitalised = firstLetterTarget === firstLetterTarget.toUpperCase();
+    
     // Direction of travel.
     rtl = sourceBbox.left > targetBbox.left;
 
@@ -40,7 +45,15 @@ function SwapLines(source, target){
     });
 
     sourceLine.addEventListener('ground', function(e){
-       targetLine.swap(source.textContent);
+        var replacement = source.textContent,
+            isStringChanging = false;
+        if(isSourceCapitalised === true && isTargetCapitalised === false){
+            log(source, 'is upper case');
+            replacement = replacement.substr(0,1).toLowerCase()+replacement.substr(1);
+            isStringChanging = true;
+        }
+
+       targetLine.swap(source.textContent, replacement);
     });
 
     function handleProgress(e){
