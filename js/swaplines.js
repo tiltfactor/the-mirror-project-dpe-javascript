@@ -75,7 +75,7 @@ function SwapLines(source, target){
         // incoming word) then animation needs to be complete by the time
         // the first letter lands.
 
-        targetLine.fillSpace(difference, flightTimeRemaining);
+        targetLine.fillSpace((0.5 + difference) | 0, (0.5 + flightTimeRemaining) | 0);
         targetLine.fadeOut(rtl, flightTimeRemaining);
     }
 

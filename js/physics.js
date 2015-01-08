@@ -135,12 +135,12 @@ function PhysicsObject(el, options){
         // If we aren't using canvas we assume DOM manipulation.
         if(mode.split(":")[0].toLowerCase() !== "canvas"){
             el.style.transform = "translate3d("
-                + this.x + "px,"
-                + this.y + "px, 0)";
+                + ((0.5 + this.x) | 0) + "px,"
+                + ((0.5 + this.y) | 0) + "px, 0)";
 
             el.style.webkitTransform = "translate3d("
-                + this.x + "px,"
-                + this.y + "px, 0)";
+                + ((0.5 + this.x) | 0) + "px,"
+                + ((0.5 + this.y) | 0) + "px, 0)";
         }
     };
 }
