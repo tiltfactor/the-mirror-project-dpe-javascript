@@ -46,10 +46,13 @@ function SwapLines(source, target){
 
     sourceLine.addEventListener('ground', function(e){
         var replacement = source.textContent,
-            isStringChanging = false;
-        if(isSourceCapitalised === true && isTargetCapitalised === false){
-            log(source, 'is upper case');
-            replacement = replacement.substr(0,1).toLowerCase()+replacement.substr(1);
+            isStringChanging = false, letter;
+
+        // If the capitalisation is different.
+        if(isSourceCapitalised !== isTargetCapitalised){
+            letter = source.textContent.substr(0,1);
+            replacement = (isSourceCapitalised) ? letter.toLowerCase() : letter.toUpperCase();
+            replacement += source.textContent.substr(1) 
             isStringChanging = true;
         }
 

@@ -17,34 +17,55 @@ function TargetLine(target, rtl){
             //...and replace with the source string.
             target.innerHTML = sourceStr;
             
+        }, 
+            
+        removeRemainderSurround = function(){
+            // Remove the span surrounding (unwrap) the post-target/remaining text.
+            while(target.nextSibling.firstChild){
+                target.parentNode.appendChild(target.nextSibling.firstChild);
+            }
+            target.parentNode.removeChild(target.nextSibling);
+        },
+        
+        changeClasses = function(){
+            line.classList.remove('swapping');
+            // FIX: May no longer be necessary.
+            line.classList.add('swapped');
+
+            target.classList.remove('target');
+            target.classList.add('swapped');
         };
 
     line.classList.add('swapping');
+    target.classList.add('target');
 
     this.swap = function(sourceStr, replacementStr){
 
         // Replace with word in flight.
         replaceTarget(sourceStr);
-
+        target.style.opacity = 1;
+        
         // If word is being replaced then hide now...
         if(sourceStr !== replacementStr){
             // ... and wait for transition to end.
-            target.classList.add('is-replacing');
             target.addEventListener('transitionend', function(){
+
                 replaceTarget(replacementStr);
                 target.classList.remove('is-replacing');
+
+                changeClasses();
             });
+            // Starts the transition that we're listening for.
+            target.classList.add('is-replacing');
+            // Remove surround now otherwise we get a jump.
+            removeRemainderSurround();
+            // Prevent remainder from execution until end of transition.
+            return;
         }
 
-        line.classList.remove('swapping');
-        line.classList.add('swapped');
+        removeRemainderSurround();
+        changeClasses();
 
-        // Remove the span surrounding (unwrap) the post-target/remaining text.
-        while(target.nextSibling.firstChild){
-            target.parentNode.appendChild(target.nextSibling.firstChild);
-        }
-        target.parentNode.removeChild(target.nextSibling);
-        target.classList.add('swapped');
     };
 
     this.fadeOut = function(rtl, duration){

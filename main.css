@@ -52,13 +52,13 @@ body {
     min-width: 100%;
 }
 
-.line span {
+.line .target {
     transition: opacity 100ms;
     opacity: 1;
 }
 
-.line span.is-replacing {
-    opacity: 0;
+.line .target.is-replacing {
+    opacity: 0 !important;
     transition: opacity 500ms;
 }
 
