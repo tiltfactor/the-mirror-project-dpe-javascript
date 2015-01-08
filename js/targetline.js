@@ -26,6 +26,7 @@ function TargetLine(target, rtl){
             target.parentNode.appendChild(target.nextSibling.firstChild);
         }
         target.parentNode.removeChild(target.nextSibling);
+        target.classList.add('swapped');
     };
 
     this.fadeOut = function(rtl, duration){

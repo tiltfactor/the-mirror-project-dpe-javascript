@@ -24,7 +24,7 @@ var World = (function(){
 
         this.wordClassIndex = 0;
         this.allWordClasses = ['NN', 'DT', 'IN', 'NNP', 'JJ', 'NNS', 'PRP', 'VBZ', 'RB', 'VBP', 'VB', 'CC', 'PRP$', 'TO', 'VBD', 'VBN', 'VBG', 'WRB', 'MD', 'CD', 'WP', 'EX', 'RP', 'JJR', 'WDT', 'JJS', 'RBR', 'WP$'];
-        this.wordClasses = ['NN', 'DT', 'IN'];
+        this.wordClasses = ['NN'];
 
         this.setWordClass = function(target){
             var wc = target.id;
@@ -40,14 +40,17 @@ var World = (function(){
             // Resetting lines for next pass/class.
             var lines = document.querySelectorAll('.world .line');
             [].forEach.call(lines, function(line){
-                line.classList.remove('swapped', 'swapping');
+               	line.classList.remove('swapped', 'swapping');
             });
 
             // Are there any more classes?
             if(this.wordClassIndex < this.wordClasses.length-1){
                 this.wordClassIndex++;
                 log('Next class: ', this.wordClasses[this.wordClassIndex]);
-                this.dispatchEvent({type:'classchange', newClass: this.wordClasses[this.wordClassIndex] });
+                this.dispatchEvent({
+                    type:'classchange', 
+                    newClass: this.wordClasses[this.wordClassIndex] 
+                });
                 this.next();
             } else {
                 // No? Then we stop.
@@ -60,14 +63,20 @@ var World = (function(){
             var tmpSource = this.sourcePoem,
                 tmpTarget = this.targetPoem,
                 wordClass = this.wordClasses[this.wordClassIndex],
-                source, target, swap;
+                source, target, swap, lineIndex;
 
             // Swap source and target or set them in the first instance.
             this.sourcePoem = tmpTarget || lr.poem1 || document.querySelector('.poem1');
             this.targetPoem = tmpSource || lr.poem2 || document.querySelector('.poem2');
 
+            // Get line index.
+            lineIndex = parseInt(this.sourcePoem.dataset.lastIndex || 0);
+
             // Get the next source that hasn't been swapped during this pass/class.
-            source = this.sourcePoem.querySelector('.line:not(.swapped):not(.swapping) span[data-tag="'+wordClass+'"]');
+            source = this.sourcePoem.querySelector('.line:not(.swapping):nth-child(n+'+(lineIndex+1)+') span[data-tag="'+wordClass+'"]:not(.swapped)');
+            if(!source){
+                source = this.sourcePoem.querySelector('.line:not(.swapping):nth-child(n+1) span[data-tag="'+wordClass+'"]:not(.swapped)');
+            }
             target = lastSource || this.targetPoem.querySelector('span[data-tag="'+wordClass+'"]');
 
             // Do we have a viable swap? (we need both source and target, fo' sho').
@@ -87,6 +96,11 @@ var World = (function(){
                     this.nextClass();
                 }
                 return;
+            } else {
+                // Set the source line index.
+                var k=0, e=source.parentNode;
+                while (e = e.previousSibling) { ++k;}
+                this.sourcePoem.dataset['lastIndex'] = k;
             }
 
             // Instance of a line swap. Listening for completion.
