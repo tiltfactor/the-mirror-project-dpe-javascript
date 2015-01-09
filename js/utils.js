@@ -37,11 +37,16 @@ var Utils = Utils || {
 Utils.centreColumnContent = function(el){
     var max = 0, bounds, viewportW = document.documentElement.clientWidth;
 
-
     [].forEach.call(el.children, function(line){
+
         line.style['min-width'] = 0;
         bounds = line.getBoundingClientRect();
-        max = Math.max(max, bounds.width);
+
+        var theCSSprop = window.getComputedStyle(line,null).getPropertyValue("min-width");
+        var display = window.getComputedStyle(line,null).getPropertyValue("display");
+        // console.log(line, bounds.width, max, theCSSprop, display);
+        max = Math.max(bounds.width, max);
+
         line.style['min-width'] = null;
     });
 

@@ -11,14 +11,30 @@ function LoadRender(){
         start(file1, file2);
     };
 
-    this.init = function(content1, content2){
+    this.loadAsync = function(){
+        var files = [
+            'data/pos_tags.json'
+            ];
 
-        load('./data/flanagan/content.json', true, function(data){
+        files.forEach(function(path){
+            load(path, true, function(data){
+                console.log(data);
+                window.options.postags = data;
+
+            });
+        });
+
+
+    };
+
+    this.loadLists = function(listFile1, listFile2){
+
+        load(listFile1, true, function(data){
             renderFiles(data, document.querySelector('.choose .left'));
         }, 
         function(err){console.error("Couldn't load" + err)});
 
-        load('./data/dickinson/content.json', true, function(data){
+        load(listFile2, true, function(data){
             renderFiles(data, document.querySelector('.choose .right'));
         }, 
         function(err){console.error("Couldn't load" + err)});

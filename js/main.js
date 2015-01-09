@@ -24,12 +24,9 @@ lr.addEventListener('rendered', function(data){
     });
 });
 
-lr.init('./data/flanagan/content.json', './data/dickinson/content.json');
-setTimeout(function(){
-    // lr.force('./data/flanagan/On_Being_From_.xml', './data/dickinson/OneSeries-VIII.xml');
-    // lr.force('./data/flanagan/Insubstantial_Stuff_of_Pure_Being_.xml', './data/dickinson/OneSeries-IX.xml');
-}, 500);
-
+// lr.force('./data/flanagan/On_Being_From_.xml', './data/dickinson/OneSeries-VIII.xml');
+lr.loadLists('./data/flanagan/content.json', './data/dickinson/content.json');
+lr.loadAsync();
 
 /*
  * CONTROLS and SETTINGS 
@@ -57,7 +54,9 @@ Utils.initCheckboxes(animModes, options.animationMode, controlsAnimMode, functio
 var setWordClass = world.setWordClass.bind(world),
     sliderTemplate = document.querySelector('.slider'),
     controlsFlight = document.querySelector('.controls--flight'),
-    controlsWordClasses = document.querySelector('.controls--poem .word-classes');
+    controlsWordClasses = document.querySelector('.controls--poem .word-classes'),
+    controlsWCDebug = document.querySelector('.controls--poem .debug'),
+    to;
 
 [].forEach.call(slidersConfig, function(config){
     var clone = sliderTemplate.cloneNode(true);
@@ -65,6 +64,20 @@ var setWordClass = world.setWordClass.bind(world),
     Utils.initSlider(clone, config);
 });
 Utils.initCheckboxes(world.allWordClasses, world.wordClasses, controlsWordClasses, setWordClass);
+var labels = controlsWordClasses.querySelectorAll('label');
+[].forEach.call(labels, function(label){
+    label.addEventListener('mouseover', function(){
+        if(window.options.postags){
+            var id = this.getElementsByTagName('input')[0].id;
+            controlsWCDebug.innerHTML = window.options.postags[id];
+            controlsWCDebug.style.opacity = 1;
+            clearTimeout(to);
+            to = setTimeout(function(){
+                controlsWCDebug.style.opacity = 0;
+            }, 3000);
+        }
+    });
+});
 
 // Download PDF
 var downloadBtn = document.getElementById('pdf-download');
