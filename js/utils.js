@@ -36,11 +36,13 @@ var Utils = Utils || {
 
 Utils.centreColumnContent = function(el){
     var max = 0, bounds, viewportW = document.documentElement.clientWidth;
+
+
     [].forEach.call(el.children, function(line){
-        line.style.display = 'inline';
+        line.style['min-width'] = 0;
         bounds = line.getBoundingClientRect();
         max = Math.max(max, bounds.width);
-        line.style.display = null;
+        line.style['min-width'] = null;
     });
 
     max = Math.min(max, viewportW);
