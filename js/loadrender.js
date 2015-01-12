@@ -18,7 +18,6 @@ function LoadRender(){
 
         files.forEach(function(path){
             load(path, true, function(data){
-                console.log(data);
                 window.options.postags = data;
 
             });
@@ -88,7 +87,9 @@ function LoadRender(){
         docfrag.appendChild(ul);
         el.appendChild(docfrag);
 
-        Utils.centreColumnContent(ul);
+        setTimeout(function(){
+            Utils.centreColumnContent(ul);
+        }, 500);
     };
 
     function cbChangeHandler(e){
@@ -179,7 +180,9 @@ function LoadRender(){
             renderLineTags(lineEl, tags);
         });
 
-        Utils.centreColumnContent(container);
+        setTimeout(function(){
+            Utils.centreColumnContent(container);
+        }, 500);
 
         return container;
     }
