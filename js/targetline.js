@@ -46,7 +46,7 @@ function TargetLine(target, rtl){
         target.style.opacity = 1;
         
         // If word is being replaced then hide now...
-        if(sourceStr !== replacementStr){
+        if( sourceStr !== replacementStr){
             // ... and wait for transition to end.
             target.addEventListener('transitionend', function(){
 

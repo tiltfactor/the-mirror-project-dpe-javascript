@@ -45,6 +45,15 @@ body {
     opacity: 0.5;
 }
 
+.source-duplicate {
+    display: block;
+    position: relative;
+}
+
+.source-duplicate span {
+    display: inline-block;
+}
+
 .line {
     display: inline-block;
     line-height: 1.25em;

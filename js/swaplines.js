@@ -3,7 +3,7 @@
 function SwapLines(source, target){
 
     var self = this,
-        targetDup,
+        targetDup, sourceDup,
         sourceBbox, targetBbox,
         world = World.getInstance(),
         delayMs = 250, arcHeight = world.arcHeight,
@@ -24,9 +24,9 @@ function SwapLines(source, target){
     arcHeight = (arcHeight-(sourceBbox.top-targetBbox.top)<0)
         ? sourceBbox.top-targetBbox.top+1 : arcHeight;
 
-    var vDistance1 = arcHeight,
-        vDistance2 = arcHeight-(sourceBbox.top-targetBbox.top),
-        hDistance = targetBbox.left-sourceBbox.left;
+    var v1 = arcHeight,
+        v2 = arcHeight-(sourceBbox.top-targetBbox.top),
+        h = targetBbox.left-sourceBbox.left;
 
     targetDup = Utils.duplicate(target);
     target.parentNode.insertBefore(targetDup, target);
@@ -34,14 +34,25 @@ function SwapLines(source, target){
 
     var targetLine = new TargetLine(targetDup);
 
-    var sourceLine = new SourceLine(source, Utils.duplicate(source));
-    sourceLine.throwDuplicate(rtl, hDistance, vDistance1, vDistance2, targetBbox.top);
+    sourceDup = Utils.duplicate(source);
+    sourceDup.classList.add('source-duplicate');
+    source.style.opacity = 0.5;
+
+    var sourceLine = new SourceLine(sourceDup);
+    // Put each letter into starting position, ignoring parent.
+    [].forEach.call(sourceDup.children, function(el){
+        el.style.transform = "translate3d("
+            + sourceBbox.left + "px,"
+            + sourceBbox.top + "px, 0)";
+    });
+    sourceLine.throw(rtl, h, v1, v2, targetBbox.top);
+    // Determine time of flight, half it and start target anims.
+    var thr = new Throw(world.g, h, v1+world.arcVariant, v2+world.arcVariant);
+    // log(thr.getFlightTime());
 
     sourceLine.addEventListener('progress', handleProgress);
-    sourceLine.addEventListener('progress', function(e){
-        if(e.progress >= 100){
-            self.dispatchEvent({type:'complete'});
-        }
+    sourceLine.addEventListener('complete', function(e){
+        self.dispatchEvent({type:'complete'});
     });
 
     sourceLine.addEventListener('ground', function(e){
@@ -49,7 +60,7 @@ function SwapLines(source, target){
             isStringChanging = false, letter;
 
         // If the capitalisation is different.
-        if(isSourceCapitalised !== isTargetCapitalised){
+        if(options.doCorrectCaps && isSourceCapitalised !== isTargetCapitalised){
             letter = source.textContent.substr(0,1);
             replacement = (isSourceCapitalised) ? letter.toLowerCase() : letter.toUpperCase();
             replacement += source.textContent.substr(1) 
@@ -60,10 +71,8 @@ function SwapLines(source, target){
     });
 
     function handleProgress(e){
-        if(e.progress >= 50){
-            targetLineAnimations(e.framesRemaining);
-            this.removeEventListener('progress', handleProgress);
-        }
+        targetLineAnimations(e.framesRemaining);
+        this.removeEventListener('progress', handleProgress);
     }
 
     function targetLineAnimations(framesRemaining){

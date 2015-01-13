@@ -2,11 +2,7 @@
 
 function PhysicsObject(el, options){
 
-    var self = this,
-        boundBox = el.getBoundingClientRect(),
-        actions = [],
-        actionsToRemove = [],
-        mode = options.animationMode || "dom";
+    var self = this;
 
     var createCanvasHTMLCopy = function(el){
         // Use handy library for copy any HTML element to canvas.
@@ -14,7 +10,7 @@ function PhysicsObject(el, options){
             onrendered: function(canvas){
                 self.canvas = canvas;
                 // Hide duplicate el.
-                el.style.opacity = 0;
+                this.el.style.opacity = 0;
             }
         });
     },
@@ -23,13 +19,13 @@ function PhysicsObject(el, options){
         var boxCtx;
         // Create element dynamically.
         self.canvas = document.createElement('canvas');
-        self.canvas.width = boundBox.width;
-        self.canvas.height = boundBox.height;
+        self.canvas.width = this.boundBox.width;
+        self.canvas.height = this.boundBox.height;
         boxCtx = self.canvas.getContext('2d');
 
         boxCtx.textBaseline="bottom"; 
-        boxCtx.translate(0, boundBox.height);
-        boxCtx.clearRect(0,0, boundBox.width, boundBox.height);
+        boxCtx.translate(0, this.boundBox.height);
+        boxCtx.clearRect(0,0, this.boundBox.width, this.boundBox.height);
         // TODO - Get this from CSS.
         boxCtx.font = "25px fenixregular";
         boxCtx.fillStyle = "Black";
@@ -44,106 +40,114 @@ function PhysicsObject(el, options){
 
     };
 
-    
-    this.x = boundBox.left;
-    this.y = boundBox.top;
+    this.el = el;
+    this.boundBox = el.getBoundingClientRect();
+    this.actions = [];
+    this.actionsToRemove = [];
+    this.mode = options.animationMode || "dom";
+
+    this.x = this.boundBox.left;
+    this.y = this.boundBox.top;
     this.vx = 0;
     this.vy = 0;
+
+    // console.log(this.x, el);
 
     el.classList.add('grav-item');
 
     // If this is either of canvas modes then we prerender canvas 
     // once at the start and copy it later for performance.
-    if(mode.toLowerCase() === "canvas:copy"){
+    if(this.mode.toLowerCase() === "canvas:copy"){
         createCanvasHTMLCopy(el);
-    } else if(mode.toLowerCase() === "canvas:text"){
+    } else if(this.mode.toLowerCase() === "canvas:text"){
         createCanvasText(el);
     }
 
-    this.el = function(){
-        return el;
-    };
-
-    this.removeActionType = function(Action){
-        var i = actions.length;
-        while(i--){
-            // console.log(Action, actions[i] instanceof Action);
-            if(actions[i] instanceof Action){
-                actions.splice(i, 1);
-            }
-        }
-    };
-
-    this.removeAction = function(action){
-        var i = actions.length;
-        while(i--){
-            if(actions[i] === action){
-                actions.splice(i, 1);
-            }
-        }
-    };
-
-    this.removeQueuedActions = function(){
-        var i = actionsToRemove.length;
-        while(i--){
-            var action = actionsToRemove.splice(i, 1);
-            this.removeAction(action[0]);
-        };
-    };
-
-    this.addAction = function(action, once){
-        actions.push(action);
-        if(once === true){
-            actionsToRemove.push(action);
-        }
-    };
-
-    this.behaveAll = function(count){
-        for(var i = 0, len = actions.length; i < len; i++){
-            actions[i].behave(this, count);
-        }
-        this.removeQueuedActions();
-    };
-
-    this.draw = function(){
-
-        var ctx, thresholdW = 0, thresholdH = 0;
-
-        if(mode.toLowerCase() === "canvas:copy"){
-            ctx = world.getAnimContext();
-        } else if(mode.toLowerCase() === "canvas:text"){
-            ctx = world.getAnimContext();
-            thresholdW = 1;
-            thresholdH = 2;
-        }
-
-        // If this is canvas mode and canvas exists.
-        if(mode.split(":")[0].toLowerCase() === "canvas" && this.canvas){
-            // Clear previous canvas area.
-            ctx.clearRect(this.x-thresholdW, this.y-thresholdH, this.canvas.width+(2*thresholdW), this.canvas.height+(2*thresholdH));
-        }
-
-        // Calculate position based on velocity.
-        this.y += this.vy;
-        this.x += this.vx;
-
-        if(mode.split(":")[0].toLowerCase() === "canvas" && this.canvas){
-            // Draw new image position.
-            ctx.drawImage(this.canvas, (0.5 + this.x) | 0 , (0.5 +  this.y) | 0);
-        }
-
-        // If we aren't using canvas we assume DOM manipulation.
-        if(mode.split(":")[0].toLowerCase() !== "canvas"){
-            el.style.transform = "translate3d("
-                + ((0.5 + this.x) | 0) + "px,"
-                + ((0.5 + this.y) | 0) + "px, 0)";
-
-            el.style.webkitTransform = "translate3d("
-                + ((0.5 + this.x) | 0) + "px,"
-                + ((0.5 + this.y) | 0) + "px, 0)";
-        }
-    };
 }
+
+PhysicsObject.prototype.el = function(){
+    return el;
+}
+
+PhysicsObject.prototype.removeActionType = function(Action){
+    var i = this.actions.length;
+    while(i--){
+        // console.log(Action, actions[i] instanceof Action);
+        if(this.actions[i] instanceof Action){
+            this.actions.splice(i, 1);
+        }
+    }
+};
+
+PhysicsObject.prototype.removeAction = function(action){
+    var i = this.actions.length;
+    while(i--){
+        if(this.actions[i] === action){
+            this.actions.splice(i, 1);
+        }
+    }
+};
+
+PhysicsObject.prototype.removeQueuedActions = function(){
+    var i = this.actionsToRemove.length;
+    while(i--){
+        var action = this.actionsToRemove.splice(i, 1);
+        this.removeAction(action[0]);
+    };
+};
+
+PhysicsObject.prototype.addAction = function(action, once){
+    this.actions.push(action);
+    if(once === true){
+        this.actionsToRemove.push(action);
+    }
+};
+
+PhysicsObject.prototype.behaveAll = function(count){
+    for(var i = 0, len = this.actions.length; i < len; i++){
+        this.actions[i].behave(this, count);
+    }
+    this.removeQueuedActions();
+};
+
+PhysicsObject.prototype.draw = function(){
+
+    var ctx, thresholdW = 0, thresholdH = 0;
+
+    if(this.mode.toLowerCase() === "canvas:copy"){
+        ctx = world.getAnimContext();
+    } else if(this.mode.toLowerCase() === "canvas:text"){
+        ctx = world.getAnimContext();
+        thresholdW = 1;
+        thresholdH = 2;
+    }
+
+    // If this is canvas mode and canvas exists.
+    if(this.mode.split(":")[0].toLowerCase() === "canvas" && this.canvas){
+        // Clear previous canvas area.
+        ctx.clearRect(this.x-thresholdW, this.y-thresholdH, this.canvas.width+(2*thresholdW), this.canvas.height+(2*thresholdH));
+    }
+
+    // Calculate position based on velocity.
+    this.y += this.vy;
+    this.x += this.vx;
+
+    if(this.mode.split(":")[0].toLowerCase() === "canvas" && this.canvas){
+        // Draw new image position.
+        ctx.drawImage(this.canvas, (0.5 + this.x) | 0 , (0.5 +  this.y) | 0);
+    }
+
+    // If we aren't using canvas we assume DOM manipulation.
+    if(this.mode.split(":")[0].toLowerCase() !== "canvas"){
+        this.el.style.transform = "translate3d("
+            + ((0.5 + this.x) | 0) + "px,"
+            + ((0.5 + this.y) | 0) + "px, 0)";
+
+        this.el.style.webkitTransform = "translate3d("
+            + ((0.5 + this.x) | 0) + "px,"
+            + ((0.5 + this.y) | 0) + "px, 0)";
+    }
+};
 
 EventDispatcher.prototype.apply( PhysicsObject.prototype );
 
@@ -156,8 +160,7 @@ function Ground(y, x, rtl){
             pO.vy = 0;
             pO.y = y;
             pO.x = x;
-            pO.removeActionType(Gravity);
-            pO.removeAction(this);
+            pO.actionsToRemove.push(this);
             pO.detach = true;
             pO.dispatchEvent({type:'ground'});
         }
@@ -170,29 +173,18 @@ function Gravity(g){
     };
 }
 
-function ThrowProgress(flightTime){
+function ThrowProgress(flightTime, dispatchAt){
 
-    this.percent = 0;
-    flightTime = Math.round(flightTime);
+    this.flightTime = ((0.5 + flightTime) | 0);
+    this.dispatchAt = ((0.5 + dispatchAt) | 0);
 
     this.behave = function(pO, count){
-
-        if(this.percent < 100){
-
-            var thisPercent = 0, endCount;
-
-            this.startCount = this.startCount || count;
-            thisPercent = Math.round(((count-this.startCount)/flightTime)*100);
-            if(this.percent < thisPercent){
-                this.percent = thisPercent;
-                pO.dispatchEvent({type:'throwprogress', progress: this.percent, framesRemaining: count-this.startCount});
-            }
-
-            // if(this.percent >= 100){
-               // pO.removeAction(this);
-            //}
+        this.startCount = this.startCount || count;
+        if(count-this.startCount >= this.dispatchAt){
+            pO.dispatchEvent({type:'throwprogress', framesRemaining: count-this.startCount});
+            pO.actionsToRemove.push(this);
         }
-    }
+    };
 
 }
 
