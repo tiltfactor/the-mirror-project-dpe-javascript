@@ -43,7 +43,8 @@ function SwapLines(source, target){
 
 SwapLines.prototype.initSource = function(source){
 
-    var sourceDup, 
+    var self = this,
+        sourceDup, 
         bbox = this.sourceBbox,
         arcHeight = this.world.arcHeight,
         h,
@@ -53,9 +54,7 @@ SwapLines.prototype.initSource = function(source){
 
     sourceDup = Utils.duplicate(source);
     // FIXME: Is this class needed?
-    sourceDup.classList.add('source-duplicate');
-    source.classList.add('source');
-    // source.style.opacity = 0.5;
+    sourceDup.classList.add('source--is-duplicate');
 
     // Ensure arcHeight will reach target if it is above source.
     arcHeight = (arcHeight-(this.sourceBbox.top-this.targetBbox.top)<0)
@@ -65,18 +64,26 @@ SwapLines.prototype.initSource = function(source){
     v1 = arcHeight;
     v2 = arcHeight-(this.sourceBbox.top-this.targetBbox.top);
 
-    this.sourceLine = new SourceLine(sourceDup);
     // Put each letter into starting position, ignoring parent.
     [].forEach.call(sourceDup.children, function(el){
         el.style.transform = "translate3d("
             + bbox.left + "px,"
             + bbox.top + "px, 0)";
     });
-    this.sourceLine.throw(this.rtl, h, v1, v2, this.targetBbox.top);
 
+    this.sourceLine = new SourceLine(sourceDup);
+    this.sourceLine.addEventListener('rendered', this.handleRendered.bind(this));
+    this.sourceLine.render(this.rtl, h, v1, v2, this.targetBbox.top);
     this.sourceLine.addEventListener('progress', this.handleProgress.bind(this));
     this.sourceLine.addEventListener('complete', this.handleComplete.bind(this));
     this.sourceLine.addEventListener('ground-letter', this.handleGroundLetter.bind(this));
+};
+
+SwapLines.prototype.handleRendered = function(e){
+    var sourceLine = e.target;
+
+    sourceLine.throw(this.rtl);
+    this.source.classList.add('source');
 };
 
 SwapLines.prototype.initTarget = function(target){

@@ -1,5 +1,6 @@
 "use strict";
 
+/* Singleton */
 var World = (function(){
 
     function WorldObject( options )  {
@@ -134,32 +135,42 @@ var World = (function(){
 
         this.draw = function() {
 
+            var j = this.animList.length;
+            while(j--){
+                if(this.animList[j].detach){
+                    // Clears any remaining canvas gumph.
+                    this.animList[j].clear();
+                    this.animList.splice(j, 1);
+                }
+            }
+
             for (var i = 0, len = this.animList.length; i < len; i++) {
 
-                // Apply all behaviours to items in animList.
+                // Behaviours make calculations on velocity, etc.
                 this.animList[i].behaveAll(count);
-                // Draw. Currently only making calculations.
+
+                // Clear only acts on canvas mode.
+                this.animList[i].clear();
+                // Draw renders.
                 this.animList[i].draw();
 
             }
 
-            var j = this.animList.length;
-            while(j--){
-                if(this.animList[j].detach){
-                    this.animList.splice(j, 1);
-                }
-            }
         }
 
         this.start = function(){
 
-            var controls = document.querySelectorAll('.controls');
+            var controls = document.querySelectorAll('.controls'),
+                worldEl = document.querySelector('.world');
+
             [].forEach.call(controls, function(el){
                el.classList.remove('is-active'); 
             });
 
             document.querySelector('.choose').style.display = 'none';
-            document.querySelector('.world').style.display = 'block';
+            worldEl.style.display = 'block';
+            // Add mode to body.
+            document.body.classList.add(options.animationMode.split(":")[0]);
 
             this.next();
             this.animate();

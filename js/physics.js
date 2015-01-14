@@ -2,6 +2,23 @@
 
 function PhysicsObject(el, options){
 
+    this.el = el;
+    this.boundBox = el.getBoundingClientRect();
+    this.actions = [];
+    this.actionsToRemove = [];
+    this.actionsTypeToRemove = [];
+    this.mode = options.world.animationMode || "dom";
+
+    this.x = this.boundBox.left;
+    this.y = this.boundBox.top;
+    this.vx = 0;
+    this.vy = 0;
+
+    el.classList.add('grav-item');
+}
+
+PhysicsObject.prototype.render = function(Action){
+
     var self = this;
 
     var createCanvasHTMLCopy = function(el){
@@ -9,8 +26,8 @@ function PhysicsObject(el, options){
         html2canvas(el, {
             onrendered: function(canvas){
                 self.canvas = canvas;
-                // Hide duplicate el.
-                self.el.style.opacity = 0;
+                self.drawInit();
+                self.dispatchEvent({type:'rendered'});
             }
         });
     },
@@ -19,13 +36,13 @@ function PhysicsObject(el, options){
         var boxCtx;
         // Create element dynamically.
         self.canvas = document.createElement('canvas');
-        self.canvas.width = this.boundBox.width;
-        self.canvas.height = this.boundBox.height;
+        self.canvas.width = self.boundBox.width;
+        self.canvas.height = self.boundBox.height;
         boxCtx = self.canvas.getContext('2d');
 
         boxCtx.textBaseline="bottom"; 
-        boxCtx.translate(0, this.boundBox.height);
-        boxCtx.clearRect(0,0, this.boundBox.width, this.boundBox.height);
+        boxCtx.translate(0, self.boundBox.height);
+        boxCtx.clearRect(0,0, self.boundBox.width, self.boundBox.height);
         // TODO - Get this from CSS.
         boxCtx.font = "25px fenixregular";
         boxCtx.fillStyle = "Black";
@@ -35,35 +52,22 @@ function PhysicsObject(el, options){
         // boxCtx.fillStyle = '#09F';
         // boxCtx.fillRect(0, 0, boundBox.width, boundBox.height);
         
-        // Hide duplicate el.
-        el.style.opacity = 0;
-
+        self.el.classList.add('is-offscreen');
     };
 
-    this.el = el;
-    this.boundBox = el.getBoundingClientRect();
-    this.actions = [];
-    this.actionsToRemove = [];
-    this.mode = options.animationMode || "dom";
-
-    this.x = this.boundBox.left;
-    this.y = this.boundBox.top;
-    this.vx = 0;
-    this.vy = 0;
-
-    // console.log(this.x, el);
-
-    el.classList.add('grav-item');
 
     // If this is either of canvas modes then we prerender canvas 
     // once at the start and copy it later for performance.
     if(this.mode.toLowerCase() === "canvas:copy"){
-        createCanvasHTMLCopy(el);
+        createCanvasHTMLCopy(this.el);
     } else if(this.mode.toLowerCase() === "canvas:text"){
-        createCanvasText(el);
+        createCanvasText(this.el);
+        self.dispatchEvent({type:'rendered'});
+    } else {
+        self.dispatchEvent({type:'rendered'});
     }
+};
 
-}
 
 PhysicsObject.prototype.removeActionType = function(Action){
     var i = this.actions.length;
@@ -90,6 +94,12 @@ PhysicsObject.prototype.removeQueuedActions = function(){
         var action = this.actionsToRemove.splice(i, 1);
         this.removeAction(action[0]);
     };
+
+    var j = this.actionsTypeToRemove.length;
+    while(j--){
+        var Action = this.actionsTypeToRemove.splice(j, 1)[0];
+        this.removeActionType(Action);
+    }
 };
 
 PhysicsObject.prototype.addAction = function(action, once){
@@ -106,22 +116,43 @@ PhysicsObject.prototype.behaveAll = function(count){
     this.removeQueuedActions();
 };
 
-PhysicsObject.prototype.draw = function(){
+PhysicsObject.prototype.clear = function(){
 
-    var ctx, thresholdW = 0, thresholdH = 0;
-
-    if(this.mode.toLowerCase() === "canvas:copy"){
-        ctx = world.getAnimContext();
-    } else if(this.mode.toLowerCase() === "canvas:text"){
-        ctx = world.getAnimContext();
-        thresholdW = 1;
-        thresholdH = 2;
-    }
+    var ctx;
 
     // If this is canvas mode and canvas exists.
     if(this.mode.split(":")[0].toLowerCase() === "canvas" && this.canvas){
+        ctx = world.getAnimContext();
         // Clear previous canvas area.
-        ctx.clearRect(this.x-thresholdW, this.y-thresholdH, this.canvas.width+(2*thresholdW), this.canvas.height+(2*thresholdH));
+        ctx.clearRect(this.x, this.y, this.canvas.width, this.canvas.height);
+    }
+
+};
+
+PhysicsObject.prototype.drawInit = function(){
+
+    var vx = this.vx, 
+        vy = this.vy;
+
+    this.x = this.boundBox.left;
+    this.y = this.boundBox.top;
+    this.vx = 0;
+    this.vy = 0;
+    this.draw();
+    this.vx = vx;
+    this.vy = vy;
+
+};
+
+PhysicsObject.prototype.draw = function(){
+    var ctx, thresholdW = 0, thresholdH = 0;
+
+    if(this.mode.split(":")[0].toLowerCase() === "canvas" && !this.canvas){
+        return;
+    }
+
+    if(this.mode.split(":")[0].toLowerCase() === "canvas"){
+        ctx = world.getAnimContext();
     }
 
     // Calculate position based on velocity.
@@ -148,15 +179,15 @@ PhysicsObject.prototype.draw = function(){
 EventDispatcher.prototype.apply( PhysicsObject.prototype );
 
 function Ground(y, x, rtl){
-    var threshold = 2;
+    var threshold = 0;
 
     this.behave = function(pO){
-        if(pO.y+threshold >= y && (rtl && pO.x-threshold <= x) || (!rtl && pO.x+threshold >= x)){
+        if((rtl && pO.y >= y && pO.x-threshold <= x) || (!rtl && pO.y >= y && pO.x >= x)){
             pO.vx = 0;
             pO.vy = 0;
-            pO.y = y;
-            pO.x = x;
             pO.actionsToRemove.push(this);
+            pO.actionsTypeToRemove.push(Gravity);
+            pO.actionsTypeToRemove.push(Throw);
             pO.detach = true;
             pO.dispatchEvent({type:'ground'});
         }
@@ -232,5 +263,4 @@ Throw.prototype.totalFlightTime = function(upH, downH) {
     // Just add the times for the upwards and downwards journeys separately
     return this.timeToFallHeight(upH) + this.timeToFallHeight(downH);
 }
-
 

@@ -5,6 +5,7 @@ function SourceLine(wordEl){
     // TODO: Make configurable.
     this.delayMs = 250;
     this.wordEl = wordEl;
+    this.renderedBoxes = [],
     this.letterEls = [],
     this.world = World.getInstance();
 
@@ -17,7 +18,21 @@ function SourceLine(wordEl){
     document.body.appendChild(wordEl);
 }
 
-SourceLine.prototype.throw = function(rtl, h, v1, v2, groundY){
+SourceLine.prototype.throw = function(rtl){
+    var delay;
+
+    for(var i = 0, len = this.renderedBoxes.length; i < len; i++){
+        delay = (rtl === true) ? this.delayMs*(len-i) : this.delayMs*i;
+        (function(box){
+            setTimeout(function(){
+                world.animList.push(box);
+            }, delay);
+        })(this.renderedBoxes[i]);
+    };
+
+};
+
+SourceLine.prototype.render = function(rtl, h, v1, v2, groundY){
 
     var delay, 
         variant,
@@ -37,10 +52,16 @@ SourceLine.prototype.throw = function(rtl, h, v1, v2, groundY){
         startX = l.getBoundingClientRect().left-parentBounds.left;
 
         box = new PhysicsObject(l, options);
+        box.addEventListener('rendered', this.handleRendered.bind(this));
+        box.render();
         box.draw();
 
         gravity = new Gravity(world.g);
         box.addAction(gravity);
+
+        ground = new Ground(groundY, box.x+h, rtl);
+        box.addAction(ground);
+        box.addEventListener('ground', this.handleGroundLetter.bind(this));
 
         variant = Math.random()*world.arcVariant;
         thr = new Throw(world.g, h, v1+variant, v2+variant);
@@ -55,20 +76,16 @@ SourceLine.prototype.throw = function(rtl, h, v1, v2, groundY){
             box.addEventListener('throwprogress', this.handleProgress.bind(this));
         }
 
-        ground = new Ground(groundY, box.x+h, rtl);
-        box.addAction(ground);
-        box.addEventListener('ground', this.handleGroundLetter.bind(this));
-
-        delay = (rtl === true) ? this.delayMs*(len-i) : this.delayMs*i;
-        (function(box){
-            setTimeout(function(){
-                world.animList.push(box);
-            }, delay);
-        }(box));
-
         if((rtl === false && i === len-1) || (rtl === true && i === 0)){
             box.addEventListener('ground', this.handleComplete.bind(this));
         }
+    }
+};
+
+SourceLine.prototype.handleRendered = function(e){
+    this.renderedBoxes.push(e.target);
+    if(this.renderedBoxes.length === this.letterEls.length){
+        this.dispatchEvent({type:'rendered'});
     }
 };
 

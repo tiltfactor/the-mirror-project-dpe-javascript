@@ -45,13 +45,17 @@ body {
     opacity: 0.5;
 }
 
-.source-duplicate {
+.source--is-duplicate {
     display: block;
     position: relative;
 }
 
-.source-duplicate span {
+.source--is-duplicate span {
     display: inline-block;
+}
+
+.canvas .source--is-duplicate {
+    visibility: hidden;
 }
 
 .line {
@@ -105,6 +109,10 @@ body {
 
 .grav-item.is-grounded {
     display: none;
+}
+
+.grav-item.is-offscreen {
+    visibility: hidden;
 }
 
 .box {

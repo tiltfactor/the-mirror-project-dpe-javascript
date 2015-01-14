@@ -46,8 +46,8 @@ var setGravity = world.setGravity.bind(world),
 // Animation mode.
 var animModes = ['dom', 'canvas:copy', 'canvas:text'],
     controlsAnimMode = document.querySelector('.controls--anim-mode .anim-mode');
-Utils.initCheckboxes(animModes, options.animationMode, controlsAnimMode, function(target){
-    options.animationMode = target.value;
+Utils.initCheckboxes(animModes, options.world.animationMode, controlsAnimMode, function(target){
+    options.world.animationMode = target.value;
 });
 
 // Word classes.
