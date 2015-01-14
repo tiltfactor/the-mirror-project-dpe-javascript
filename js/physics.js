@@ -10,7 +10,7 @@ function PhysicsObject(el, options){
             onrendered: function(canvas){
                 self.canvas = canvas;
                 // Hide duplicate el.
-                this.el.style.opacity = 0;
+                self.el.style.opacity = 0;
             }
         });
     },
@@ -63,10 +63,6 @@ function PhysicsObject(el, options){
         createCanvasText(el);
     }
 
-}
-
-PhysicsObject.prototype.el = function(){
-    return el;
 }
 
 PhysicsObject.prototype.removeActionType = function(Action){

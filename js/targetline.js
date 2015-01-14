@@ -8,37 +8,87 @@ function TargetLine(target, rtl){
             self.dispatchEvent({type:'complete'});
         },
             
-        replaceTarget = function(sourceStr){
-            
-            // Remove content of target (letters surrounded by spans)...
-            while (target.firstChild) {
-                target.removeChild(target.firstChild);
-            }
-            //...and replace with the source string.
-            target.innerHTML = sourceStr;
-            
-        }, 
-            
         removeRemainderSurround = function(){
             // Remove the span surrounding (unwrap) the post-target/remaining text.
             while(target.nextSibling.firstChild){
                 target.parentNode.appendChild(target.nextSibling.firstChild);
             }
             target.parentNode.removeChild(target.nextSibling);
-        },
-        
-        changeClasses = function(){
-            line.classList.remove('swapping');
-            // FIX: May no longer be necessary.
-            line.classList.add('swapped');
-
-            target.classList.remove('target');
-            target.classList.add('swapped');
         };
-
-    line.classList.add('swapping');
+        
+    // Line, target and target letter classes.
+    line.classList.add('is-swapping');
     target.classList.add('target');
+    [].forEach.call(target.children, function(letterEl){
+        letterEl.classList.add('target__letter--old');
+    });
 
+    this.showLetter = function(letter, rtl){
+        var tmpNodeList = target.querySelectorAll('.is-hidden'),
+            targetLetterEls = [];
+
+        // Need and Array instead of NodeList for reversal.
+        [].forEach.call(tmpNodeList, function(el){
+            targetLetterEls.push(el);
+        });
+
+        // Depending on direction of travel search letters in particular order.
+        if(rtl === false){
+            targetLetterEls.reverse();
+        }
+
+        // using [].some will stop execution after return true;
+        targetLetterEls.some(function(el){
+            if(el.textContent === letter){
+                el.classList.remove('is-hidden');
+                return true;
+            }
+        });
+    };
+
+    /*
+     * Once target has been fully replaced, we remove extraneous surrounding 
+     * elements from letters.
+     * TODO - Deal with capitalisation change here.
+     */
+    this.clean = function(sourceStr, replacementStr){
+        // Remove content of target (letters surrounded by spans)...
+        while (target.firstChild) {
+            target.removeChild(target.firstChild);
+        }
+        //...and replace with the source string.
+        target.innerHTML = sourceStr;
+
+        line.classList.remove('is-swapping');
+        target.classList.remove('target');
+        target.classList.add('was-target');
+    };
+
+    /*
+     * When the original target word has faded insert new source word here
+     * so that each letter can be revealed as it lands 
+     */
+    this.swap = function(sourceStr){
+        var lSpan, l; 
+
+
+        while (target.firstChild) {
+            target.removeChild(target.firstChild);
+        }
+        for (var i = 0, len = sourceStr.length; i < len; i++) {
+            lSpan = document.createElement('span');
+            lSpan.classList.add('target__letter--new', 'is-hidden');
+            l = document.createTextNode(sourceStr[i]); 
+            // Used as selector later.
+            lSpan.dataset['letter'] = sourceStr[i];
+            lSpan.appendChild(l);
+            target.appendChild(lSpan);
+        }
+        removeRemainderSurround();
+        target.classList.remove('was-source');
+    };
+
+    /*
     this.swap = function(sourceStr, replacementStr){
 
         // Replace with word in flight.
@@ -67,34 +117,28 @@ function TargetLine(target, rtl){
         changeClasses();
 
     };
+    */
 
-    this.fadeOut = function(rtl, duration){
+    this.fadeOut = function(duration, replacement){
 
         var childNodes = [];
         childNodes = [].map.call(target.childNodes, function(element) {
             return element;
         });
+        childNodes.reverse();
 
-        if(rtl !== true){
-            childNodes.reverse();
-        }
-
-        var animMaxDuration = (childNodes.length*200)+250;
-        for(var i = 0, len = childNodes.length; i < len; i++){
-            (function(index){
-                setTimeout(function(){
-                    move(childNodes[index])
-                        .set('opacity', 0)
-                        .duration(250)
-                        .delay(index*100)
-                        .end();
-                }, 1 );
-            }(i));
-            // console.log((i+1)*0.25+'s');
-        }
+        childNodes.forEach(function(el, index){
+            setTimeout(function(){
+                move(el)
+                    .set('opacity', 0)
+                    .duration(250)
+                    .delay(index*100)
+                    .end();
+            }, 1 );
+        });
     };
 
-    this.fillSpace = function(difference, duration){
+    this.fillSpace = function(difference, duration, replacement){
 
         var childNodes = line.childNodes,
             nodesToRight = [],
@@ -125,7 +169,10 @@ function TargetLine(target, rtl){
             move(span)
                 .translate(0-difference, 0)
                 .duration(duration)
-                .end(complete);
+                .end(function(){
+                    complete()
+                    self.swap(replacement);
+                });
         }, 1);
 
     };

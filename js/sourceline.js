@@ -57,6 +57,7 @@ SourceLine.prototype.throw = function(rtl, h, v1, v2, groundY){
 
         ground = new Ground(groundY, box.x+h, rtl);
         box.addAction(ground);
+        box.addEventListener('ground', this.handleGroundLetter.bind(this));
 
         delay = (rtl === true) ? this.delayMs*(len-i) : this.delayMs*i;
         (function(box){
@@ -66,19 +67,14 @@ SourceLine.prototype.throw = function(rtl, h, v1, v2, groundY){
         }(box));
 
         if((rtl === false && i === len-1) || (rtl === true && i === 0)){
-            thrComplete = new ThrowProgress(thr.getFlightTime(), thr.getFlightTime());
-            box.addAction(thrComplete);
-            box.addEventListener('throwprogress', this.handleComplete.bind(this));
+            box.addEventListener('ground', this.handleComplete.bind(this));
         }
     }
 };
 
-SourceLine.prototype.handleGround = function(){
-    this.dispatchEvent({type:'ground'});
-    // TODO - Does this need to be in parent class?
-    this.wordEl.parentNode.removeChild(this.wordEl);
+SourceLine.prototype.handleGroundLetter = function(e){
+    this.dispatchEvent({type:'ground-letter', pO: e.target});
 };
-
 
 SourceLine.prototype.handleProgress = function(e){
     this.dispatchEvent({type:'progress', framesRemaining:e.framesRemaining });

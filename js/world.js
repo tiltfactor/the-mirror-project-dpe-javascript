@@ -40,7 +40,7 @@ var World = (function(){
             // Resetting lines for next pass/class.
             var lines = document.querySelectorAll('.world .line');
             [].forEach.call(lines, function(line){
-               	line.classList.remove('swapped', 'swapping');
+               	line.classList.remove('was-target', 'is-swapping');
             });
 
             // Are there any more classes?
@@ -73,9 +73,9 @@ var World = (function(){
             lineIndex = parseInt(this.sourcePoem.dataset.lastIndex || 0);
 
             // Get the next source that hasn't been swapped during this pass/class.
-            source = this.sourcePoem.querySelector('.line:not(.swapping):nth-child(n+'+(lineIndex+1)+') span[data-tag="'+wordClass+'"]:not(.swapped)');
+            source = this.sourcePoem.querySelector('.line:not(.is-swapping):nth-child(n+'+(lineIndex+1)+') span[data-tag="'+wordClass+'"]:not(.was-target)');
             if(!source){
-                source = this.sourcePoem.querySelector('.line:not(.swapping):nth-child(n+1) span[data-tag="'+wordClass+'"]:not(.swapped)');
+                source = this.sourcePoem.querySelector('.line:not(.is-swapping):nth-child(n+1) span[data-tag="'+wordClass+'"]:not(.was-target)');
             }
             target = lastSource || this.targetPoem.querySelector('span[data-tag="'+wordClass+'"]');
 
@@ -98,7 +98,7 @@ var World = (function(){
                 return;
             } else {
                 // Set the source line index.
-                var k=0, e=source.parentNode;
+                var k = 1, e = source.parentNode;
                 while (e = e.previousSibling) { ++k;}
                 this.sourcePoem.dataset['lastIndex'] = k;
             }

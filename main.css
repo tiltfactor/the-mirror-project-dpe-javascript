@@ -64,11 +64,28 @@ body {
 .line .target {
     transition: opacity 100ms;
     opacity: 1;
+    position: relative;
 }
 
-.line .target.is-replacing {
+.line .target .target__letter--new.is-hidden {
+    visibility: hidden;
+}
+
+/* When changing capitalisation */
+/*
+.target.is-replacing {
     opacity: 0 !important;
     transition: opacity 500ms;
+}
+*/
+
+.line .target .letter-replacement {
+    position: absolute;
+}
+
+.line .was-source,
+.line .source {
+    opacity: 0.5;
 }
 
 .poem-container {
@@ -84,6 +101,10 @@ body {
 .grav-item {
    position: absolute;
    display: block;
+}
+
+.grav-item.is-grounded {
+    display: none;
 }
 
 .box {
