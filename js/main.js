@@ -24,8 +24,8 @@ lr.addEventListener('rendered', function(data){
     });
 });
 
-lr.force('./data/flanagan/On_Being_From_.xml', './data/dickinson/OneSeries-VIII.xml');
-// lr.loadLists('./data/flanagan/content.json', './data/dickinson/content.json');
+// lr.force('./data/flanagan/On_Being_From_.xml', './data/dickinson/OneSeries-VIII.xml');
+lr.loadLists('./data/flanagan/content.json', './data/dickinson/content.json');
 lr.loadAsync();
 
 /*
