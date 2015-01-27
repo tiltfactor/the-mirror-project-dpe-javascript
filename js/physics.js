@@ -178,7 +178,7 @@ PhysicsObject.prototype.draw = function(){
 EventDispatcher.prototype.apply( PhysicsObject.prototype );
 
 function Ground(y, x, rtl){
-    var threshold = 0;
+    var threshold = 2;
 
     this.behave = function(pO){
         if((rtl && pO.y >= y && pO.x-threshold <= x) || (!rtl && pO.y >= y && pO.x >= x)){
