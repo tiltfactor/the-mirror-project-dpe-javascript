@@ -128,13 +128,9 @@ function TargetLine(target, rtl){
         childNodes.reverse();
 
         childNodes.forEach(function(el, index){
-            setTimeout(function(){
-                move(el)
-                    .set('opacity', 0)
-                    .duration(250)
-                    .delay(index*100)
-                    .end();
-            }, 1 );
+            el.style.WebkitTransitionDelay = index*100 + 'ms';
+            el.style.MozTransitionDelay = index*100 + 'ms';
+            el.style.opacity = 0;
         });
     };
 
