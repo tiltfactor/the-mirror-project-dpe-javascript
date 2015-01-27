@@ -145,15 +145,10 @@ var World = (function(){
             }
 
             for (var i = 0, len = this.animList.length; i < len; i++) {
-
                 // Behaviours make calculations on velocity, etc.
                 this.animList[i].behaveAll(count);
-
-                // Clear only acts on canvas mode.
-                this.animList[i].clear();
                 // Draw renders.
                 this.animList[i].draw();
-
             }
 
         }

@@ -110,23 +110,10 @@ PhysicsObject.prototype.addAction = function(action, once){
 };
 
 PhysicsObject.prototype.behaveAll = function(count){
-    for(var i = 0, len = this.actions.length; i < len; i++){
+    for(var i = this.actions.length; i--; ){
         this.actions[i].behave(this, count);
     }
     this.removeQueuedActions();
-};
-
-PhysicsObject.prototype.clear = function(){
-
-    var ctx;
-
-    // If this is canvas mode and canvas exists.
-    if(this.mode.split(":")[0].toLowerCase() === "canvas" && this.canvas){
-        ctx = world.getAnimContext();
-        // Clear previous canvas area.
-        ctx.clearRect(this.x, this.y, this.canvas.width, this.canvas.height);
-    }
-
 };
 
 PhysicsObject.prototype.drawInit = function(){
@@ -144,28 +131,40 @@ PhysicsObject.prototype.drawInit = function(){
 
 };
 
+PhysicsObject.prototype.clear = function(){
+
+    var ctx;
+
+    // If this is canvas mode and canvas exists.
+    if(this.canvas){
+        ctx = world.getAnimContext();
+        // Clear previous canvas area.
+        // Add 1px to all sides of rect in case of float calculations.
+        ctx.clearRect(this.x-1, this.y-1, this.canvas.width+2, this.canvas.height+2);
+    }
+
+};
+
 PhysicsObject.prototype.draw = function(){
     var ctx, thresholdW = 0, thresholdH = 0;
 
-    if(this.mode.split(":")[0].toLowerCase() === "canvas" && !this.canvas){
+    if(!this.canvas){
         return;
+    } else {
+        this.clear();
     }
 
-    if(this.mode.split(":")[0].toLowerCase() === "canvas"){
-        ctx = world.getAnimContext();
-    }
+    ctx = world.getAnimContext();
 
     // Calculate position based on velocity.
     this.y += this.vy;
     this.x += this.vx;
 
-    if(this.mode.split(":")[0].toLowerCase() === "canvas" && this.canvas){
+    if(this.canvas){
         // Draw new image position.
         ctx.drawImage(this.canvas, (0.5 + this.x) | 0 , (0.5 +  this.y) | 0);
-    }
-
-    // If we aren't using canvas we assume DOM manipulation.
-    if(this.mode.split(":")[0].toLowerCase() !== "canvas"){
+    } else { 
+        // If we aren't using canvas we assume DOM manipulation.
         this.el.style.transform = "translate3d("
             + ((0.5 + this.x) | 0) + "px,"
             + ((0.5 + this.y) | 0) + "px, 0)";
