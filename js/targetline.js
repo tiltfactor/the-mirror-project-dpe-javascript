@@ -130,6 +130,7 @@ function TargetLine(target, rtl){
         childNodes.forEach(function(el, index){
             el.style.WebkitTransitionDelay = index*100 + 'ms';
             el.style.MozTransitionDelay = index*100 + 'ms';
+            el.style.transitionDelay = index*100 + 'ms';
             el.style.opacity = 0;
         });
     };
@@ -170,7 +171,6 @@ function TargetLine(target, rtl){
                     self.swap(replacement);
                 });
         }, 1);
-
     };
 }
 
