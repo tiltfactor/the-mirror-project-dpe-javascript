@@ -26,7 +26,9 @@ PhysicsObject.prototype.render = function(Action){
         html2canvas(el, {
             onrendered: function(canvas){
                 self.canvas = canvas;
-                self.drawInit();
+                // If we do not init then it doesn't draw until throw() is called.
+                // This means we don't get the temporary overlay (i.e. fuzzy text)
+                // self.drawInit();
                 self.dispatchEvent({type:'rendered'});
             }
         });
@@ -40,7 +42,7 @@ PhysicsObject.prototype.render = function(Action){
         self.canvas.height = self.boundBox.height;
         boxCtx = self.canvas.getContext('2d');
 
-        boxCtx.textBaseline="bottom"; 
+        boxCtx.textBaseline="bottom";
         boxCtx.translate(0, self.boundBox.height);
         boxCtx.clearRect(0,0, self.boundBox.width, self.boundBox.height);
         // TODO - Get this from CSS.
@@ -51,12 +53,12 @@ PhysicsObject.prototype.render = function(Action){
         // DEBUG:
         // boxCtx.fillStyle = '#09F';
         // boxCtx.fillRect(0, 0, boundBox.width, boundBox.height);
-        
+
         self.el.classList.add('is-offscreen');
     };
 
 
-    // If this is either of canvas modes then we prerender canvas 
+    // If this is either of canvas modes then we prerender canvas
     // once at the start and copy it later for performance.
     if(this.mode.toLowerCase() === "canvas:copy"){
         createCanvasHTMLCopy(this.el);
@@ -118,7 +120,7 @@ PhysicsObject.prototype.behaveAll = function(count){
 
 PhysicsObject.prototype.drawInit = function(){
 
-    var vx = this.vx, 
+    var vx = this.vx,
         vy = this.vy;
 
     this.x = this.boundBox.left;
@@ -163,7 +165,7 @@ PhysicsObject.prototype.draw = function(){
     if(this.canvas){
         // Draw new image position.
         ctx.drawImage(this.canvas, (0.5 + this.x) | 0 , (0.5 +  this.y) | 0);
-    } else { 
+    } else {
         // If we aren't using canvas we assume DOM manipulation.
         this.el.style.transform = "translate3d("
             + ((0.5 + this.x) | 0) + "px,"
@@ -215,7 +217,7 @@ function ThrowProgress(flightTime, dispatchAt){
 }
 
 function Throw(g, hDistance, vDistance1, vDistance2){
-    
+
     vDistance2 = vDistance2 || vDistance1;
 
     this.g = g;
@@ -234,7 +236,7 @@ function Throw(g, hDistance, vDistance1, vDistance2){
 
         pO.vx = vx;
         pO.vy = 0-vy;
-        
+
     };
 
 };
