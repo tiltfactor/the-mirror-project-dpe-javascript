@@ -26,7 +26,7 @@ var Utils = Utils || {
         var str = el.textContent;
         for (var i = 0, len = str.length; i < len; i++) {
             var lSpan = document.createElement('span');
-            var l = document.createTextNode(str[i]); 
+            var l = document.createTextNode(str[i]);
             lSpan.appendChild(l);
             dup.appendChild(lSpan);
         }
@@ -77,7 +77,7 @@ Utils.initSlider = function(slider, config){
     label.innerHTML = config.title;
 
     input.addEventListener('input', function(e){
-        config.cb(this.value); 
+        config.cb(this.value);
         val.innerHTML = this.value;
     });
 };

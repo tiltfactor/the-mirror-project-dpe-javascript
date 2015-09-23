@@ -2,7 +2,7 @@
 
 function LoadRender(){
 
-    var self = this, 
+    var self = this,
         selectedFiles = [];
 
     this.force = function(file1, file2){
@@ -30,12 +30,12 @@ function LoadRender(){
 
         load(listFile1, true, function(data){
             renderFiles(data, document.querySelector('.choose .left'));
-        }, 
+        },
         function(err){console.error("Couldn't load" + err)});
 
         load(listFile2, true, function(data){
             renderFiles(data, document.querySelector('.choose .right'));
-        }, 
+        },
         function(err){console.error("Couldn't load" + err)});
 
     }
@@ -147,7 +147,7 @@ function LoadRender(){
             if(rendered.length >= 2){
                 self.dispatchEvent({type:'rendered'});
             }
-        }, 
+        },
         function(err){console.error("Couldn't load" + err)});
 
         load(file2.fullpath, false, function(data){
@@ -158,7 +158,7 @@ function LoadRender(){
             if(rendered.length >= 2){
                 self.dispatchEvent({type:'rendered', files: [file1, file2]});
             }
-        }, 
+        },
         function(err){console.error("Couldn't load" + err)});
     }
 
@@ -176,7 +176,7 @@ function LoadRender(){
             lineEl.classList.add('line');
             lineEl.textContent = original.textContent || "&nbsp;";
             container.appendChild(lineEl);
-             
+
             renderLineTags(lineEl, tags);
         });
 
@@ -196,7 +196,7 @@ function LoadRender(){
             var startStr = lineStr.substr(0, lineStr.length+position); // from start to position.
             var searchStr = lineStr.substr(position); // from position to end.
             //console.log(searchStr, position, lineStr.length+position);
-            
+
             var index = searchStr.indexOf(tag.textContent);
             lineStr = startStr + searchStr.replace(tag.textContent, replacement);
 

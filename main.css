@@ -95,7 +95,7 @@ body {
 
 .line .was-source,
 .line .source {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .poem-container {
@@ -230,7 +230,7 @@ body {
 }
 
 .controls--poem .checkbox {
-    transition: transform 500ms, opacity 500ms;
+    /* transition: transform 500ms, opacity 500ms; */
 }
 
 .controls--poem .checkbox.is-unused {
@@ -261,4 +261,3 @@ canvas#animations {
    pointer-events: none;
    top: 0;
    left: 0;
-}

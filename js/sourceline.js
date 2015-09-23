@@ -34,12 +34,12 @@ SourceLine.prototype.throw = function(rtl){
 
 SourceLine.prototype.render = function(rtl, h, v1, v2, groundY){
 
-    var delay, 
+    var delay,
         variant,
         parentBounds = this.wordEl.getBoundingClientRect(),
         startX,
         l,
-        box, 
+        box,
         gravity,
         ground,
         thrProgress,
