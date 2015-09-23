@@ -114,37 +114,6 @@ function TargetLine(target, rtl){
 
     };
 
-    /*
-    this.swap = function(sourceStr, replacementStr){
-
-        // Replace with word in flight.
-        replaceTarget(sourceStr);
-        target.style.opacity = 1;
-
-        // If word is being replaced then hide now...
-        if( sourceStr !== replacementStr){
-            // ... and wait for transition to end.
-            target.addEventListener('transitionend', function(){
-
-                replaceTarget(replacementStr);
-                target.classList.remove('is-replacing');
-
-                changeClasses();
-            });
-            // Starts the transition that we're listening for.
-            target.classList.add('is-replacing');
-            // Remove surround now otherwise we get a jump.
-            removeRemainderSurround();
-            // Prevent remainder from execution until end of transition.
-            return;
-        }
-
-        removeRemainderSurround();
-        changeClasses();
-
-    };
-    */
-
     this.fadeOut = function(duration, replacement){
 
         var childNodes = [];
