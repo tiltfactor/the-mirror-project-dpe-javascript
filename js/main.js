@@ -24,12 +24,13 @@ lr.addEventListener('rendered', function(data){
     });
 });
 
-// lr.force('./data/flanagan/On_Being_From_.xml', './data/dickinson/OneSeries-VIII.xml');
+// lr.force('./data/dickinson/OneSeries-VIII.xml', './data/flanagan/On_Being_From_.xml');
 lr.loadLists('./data/flanagan/content.json', './data/dickinson/content.json');
+// lr.loadSequence('./data/sequence.json');
 lr.loadAsync();
 
 /*
- * CONTROLS and SETTINGS 
+ * CONTROLS and SETTINGS
  * TODO: Move to seperate module.
  */
 
@@ -40,7 +41,7 @@ var setGravity = world.setGravity.bind(world),
     slidersConfig = [
         { title:"Gravity", cb: setGravity, value: world.g, min: 0.001, max : 0.2, step: 0.001 },
         { title:"Arc height", cb: setArcHeight, value: world.arcHeight, min: 50, max : 300, step: 1 },
-        { title:"Arc height variant", cb: setArcVariant, value: world.arcVariant, min: 0, max : 50, step: 1 } 
+        { title:"Arc height variant", cb: setArcVariant, value: world.arcVariant, min: 0, max : 50, step: 1 }
 ];
 
 // Animation mode.
