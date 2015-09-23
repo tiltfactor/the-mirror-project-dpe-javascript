@@ -1,0 +1,492 @@
+<output>
+  <line>
+    <tags>
+      <tag class="CD">1</tag>
+    </tags>
+    <original><![CDATA[1.]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">fragile</tag>
+      <tag class="NN">summer</tag>
+      <tag class="NN">house</tag>
+    </tags>
+    <original><![CDATA[fragile              (the summer house)]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBG">terrifying</tag>
+      <tag class="JJ">terrific</tag>
+      <tag class="JJ">basic</tag>
+      <tag class="NNS">boxes</tag>
+      <tag class="DT">both</tag>
+      <tag class="NNS">bases</tag>
+      <tag class="JJ">I'll</tag>
+      <tag class="NN">take</tag>
+      <tag class="DT">both</tag>
+    </tags>
+    <original><![CDATA[terrifying       terrific          basic     boxes       both bases         I'll take both]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">winter</tag>
+      <tag class="NN">shell</tag>
+    </tags>
+    <original><![CDATA[                                                                                     (the winter shell)]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">I</tag>
+      <tag class="VBP">triangulate</tag>
+      <tag class="RB">differently</tag>
+    </tags>
+    <original><![CDATA[I     triangulate differently]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="WRB">How</tag>
+      <tag class="TO">to</tag>
+      <tag class="JJ">apple</tag>
+      <tag class="NNP">saying</tag>
+    </tags>
+    <original><![CDATA[How to apple: saying.]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">central</tag>
+      <tag class="NN">heirloom</tag>
+      <tag class="NN">ossifragant</tag>
+    </tags>
+    <original><![CDATA[                     central heirloom         ossifragant]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="RB">perhaps</tag>
+      <tag class="PRP">I</tag>
+      <tag class="VBP">want</tag>
+      <tag class="CD">three</tag>
+      <tag class="NNS">bedrooms</tag>
+    </tags>
+    <original><![CDATA[       perhaps          I want three bedrooms]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="RB">not</tag>
+      <tag class="VBG">stopping</tag>
+      <tag class="RB">here</tag>
+    </tags>
+    <original><![CDATA[not stopping here]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="RB">not</tag>
+      <tag class="JJ">the</tag>
+    </tags>
+    <original><![CDATA[          not there !]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="CD">2</tag>
+    </tags>
+    <original><![CDATA[2.]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="RB">just</tag>
+      <tag class="NNP">known</tag>
+      <tag class="NNP">How</tag>
+      <tag class="TO">to</tag>
+      <tag class="VB">ask</tag>
+      <tag class="IN">for</tag>
+      <tag class="NNP">water</tag>
+    </tags>
+    <original><![CDATA[just known.                         How to ask for water.]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">chairing</tag>
+      <tag class="NN">twelve</tag>
+      <tag class="VBZ">windows</tag>
+      <tag class="DT">a</tag>
+      <tag class="JJ">few</tag>
+      <tag class="NN">city</tag>
+      <tag class="NNS">doors</tag>
+    </tags>
+    <original><![CDATA[chairing.            twelve windows               a few city doors]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">last</tag>
+      <tag class="NN">night</tag>
+      <tag class="PRP">we</tag>
+      <tag class="VBP">ate</tag>
+      <tag class="NN">egg</tag>
+      <tag class="VBG">pudding</tag>
+      <tag class="CC">and</tag>
+    </tags>
+    <original><![CDATA[     last night we ate egg pudding and]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="CD">3</tag>
+    </tags>
+    <original><![CDATA[3.]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">the</tag>
+      <tag class="VBD">was</tag>
+      <tag class="NN">egg</tag>
+      <tag class="-NONE-">promise</tag>
+      <tag class="PRP">you</tag>
+      <tag class="VBD">diloricated</tag>
+      <tag class="PRP">me</tag>
+      <tag class="JJR">more</tag>
+      <tag class="IN">than</tag>
+      <tag class="NN">anything</tag>
+    </tags>
+    <original><![CDATA[there was egg promise:           you diloricated me  more than anything]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VB">make</tag>
+      <tag class="PRP">me</tag>
+      <tag class="VBD">civilized</tag>
+      <tag class="VBP">behave</tag>
+      <tag class="NN">streetcorner</tag>
+    </tags>
+    <original><![CDATA[make me     civilized            behave streetcorner]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNS">mattresses</tag>
+      <tag class="RB">cover</tag>
+      <tag class="IN">in</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">telltale</tag>
+    </tags>
+    <original><![CDATA[           ::where mattresses cover in the telltale]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="CD">4</tag>
+    </tags>
+    <original><![CDATA[4.]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">victim</tag>
+      <tag class="NN">blood</tag>
+      <tag class="NNS">ankle-killers</tag>
+    </tags>
+    <original><![CDATA[                  victim blood           ankle-killers]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBP">tiny</tag>
+      <tag class="VBG">vamping</tag>
+      <tag class="RB">clearly</tag>
+      <tag class="DT">a</tag>
+      <tag class="NN">lifestyle</tag>
+    </tags>
+    <original><![CDATA[           tiny vamping          clearly a lifestyle]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">A</tag>
+      <tag class="NN">roughening</tag>
+      <tag class="NN">form</tag>
+      <tag class="IN">of</tag>
+      <tag class="NNP">affection</tag>
+      <tag class="DT">a</tag>
+    </tags>
+    <original><![CDATA[                  A roughening form              of affection, a]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="CD">5</tag>
+    </tags>
+    <original><![CDATA[5.]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">pretend</tag>
+      <tag class="NN">impigrity</tag>
+      <tag class="NNP">Chickening</tag>
+      <tag class="DT">a</tag>
+      <tag class="JJ">vacant</tag>
+      <tag class="NN">lot</tag>
+      <tag class="RB">too</tag>
+      <tag class="VBD">cooped</tag>
+    </tags>
+    <original><![CDATA[pretend impigrity                 Chickening a vacant lot          too cooped]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="TO">to</tag>
+      <tag class="NNP">bird</tag>
+    </tags>
+    <original><![CDATA[to bird:]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">where</tag>
+      <tag class="VB">go</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNS">eggs</tag>
+    </tags>
+    <original><![CDATA[                  where go the eggs (rats)]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="WRB">where</tag>
+      <tag class="VBZ">comes</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">feed</tag>
+    </tags>
+    <original><![CDATA[                  where comes the feed (rats)]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="CD">6</tag>
+    </tags>
+    <original><![CDATA[6.]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">a</tag>
+      <tag class="NN">girl</tag>
+      <tag class="IN">on</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">train</tag>
+      <tag class="NN">shouts</tag>
+      <tag class="NN">I'm</tag>
+      <tag class="VBG">dying</tag>
+      <tag class="NN">I'm</tag>
+    </tags>
+    <original><![CDATA[a girl on the train shouts: I'm dying I'm]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBG">dying</tag>
+      <tag class="NN">I'm</tag>
+      <tag class="VBG">dying</tag>
+    </tags>
+    <original><![CDATA[                                      dying I'm                dying]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNS">castigates</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">smile</tag>
+      <tag class="IN">on</tag>
+      <tag class="PRP$">her</tag>
+      <tag class="NN">face</tag>
+      <tag class="PRP">she</tag>
+      <tag class="VBZ">has</tag>
+      <tag class="DT">a</tag>
+      <tag class="JJ">smile</tag>
+      <tag class="IN">on</tag>
+      <tag class="PRP$">her</tag>
+    </tags>
+    <original><![CDATA[                      castigates the smile on her face   (OR she has a smile on her]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">face</tag>
+    </tags>
+    <original><![CDATA[face)]]></original>
+  </line>
+</output>

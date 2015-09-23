@@ -1,0 +1,279 @@
+<output>
+  <line>
+    <tags>
+      <tag class="CD">1</tag>
+    </tags>
+    <original><![CDATA[1.]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">around</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">time</tag>
+      <tag class="IN">of</tag>
+      <tag class="NNS">cardinals</tag>
+    </tags>
+    <original><![CDATA[around the time of cardinals]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">about</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">time</tag>
+      <tag class="PRP">he</tag>
+      <tag class="VBD">was</tag>
+      <tag class="VBN">supposed</tag>
+      <tag class="TO">to</tag>
+      <tag class="VB">come</tag>
+      <tag class="NN">home</tag>
+    </tags>
+    <original><![CDATA[about the time he was supposed to come home]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">I</tag>
+      <tag class="VBP">sit</tag>
+      <tag class="CC">and</tag>
+      <tag class="NN">sit</tag>
+    </tags>
+    <original><![CDATA[             I sit and sit]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">in</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">middle</tag>
+      <tag class="IN">of</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNS">arrivals</tag>
+    </tags>
+    <original><![CDATA[in the middle of the arrivals]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Buddha</tag>
+      <tag class="VBD">was</tag>
+      <tag class="RB">not</tag>
+      <tag class="VBN">known</tag>
+    </tags>
+    <original><![CDATA[Buddha was not known]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">by</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">time</tag>
+      <tag class="IN">of</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNP">sky</tag>
+      <tag class="NNP">He</tag>
+      <tag class="VBD">drifted</tag>
+      <tag class="NNP">in</tag>
+    </tags>
+    <original><![CDATA[ by the time of the sky. He drifted in:]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">the</tag>
+      <tag class="NNS">stars</tag>
+      <tag class="CC">and</tag>
+      <tag class="PRP$">their</tag>
+      <tag class="NN">seafaring</tag>
+    </tags>
+    <original><![CDATA[the stars and their seafaring]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">they</tag>
+      <tag class="VBP">are</tag>
+      <tag class="WP">what</tag>
+      <tag class="NN">time</tag>
+      <tag class="NNS">textures</tag>
+    </tags>
+    <original><![CDATA[ they are what time textures]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBG">stepping</tag>
+      <tag class="RB">gingerly</tag>
+      <tag class="IN">up</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNS">stairs</tag>
+    </tags>
+    <original><![CDATA[stepping gingerly up the stairs]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">outside</tag>
+      <tag class="DT">the</tag>
+      <tag class="JJ">notorious</tag>
+    </tags>
+    <original><![CDATA[outside the notorious]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">hue</tag>
+      <tag class="CC">and</tag>
+      <tag class="NN">grit</tag>
+      <tag class="NNS">skulks</tag>
+    </tags>
+    <original><![CDATA[ hue and grit skulks]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">the</tag>
+      <tag class="NN">dye</tag>
+      <tag class="IN">of</tag>
+      <tag class="NN">succor</tag>
+    </tags>
+    <original><![CDATA[the dye of succor]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="CD">2</tag>
+    </tags>
+    <original><![CDATA[2.]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">I</tag>
+      <tag class="VBP">sit</tag>
+      <tag class="CC">and</tag>
+      <tag class="NN">sit</tag>
+      <tag class="CC">and</tag>
+      <tag class="RB">fly</tag>
+      <tag class="CC">and</tag>
+      <tag class="RB">fly</tag>
+    </tags>
+    <original><![CDATA[I sit and sit and fly and fly]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">I</tag>
+      <tag class="VBP">make</tag>
+      <tag class="NNS">friends</tag>
+      <tag class="IN">with</tag>
+      <tag class="JJ">vikings</tag>
+    </tags>
+    <original><![CDATA[I make friends with vikings:]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">they</tag>
+      <tag class="VBP">drink</tag>
+      <tag class="DT">a</tag>
+      <tag class="JJ">lot</tag>
+      <tag class="NN">carry</tag>
+      <tag class="IN">around</tag>
+      <tag class="NN">wooden</tag>
+      <tag class="NNS">bowls</tag>
+    </tags>
+    <original><![CDATA[they drink a lot, carry around wooden bowls]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBZ">eyes</tag>
+      <tag class="RB">as</tag>
+      <tag class="JJ">grey</tag>
+      <tag class="IN">as</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">time</tag>
+      <tag class="IN">into</tag>
+      <tag class="NN">sleep</tag>
+    </tags>
+    <original><![CDATA[eyes as grey as the time into sleep]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">the</tag>
+      <tag class="NN">god</tag>
+      <tag class="IN">of</tag>
+      <tag class="DT">the</tag>
+      <tag class="JJ">earth</tag>
+      <tag class="NNS">chuckles</tag>
+      <tag class="IN">under</tag>
+      <tag class="PRP$">his</tag>
+      <tag class="NNS">feets</tag>
+    </tags>
+    <original><![CDATA[the god of the earth chuckles under his feets]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">the</tag>
+      <tag class="NNS">days</tag>
+      <tag class="-NONE-">shorten</tag>
+      <tag class="VB">turn</tag>
+      <tag class="DT">an</tag>
+      <tag class="JJ">inedible</tag>
+      <tag class="NN">color</tag>
+    </tags>
+    <original><![CDATA[the days shorten, turn an inedible color]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">awake</tag>
+      <tag class="IN">under</tag>
+      <tag class="DT">a</tag>
+      <tag class="JJ">thin</tag>
+      <tag class="VBN">red</tag>
+      <tag class="NN">blanket</tag>
+    </tags>
+    <original><![CDATA[awake under a thin red blanket]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">earthbound</tag>
+      <tag class="NN">torchbound</tag>
+      <tag class="NN">awash</tag>
+      <tag class="IN">with</tag>
+      <tag class="NN">delicacy</tag>
+    </tags>
+    <original><![CDATA[earthbound       torchbound awash with delicacy]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">lit</tag>
+      <tag class="IN">as</tag>
+      <tag class="IN">though</tag>
+      <tag class="IN">through</tag>
+      <tag class="NN">skin</tag>
+    </tags>
+    <original><![CDATA[lit as though through skin]]></original>
+  </line>
+</output>

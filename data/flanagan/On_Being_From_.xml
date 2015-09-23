@@ -1,9 +1,25 @@
 <output>
   <line>
     <tags>
-      <tag class="NN">Oh</tag>
-      <tag class="NN">Rodeo</tag>
-      <tag class="NN">Rodeo</tag>
+      <tag class="IN">On</tag>
+      <tag class="NNP">Being</tag>
+      <tag class="NNP">From</tag>
+    </tags>
+    <original><![CDATA[On Being From]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Oh</tag>
+      <tag class="NNP">Rodeo</tag>
+      <tag class="NNP">Rodeo</tag>
     </tags>
     <original><![CDATA[Oh! Rodeo, Rodeo,]]></original>
   </line>

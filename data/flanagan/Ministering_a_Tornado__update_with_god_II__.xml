@@ -1,6 +1,25 @@
 <output>
   <line>
     <tags>
+      <tag class="VBG">Ministering</tag>
+      <tag class="DT">a</tag>
+      <tag class="NNP">Tornado</tag>
+      <tag class="IN">with</tag>
+      <tag class="NN">god</tag>
+      <tag class="-NONE-">II</tag>
+    </tags>
+    <original><![CDATA[Ministering a Tornado (update with god II)]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="DT">This</tag>
       <tag class="NN">morning</tag>
       <tag class="VBZ">leaves</tag>

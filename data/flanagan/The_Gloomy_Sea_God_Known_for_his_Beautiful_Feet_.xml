@@ -1,7 +1,29 @@
 <output>
   <line>
     <tags>
-      <tag class="PRP">I</tag>
+      <tag class="DT">The</tag>
+      <tag class="NNP">Gloomy</tag>
+      <tag class="NNP">Sea</tag>
+      <tag class="NNP">God</tag>
+      <tag class="NNP">Known</tag>
+      <tag class="IN">for</tag>
+      <tag class="PRP$">his</tag>
+      <tag class="NNP">Beautiful</tag>
+      <tag class="NNP">Feet</tag>
+    </tags>
+    <original><![CDATA[The Gloomy Sea God Known for his Beautiful Feet]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">I</tag>
       <tag class="VBP">reach</tag>
       <tag class="RP">out</tag>
       <tag class="IN">for</tag>

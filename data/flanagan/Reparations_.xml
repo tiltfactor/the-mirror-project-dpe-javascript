@@ -1,8 +1,26 @@
 <output>
   <line>
     <tags>
+      <tag class="NNS">Reparations</tag>
+    </tags>
+    <original><![CDATA[Reparations]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="DT">The</tag>
-      <tag class="NN">preening</tag>
+      <tag class="VBG">preening</tag>
       <tag class="NN">water</tag>
       <tag class="NNS">laps</tag>
       <tag class="IN">with</tag>

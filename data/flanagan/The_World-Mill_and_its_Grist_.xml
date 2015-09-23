@@ -1,0 +1,157 @@
+<output>
+  <line>
+    <tags>
+      <tag class="IN">Like</tag>
+      <tag class="DT">all</tag>
+      <tag class="NN">twin</tag>
+      <tag class="NN">giants</tag>
+      <tag class="PRP">I</tag>
+      <tag class="VBP">have</tag>
+      <tag class="DT">no</tag>
+      <tag class="NNS">brothers</tag>
+    </tags>
+    <original><![CDATA[       Like all twin giants, I have no brothers]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">No</tag>
+      <tag class="NN">brother</tag>
+      <tag class="VBZ">spins</tag>
+      <tag class="NN">peace</tag>
+      <tag class="IN">into</tag>
+      <tag class="PRP">myself</tag>
+    </tags>
+    <original><![CDATA[       No brother spins peace into myself]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">No</tag>
+      <tag class="NN">brother</tag>
+      <tag class="VBZ">gets</tag>
+      <tag class="IN">in</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">car</tag>
+      <tag class="NN">am</tag>
+      <tag class="NN">drive</tag>
+    </tags>
+    <original><![CDATA[       No brother gets in the car (I am drive)]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNPS">Brothers</tag>
+      <tag class="VBP">have</tag>
+      <tag class="DT">no</tag>
+      <tag class="NN">language</tag>
+      <tag class="IN">for</tag>
+    </tags>
+    <original><![CDATA[       Brothers have no language for "adult"]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">No</tag>
+      <tag class="NNS">words</tag>
+      <tag class="TO">to</tag>
+      <tag class="VB">fork</tag>
+    </tags>
+    <original><![CDATA[       No words to fork "interests"]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="CD">One</tag>
+      <tag class="NNS">washes</tag>
+      <tag class="NNS">clothes</tag>
+      <tag class="IN">with</tag>
+      <tag class="JJ">grass</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">other</tag>
+      <tag class="NN">teeth</tag>
+      <tag class="CC">and</tag>
+      <tag class="NN">soap</tag>
+    </tags>
+    <original><![CDATA[       One washes clothes with grass, the other, teeth and soap]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">Disgusting</tag>
+      <tag class="IN">For</tag>
+      <tag class="DT">a</tag>
+      <tag class="NN">while</tag>
+      <tag class="PRP">it</tag>
+      <tag class="VBD">seemed</tag>
+    </tags>
+    <original><![CDATA[Disgusting! For a while it seemed]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="CD">One</tag>
+      <tag class="VBD">had</tag>
+      <tag class="VBN">aged</tag>
+    </tags>
+    <original><![CDATA[       One had aged]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="CC">Or</tag>
+      <tag class="PRP">you</tag>
+      <tag class="VBD">were</tag>
+      <tag class="JJ">charitable</tag>
+    </tags>
+    <original><![CDATA[         Or you were charitable]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">Lies</tag>
+      <tag class="JJ">Such</tag>
+      <tag class="NNS">ideas</tag>
+    </tags>
+    <original><![CDATA[Lies!            Such ideas]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Stir</tag>
+      <tag class="DT">a</tag>
+      <tag class="NNP">man's</tag>
+    </tags>
+    <original><![CDATA[        Stir a man's]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">ability</tag>
+      <tag class="TO">to</tag>
+      <tag class="JJ">cloud-cloud</tag>
+    </tags>
+    <original><![CDATA[           ability to cloud-cloud]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">A</tag>
+      <tag class="NN">brother</tag>
+      <tag class="NN">cup</tag>
+      <tag class="VBZ">is</tag>
+      <tag class="VBN">made</tag>
+      <tag class="IN">for</tag>
+      <tag class="NN">drinking</tag>
+    </tags>
+    <original><![CDATA[        A brother cup is made for drinking]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">A</tag>
+      <tag class="NN">brother</tag>
+      <tag class="NN">hand</tag>
+      <tag class="VBZ">is</tag>
+      <tag class="VBN">cold</tag>
+      <tag class="IN">for</tag>
+      <tag class="NNS">years</tag>
+    </tags>
+    <original><![CDATA[        A brother hand is cold for years]]></original>
+  </line>
+</output>

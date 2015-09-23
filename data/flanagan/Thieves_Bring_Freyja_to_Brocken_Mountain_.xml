@@ -1,0 +1,339 @@
+<output>
+  <line>
+    <tags>
+      <tag class="WP">who</tag>
+      <tag class="NNS">treks</tag>
+      <tag class="VBP">up</tag>
+      <tag class="NNP">Black</tag>
+      <tag class="NNP">Horse</tag>
+      <tag class="NNP">Road</tag>
+    </tags>
+    <original><![CDATA[who treks up Black Horse Road]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">mauling</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">passageway</tag>
+    </tags>
+    <original><![CDATA[mauling the passageway?]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="CD">Two</tag>
+      <tag class="JJ">cats</tag>
+      <tag class="JJ">Bee-gold</tag>
+      <tag class="CC">and</tag>
+      <tag class="JJ">Tree-gold</tag>
+    </tags>
+    <original><![CDATA[  Two cats: Bee-gold and Tree-gold]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">escort</tag>
+      <tag class="NNS">earth's</tag>
+      <tag class="NN">daughter</tag>
+      <tag class="IN">over</tag>
+      <tag class="NN">clay</tag>
+    </tags>
+    <original><![CDATA[escort earth's daughter over clay]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Propped</tag>
+      <tag class="IN">up</tag>
+      <tag class="IN">in</tag>
+      <tag class="NN">sand</tag>
+      <tag class="VBP">are</tag>
+      <tag class="JJ">object-codes</tag>
+    </tags>
+    <original><![CDATA[ Propped up in sand are object-codes:]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">old</tag>
+      <tag class="JJ">witch-style</tag>
+      <tag class="NNS">brooms</tag>
+      <tag class="VBP">hold</tag>
+      <tag class="JJ">ballast-sway</tag>
+    </tags>
+    <original><![CDATA[old witch-style brooms hold ballast-sway]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Walpurgis</tag>
+      <tag class="NN">night</tag>
+      <tag class="NN">medieval</tag>
+      <tag class="VBZ">mumble-odes</tag>
+    </tags>
+    <original><![CDATA[Walpurgis night medieval mumble-odes]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP$">her</tag>
+      <tag class="RB">heavenly</tag>
+      <tag class="VBZ">books</tag>
+      <tag class="IN">in</tag>
+      <tag class="NNP">Asgard</tag>
+    </tags>
+    <original><![CDATA[          her heavenly books in Asgard]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">the</tag>
+      <tag class="JJS">greatest</tag>
+      <tag class="JJS">latest</tag>
+      <tag class="NN">breakfast</tag>
+      <tag class="NNS">women</tag>
+      <tag class="VBP">bestrode</tag>
+    </tags>
+    <original><![CDATA[ the greatest latest breakfast: women bestrode]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">a</tag>
+      <tag class="VBN">broken</tag>
+      <tag class="VBG">brunching</tag>
+      <tag class="NN">tramway</tag>
+    </tags>
+    <original><![CDATA[a broken brunching tramway]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Harz</tag>
+      <tag class="NN">mountain</tag>
+      <tag class="VBZ">sits</tag>
+      <tag class="JJ">high</tag>
+      <tag class="VBN">unbowed</tag>
+    </tags>
+    <original><![CDATA[Harz mountain sits high, unbowed]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">house-kit</tag>
+      <tag class="NN">scrawl</tag>
+      <tag class="DT">this</tag>
+      <tag class="JJ">first</tag>
+      <tag class="IN">of</tag>
+      <tag class="NNP">May</tag>
+    </tags>
+    <original><![CDATA[house-kit scrawl this first of May]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">A</tag>
+      <tag class="NN">bear</tag>
+      <tag class="IN">in</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">blow</tag>
+      <tag class="DT">a</tag>
+      <tag class="NN">raptor</tag>
+      <tag class="TO">to</tag>
+      <tag class="NNP">prey</tag>
+    </tags>
+    <original><![CDATA[A bear in the blow, a raptor to prey:]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">it</tag>
+      <tag class="VBD">was</tag>
+      <tag class="PRP">She</tag>
+      <tag class="TO">to</tag>
+      <tag class="NNP">Odin</tag>
+      <tag class="NNS">runes</tag>
+      <tag class="VBD">bestowed</tag>
+    </tags>
+    <original><![CDATA[it was She to Odin runes bestowed]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="RB">thus</tag>
+      <tag class="PRP$">her</tag>
+      <tag class="NNS">symbols</tag>
+      <tag class="VBP">do</tag>
+      <tag class="RB">foresway</tag>
+      <tag class="NN">foot</tag>
+      <tag class="IN">with</tag>
+      <tag class="-NONE-">a</tag>
+      <tag class="JJ">saint-stain</tag>
+      <tag class="VBN">steeped</tag>
+      <tag class="RP">up</tag>
+      <tag class="-NONE-">halfway</tag>
+    </tags>
+    <original><![CDATA[   thus her symbols do foresway            (a foot with a saint-stain steeped up halfway)]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBG">drawing</tag>
+      <tag class="JJ">water-ditch</tag>
+      <tag class="IN">though</tag>
+      <tag class="PRP$">her</tag>
+      <tag class="NN">body</tag>
+      <tag class="VBD">slowed</tag>
+    </tags>
+    <original><![CDATA[drawing water-ditch        though her body slowed]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">rooted</tag>
+      <tag class="PRP">she</tag>
+      <tag class="VBZ">becomes</tag>
+      <tag class="JJ">willowy</tag>
+      <tag class="NN">gay</tag>
+    </tags>
+    <original><![CDATA[rooted, she becomes willowy, gay]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">her</tag>
+      <tag class="VBD">blackwood</tag>
+      <tag class="JJ">bird-box</tag>
+      <tag class="NNS">mouths</tag>
+      <tag class="DT">a</tag>
+      <tag class="JJ">goads</tag>
+    </tags>
+    <original><![CDATA[her blackwood bird-box mouths and goads:]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">In</tag>
+      <tag class="JJ">sharp</tag>
+      <tag class="NNS">terms</tag>
+      <tag class="JJ">tip-bend</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">ground</tag>
+      <tag class="VBZ">breaks</tag>
+    </tags>
+    <original><![CDATA[In sharp terms tip-bend the ground breaks]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">caw-snap</tag>
+      <tag class="JJ">sharp</tag>
+    </tags>
+    <original><![CDATA[       caw-snap sharp]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">scratch-jay</tag>
+      <tag class="NN">moan</tag>
+    </tags>
+    <original><![CDATA[                                 scratch-jay moan]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNS">magpies</tag>
+      <tag class="VBP">nudge</tag>
+      <tag class="PRP">her</tag>
+      <tag class="VBP">house</tag>
+      <tag class="NN">astray</tag>
+    </tags>
+    <original><![CDATA[magpies nudge her house astray]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">brick</tag>
+      <tag class="NNS">chimneys</tag>
+      <tag class="VBP">do</tag>
+      <tag class="JJ">corrode</tag>
+    </tags>
+    <original><![CDATA[brick chimneys do corrode:]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">They</tag>
+      <tag class="VBP">take</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNS">stones</tag>
+      <tag class="CC">and</tag>
+      <tag class="VB">make</tag>
+      <tag class="RP">away</tag>
+    </tags>
+    <original><![CDATA[They take the stones and make away]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">with</tag>
+      <tag class="JJ">sacred</tag>
+      <tag class="VBG">thinking</tag>
+      <tag class="TO">to</tag>
+      <tag class="VB">decode</tag>
+    </tags>
+    <original><![CDATA[with sacred thinking to decode]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP$">her</tag>
+      <tag class="JJ">mark</tag>
+      <tag class="PRP">her</tag>
+      <tag class="VBP">darkest</tag>
+      <tag class="NN">gray</tag>
+    </tags>
+    <original><![CDATA[                                             (mark her mark her darkest gray]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP$">her</tag>
+      <tag class="NN">spelling</tag>
+      <tag class="VBZ">needs</tag>
+      <tag class="DT">no</tag>
+      <tag class="NN">judgment</tag>
+      <tag class="-NONE-">day</tag>
+    </tags>
+    <original><![CDATA[                                             her spelling needs no judgment day)]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">in</tag>
+      <tag class="NNP">Foulness</tag>
+      <tag class="JJ">such</tag>
+      <tag class="VBP">do</tag>
+      <tag class="NNS">flocks</tag>
+      <tag class="VB">forebode</tag>
+    </tags>
+    <original><![CDATA[ in Foulness such do flocks forebode]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="WRB">where</tag>
+      <tag class="NNS">felines</tag>
+      <tag class="VBP">finger</tag>
+      <tag class="WP">what</tag>
+      <tag class="-NONE-">they're</tag>
+      <tag class="VBD">told</tag>
+    </tags>
+    <original><![CDATA[where felines finger what they're told]]></original>
+  </line>
+</output>

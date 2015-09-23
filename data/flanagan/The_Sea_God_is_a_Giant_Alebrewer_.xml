@@ -1,0 +1,110 @@
+<output>
+  <line>
+    <tags>
+      <tag class="NN">Drunk</tag>
+      <tag class="NN">man</tag>
+      <tag class="NN">clutch</tag>
+      <tag class="PRP$">my</tag>
+      <tag class="NN">heart</tag>
+    </tags>
+    <original><![CDATA[Drunk man, clutch my heart:]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">Dagger</tag>
+      <tag class="NNP">Your</tag>
+      <tag class="NN">name</tag>
+    </tags>
+    <original><![CDATA[           Dagger! Your name]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="MD">Should</tag>
+      <tag class="VB">be</tag>
+    </tags>
+    <original><![CDATA[           Should be "dagger"]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Make</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNS">boxes</tag>
+      <tag class="WDT">that</tag>
+      <tag class="VB">take</tag>
+    </tags>
+    <original><![CDATA[Make the boxes that take]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Everything</tag>
+      <tag class="IN">with</tag>
+      <tag class="VBG">meaning</tag>
+      <tag class="RB">away</tag>
+    </tags>
+    <original><![CDATA[Everything with meaning away]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">I</tag>
+      <tag class="VBZ">loves</tag>
+      <tag class="PRP">me</tag>
+      <tag class="DT">some</tag>
+      <tag class="NNS">women</tag>
+    </tags>
+    <original><![CDATA[I loves me some women]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">I</tag>
+      <tag class="VBZ">loves</tag>
+      <tag class="PRP">me</tag>
+      <tag class="DT">some</tag>
+      <tag class="NNS">men</tag>
+    </tags>
+    <original><![CDATA[I loves me some men]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Leave</tag>
+      <tag class="RB">only</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNS">sounds</tag>
+      <tag class="PRP">we</tag>
+      <tag class="VBP">make</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNS">tales</tag>
+      <tag class="PRP">we</tag>
+      <tag class="VBP">tell</tag>
+    </tags>
+    <original><![CDATA[Leave only the sounds we make, the tales we tell]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Leave</tag>
+      <tag class="RB">only</tag>
+      <tag class="DT">the</tag>
+      <tag class="RBS">most</tag>
+      <tag class="JJ">arbitrary</tag>
+      <tag class="NN">taste</tag>
+      <tag class="IN">of</tag>
+      <tag class="JJ">cause-and-effect</tag>
+    </tags>
+    <original><![CDATA[Leave only the most arbitrary taste of cause-and-effect]]></original>
+  </line>
+</output>

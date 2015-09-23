@@ -1,0 +1,474 @@
+<output>
+  <line>
+    <tags>
+      <tag class="NN">get</tag>
+      <tag class="TO">to</tag>
+      <tag class="VB">talk</tag>
+      <tag class="TO">to</tag>
+      <tag class="VB">you</tag>
+      <tag class="JJ">I'm</tag>
+      <tag class="IN">so</tag>
+      <tag class="JJ">happy</tag>
+      <tag class="PRP">you</tag>
+      <tag class="VBD">came</tag>
+      <tag class="IN">by</tag>
+      <tag class="CC">and</tag>
+      <tag class="JJ">I'm</tag>
+      <tag class="JJ">thrilled</tag>
+      <tag class="IN">for</tag>
+    </tags>
+    <original><![CDATA[get to talk to you, I'm so happy you came by and I'm thrilled for]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">carrot</tag>
+      <tag class="NN">cake</tag>
+      <tag class="PRP">it</tag>
+      <tag class="VBZ">looks</tag>
+      <tag class="RB">so</tag>
+      <tag class="RB">lovely</tag>
+      <tag class="IN">with</tag>
+      <tag class="PRP$">its</tag>
+      <tag class="NN">orange</tag>
+      <tag class="NNS">rouges</tag>
+      <tag class="VBG">downgrading</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">sky</tag>
+    </tags>
+    <original><![CDATA[carrot cake it looks so lovely with its orange rouges downgrading the sky]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">I'm</tag>
+      <tag class="NN">grateful</tag>
+    </tags>
+    <original><![CDATA[             I'm grateful]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="RB">entirely</tag>
+      <tag class="IN">because</tag>
+      <tag class="PRP$">your</tag>
+      <tag class="NNS">handlers</tag>
+      <tag class="NN">address</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">sun</tag>
+      <tag class="CC">and</tag>
+      <tag class="NN">bell</tag>
+      <tag class="JJ">open</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">window</tag>
+      <tag class="IN">of</tag>
+      <tag class="PRP$">your</tag>
+      <tag class="NN">studio</tag>
+    </tags>
+    <original><![CDATA[entirely because your handlers address the sun and bell open the window of your studio]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="RB">entirely</tag>
+      <tag class="IN">because</tag>
+      <tag class="PRP">you</tag>
+      <tag class="VBP">are</tag>
+      <tag class="VBG">wearing</tag>
+      <tag class="NNS">orchards</tag>
+      <tag class="RB">too</tag>
+      <tag class="CC">and</tag>
+      <tag class="DT">this</tag>
+      <tag class="NN">descent</tag>
+      <tag class="VBZ">meddles</tag>
+      <tag class="JJ">significant</tag>
+    </tags>
+    <original><![CDATA[entirely because you are wearing orchards too and this descent meddles significant]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="RB">entirely</tag>
+      <tag class="IN">because</tag>
+      <tag class="PRP">you</tag>
+      <tag class="VBP">say</tag>
+      <tag class="NN">you</tag>
+      <tag class="IN">in</tag>
+      <tag class="NN">loudspeaker</tag>
+      <tag class="CC">and</tag>
+      <tag class="RB">so</tag>
+      <tag class="VBP">do</tag>
+      <tag class="PRP">I</tag>
+      <tag class="TO">to</tag>
+      <tag class="PRP">you</tag>
+      <tag class="IN">for</tag>
+    </tags>
+    <original><![CDATA[entirely because you say "thank you" in loudspeaker and so do I to you for]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBG">shaking</tag>
+      <tag class="RP">up</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">martini</tag>
+      <tag class="IN">in</tag>
+      <tag class="PRP$">its</tag>
+      <tag class="JJ">lovely</tag>
+      <tag class="NN">classification</tag>
+      <tag class="CC">and</tag>
+      <tag class="VBD">did</tag>
+      <tag class="PRP">you</tag>
+      <tag class="RB">ever</tag>
+      <tag class="JJR">wonder</tag>
+      <tag class="WRB">why</tag>
+      <tag class="DT">some</tag>
+      <tag class="NNS">thorns</tag>
+      <tag class="VBP">need</tag>
+      <tag class="TO">to</tag>
+      <tag class="VB">be</tag>
+    </tags>
+    <original><![CDATA[shaking up the martini in its lovely classification and did you ever wonder why some thorns need to be]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBN">shaken</tag>
+      <tag class="RP">up</tag>
+      <tag class="NNS">whereas</tag>
+      <tag class="NNS">others</tag>
+      <tag class="VBP">do</tag>
+      <tag class="JJ">not</tag>
+      <tag class="NNP">Like</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">time</tag>
+      <tag class="IN">at</tag>
+      <tag class="NNP">Patti</tag>
+      <tag class="NNP">Johnson's</tag>
+      <tag class="WRB">when</tag>
+      <tag class="PRP">I</tag>
+      <tag class="VBD">told</tag>
+      <tag class="NNP">Patti</tag>
+      <tag class="PRP$">her</tag>
+      <tag class="NN">rug</tag>
+    </tags>
+    <original><![CDATA[shaken up whereas others do not? Like the time at Patti Johnson's when I told Patti her rug]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBD">looked</tag>
+      <tag class="IN">like</tag>
+      <tag class="NN">dirty</tag>
+      <tag class="-NONE-">milk</tag>
+      <tag class="CC">or</tag>
+      <tag class="WRB">when</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">dresser</tag>
+      <tag class="VBD">danced</tag>
+      <tag class="DT">an</tag>
+      <tag class="JJ">anniversary</tag>
+      <tag class="CC">and</tag>
+      <tag class="PRP">I</tag>
+      <tag class="VBD">trod</tag>
+      <tag class="IN">on</tag>
+      <tag class="DT">a</tag>
+      <tag class="NN">cornet</tag>
+      <tag class="IN">of</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNP">Chihuly</tag>
+    </tags>
+    <original><![CDATA[looked like dirty milk, or when the dresser danced an anniversary and I trod on a cornet of the Chihuly]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">by</tag>
+      <tag class="NN">accident</tag>
+      <tag class="EX">there</tag>
+      <tag class="VBD">was</tag>
+      <tag class="DT">a</tag>
+      <tag class="VBN">shaken</tag>
+      <tag class="NN">look</tag>
+      <tag class="TO">to</tag>
+      <tag class="PRP$">her</tag>
+      <tag class="NN">white</tag>
+      <tag class="NN">faculty</tag>
+      <tag class="CC">and</tag>
+      <tag class="NN">white</tag>
+      <tag class="NN">half-brother</tag>
+    </tags>
+    <original><![CDATA[by accident - there was a shaken look to her white faculty and white half-brother]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">sure</tag>
+      <tag class="PRP">I</tag>
+      <tag class="MD">can</tag>
+      <tag class="VB">see</tag>
+      <tag class="WRB">why</tag>
+      <tag class="EX">there</tag>
+      <tag class="VBD">was</tag>
+      <tag class="DT">a</tag>
+      <tag class="NN">procession</tag>
+      <tag class="VBG">breaking</tag>
+      <tag class="DT">a</tag>
+      <tag class="NN">piggy</tag>
+      <tag class="NN">artisan</tag>
+      <tag class="IN">like</tag>
+      <tag class="DT">that</tag>
+      <tag class="CC">and</tag>
+      <tag class="RB">even</tag>
+      <tag class="IN">on</tag>
+    </tags>
+    <original><![CDATA[sure I can see why there was a procession breaking a piggy artisan like that and even on]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">Chinese</tag>
+      <tag class="JJ">new</tag>
+      <tag class="NNS">years</tag>
+      <tag class="NNS">courtrooms</tag>
+      <tag class="PRP">I</tag>
+      <tag class="VBP">know</tag>
+      <tag class="WRB">why</tag>
+      <tag class="PRP">she</tag>
+      <tag class="RB">didn't</tag>
+      <tag class="JJ">iron</tag>
+      <tag class="PRP">me</tag>
+      <tag class="IN">at</tag>
+      <tag class="DT">the</tag>
+      <tag class="JJ">biennial</tag>
+    </tags>
+    <original><![CDATA[Chinese new years courtrooms I know why she didn't iron me at the biennial]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">though</tag>
+      <tag class="NNP">J</tag>
+      <tag class="VBZ">makes</tag>
+      <tag class="PRP">me</tag>
+      <tag class="NN">quince</tag>
+      <tag class="WRB">how</tag>
+      <tag class="NN">glass</tag>
+      <tag class="IN">in</tag>
+      <tag class="PRP$">its</tag>
+      <tag class="JJ">ever-movement</tag>
+      <tag class="MD">can</tag>
+      <tag class="VB">stay</tag>
+      <tag class="RB">as</tag>
+    </tags>
+    <original><![CDATA[    though  J ! makes me quince how glass in its ever-movement can stay as]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">an</tag>
+      <tag class="NN">artwork</tag>
+      <tag class="RB">even</tag>
+      <tag class="IN">in</tag>
+      <tag class="NN">winter</tag>
+      <tag class="CC">and</tag>
+      <tag class="WRB">how</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">lily</tag>
+      <tag class="VBZ">goes</tag>
+      <tag class="IN">through</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">glass</tag>
+      <tag class="IN">like</tag>
+      <tag class="NNS">dreams</tag>
+      <tag class="CC">and</tag>
+      <tag class="PRP$">their</tag>
+      <tag class="NNS">fractions</tag>
+    </tags>
+    <original><![CDATA[an artwork even in winter and how the lily goes through the glass like dreams and their fractions]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">green</tag>
+      <tag class="CC">and</tag>
+      <tag class="NN">brown</tag>
+      <tag class="NNS">shards</tag>
+      <tag class="VBP">remind</tag>
+      <tag class="PRP">me</tag>
+      <tag class="IN">of</tag>
+      <tag class="JJ">you</tag>
+      <tag class="IN">in</tag>
+      <tag class="DT">a</tag>
+      <tag class="JJ">good</tag>
+      <tag class="NN">way</tag>
+    </tags>
+    <original><![CDATA[                             green and brown shards remind me of you, in a good way]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">if</tag>
+      <tag class="PRP">you</tag>
+      <tag class="VBP">want</tag>
+      <tag class="TO">to</tag>
+      <tag class="VB">know</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">tulip</tag>
+    </tags>
+    <original><![CDATA[if you want to know the tulip]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">in</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">end</tag>
+      <tag class="WRB">when</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">sun</tag>
+      <tag class="VBZ">rises</tag>
+      <tag class="CC">and</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">popcorn</tag>
+      <tag class="VBZ">porches</tag>
+      <tag class="JJ">that's</tag>
+      <tag class="RB">just</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">thistle</tag>
+    </tags>
+    <original><![CDATA[in the end when the sun rises and the popcorn porches that's just the thistle]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">I</tag>
+      <tag class="VBP">ask</tag>
+      <tag class="CC">and</tag>
+      <tag class="NN">pronounce</tag>
+      <tag class="CC">and</tag>
+      <tag class="NNP">I'll</tag>
+      <tag class="VB">be</tag>
+      <tag class="JJ">patrimony</tag>
+      <tag class="JJ">I'll</tag>
+      <tag class="NN">stand</tag>
+      <tag class="RB">here</tag>
+      <tag class="CC">and</tag>
+      <tag class="VB">ride</tag>
+      <tag class="IN">around</tag>
+      <tag class="IN">in</tag>
+      <tag class="NNS">circumlocutions</tag>
+    </tags>
+    <original><![CDATA[I ask and pronounce and I'll be patrimony I'll stand here and ride around in circumlocutions]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">until</tag>
+      <tag class="JJ">I'm</tag>
+      <tag class="RB">not</tag>
+      <tag class="VBN">supposed</tag>
+      <tag class="TO">to</tag>
+    </tags>
+    <original><![CDATA[until I'm not supposed to]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="CC">and</tag>
+      <tag class="RB">so</tag>
+      <tag class="PRP">I</tag>
+      <tag class="RB">don't</tag>
+      <tag class="VB">forget</tag>
+    </tags>
+    <original><![CDATA[                and so I don't forget]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">you</tag>
+      <tag class="VBD">were</tag>
+      <tag class="RB">puffy</tag>
+      <tag class="CC">and</tag>
+      <tag class="NN">resplendent</tag>
+      <tag class="JJ">last</tag>
+      <tag class="NN">nightshirt</tag>
+      <tag class="IN">in</tag>
+      <tag class="PRP$">your</tag>
+      <tag class="VBN">baffled</tag>
+      <tag class="NN">wooden</tag>
+      <tag class="IN">coat</tag>
+      <tag class="IN">like</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">prince</tag>
+      <tag class="WP">who</tag>
+    </tags>
+    <original><![CDATA[you were puffy and resplendent last nightshirt in your baffled wooden coat like the prince who]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBN">invented</tag>
+      <tag class="VBP">kung</tag>
+      <tag class="NN">fu</tag>
+      <tag class="IN">in</tag>
+      <tag class="RB">just</tag>
+      <tag class="CD">one</tag>
+      <tag class="NN">day</tag>
+      <tag class="PRP">it</tag>
+      <tag class="RB">just</tag>
+      <tag class="VBD">made</tag>
+      <tag class="NNS">sequins</tag>
+      <tag class="RB">so</tag>
+      <tag class="PRP">he</tag>
+      <tag class="VBD">went</tag>
+      <tag class="RB">ahead</tag>
+    </tags>
+    <original><![CDATA[invented kung fu in just one day it just made sequins so he went ahead]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBN">sucked</tag>
+      <tag class="PRP$">his</tag>
+      <tag class="NN">footpath</tag>
+      <tag class="NN">past</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNS">bracelets</tag>
+      <tag class="CC">and</tag>
+      <tag class="VBD">clergied</tag>
+      <tag class="PRP">it</tag>
+      <tag class="JJ">clean</tag>
+      <tag class="IN">up</tag>
+      <tag class="IN">into</tag>
+      <tag class="DT">the</tag>
+      <tag class="JJ">sky</tag>
+    </tags>
+    <original><![CDATA[sucked his footpath past the bracelets and clergied it clean up into the sky]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">as</tag>
+      <tag class="PRP">you</tag>
+      <tag class="VBD">stood</tag>
+      <tag class="RB">there</tag>
+      <tag class="PRP">it</tag>
+      <tag class="VBD">was</tag>
+      <tag class="JJ">clear</tag>
+      <tag class="TO">to</tag>
+      <tag class="PRP">me</tag>
+      <tag class="IN">that</tag>
+      <tag class="PRP">I</tag>
+      <tag class="RB">again</tag>
+      <tag class="VBD">felt</tag>
+      <tag class="PRP">I</tag>
+      <tag class="VBD">needed</tag>
+      <tag class="-NONE-">you</tag>
+      <tag class="CC">and</tag>
+      <tag class="JJ">I'm</tag>
+      <tag class="RB">not</tag>
+    </tags>
+    <original><![CDATA[            as you stood there it was clear to me that I again felt I needed you, and I'm not]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">sure</tag>
+      <tag class="WRB">how</tag>
+      <tag class="PRP">I</tag>
+      <tag class="VBP">feel</tag>
+      <tag class="IN">about</tag>
+      <tag class="PRP">it</tag>
+    </tags>
+    <original><![CDATA[sure how I feel about it]]></original>
+  </line>
+</output>

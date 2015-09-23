@@ -1,7 +1,33 @@
 <output>
   <line>
     <tags>
-      <tag class="JJ">Humble</tag>
+      <tag class="WP">Who</tag>
+      <tag class="NNP">Presides</tag>
+      <tag class="NNP">Over</tag>
+      <tag class="DT">a</tag>
+      <tag class="NNP">Realm</tag>
+      <tag class="IN">of</tag>
+      <tag class="DT">the</tag>
+      <tag class="JJ">Same</tag>
+      <tag class="NNP">Name</tag>
+    </tags>
+    <original><![CDATA[Who Presides Over a Realm of the Same Name]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Humble</tag>
       <tag class="JJ">bumble</tag>
       <tag class="NNP">MWa</tag>
     </tags>

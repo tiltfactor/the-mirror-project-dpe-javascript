@@ -1,8 +1,23 @@
 <output>
   <line>
     <tags>
-      <tag class="NNS">Rockets</tag>
-      <tag class="VBP">ricochet</tag>
+      <tag class="NNP">Sunday</tag>
+      <tag class="IN">In</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNP">Garden</tag>
+      <tag class="IN">of</tag>
+      <tag class="NNPS">Locusts</tag>
+    </tags>
+    <original><![CDATA[Sunday In the Garden of Locusts]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNPS">Rockets</tag>
+      <tag class="NNP">ricochet</tag>
       <tag class="NNP">Windows</tag>
       <tag class="NNP">rattle</tag>
       <tag class="NNP">Dogs</tag>

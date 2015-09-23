@@ -1,7 +1,22 @@
 <output>
   <line>
     <tags>
-      <tag class="JJ">sharp-toed</tag>
+      <tag class="NNP">Denizen</tag>
+      <tag class="IN">with</tag>
+      <tag class="DT">a</tag>
+      <tag class="JJ">Chinese</tag>
+      <tag class="NNP">Fox</tag>
+      <tag class="NNP">Demon</tag>
+    </tags>
+    <original><![CDATA[Denizen (update with a Chinese Fox Demon)]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">sharp-toed</tag>
       <tag class="NN">interior</tag>
     </tags>
     <original><![CDATA[sharp-toed            interior]]></original>

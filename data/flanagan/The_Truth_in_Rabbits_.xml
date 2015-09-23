@@ -1,6 +1,19 @@
 <output>
   <line>
     <tags>
+      <tag class="DT">The</tag>
+      <tag class="NNP">Truth</tag>
+      <tag class="IN">in</tag>
+      <tag class="NNP">Rabbits</tag>
+    </tags>
+    <original><![CDATA[The Truth in Rabbits]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="IN">whether</tag>
       <tag class="DT">a</tag>
       <tag class="NN">proposition</tag>

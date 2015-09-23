@@ -1,8 +1,27 @@
 <output>
   <line>
     <tags>
-      <tag class="RB">Holy</tag>
-      <tag class="JJ">Savior</tag>
+      <tag class="VBG">Ministering</tag>
+      <tag class="DT">a</tag>
+      <tag class="NNP">Flood</tag>
+      <tag class="IN">with</tag>
+      <tag class="NN">god</tag>
+      <tag class="-NONE-">I</tag>
+    </tags>
+    <original><![CDATA[Ministering a Flood (update with god I)]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Holy</tag>
+      <tag class="NNP">Savior</tag>
       <tag class="CC">or</tag>
       <tag class="DT">some</tag>
       <tag class="JJ">such</tag>

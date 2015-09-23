@@ -1,7 +1,21 @@
 <output>
   <line>
     <tags>
-      <tag class="IN">At</tag>
+      <tag class="DT">The</tag>
+      <tag class="NNP">Wilderness</tag>
+      <tag class="IN">of</tag>
+      <tag class="NNP">Big</tag>
+      <tag class="NNP">Music</tag>
+    </tags>
+    <original><![CDATA[The Wilderness of Big Music]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">At</tag>
       <tag class="DT">the</tag>
       <tag class="NNP">library</tag>
       <tag class="DT">the</tag>

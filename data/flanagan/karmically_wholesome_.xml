@@ -1,6 +1,13 @@
 <output>
   <line>
     <tags>
+      <tag class="RB">karmically</tag>
+      <tag class="VBN">wholesome</tag>
+    </tags>
+    <original><![CDATA[karmically wholesome]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="NN">example</tag>
       <tag class="NN">living</tag>
       <tag class="IN">on</tag>

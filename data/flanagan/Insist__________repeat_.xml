@@ -1,6 +1,13 @@
 <output>
   <line>
     <tags>
+      <tag class="NN">Insist</tag>
+      <tag class="VBD">repeat</tag>
+    </tags>
+    <original><![CDATA[Insist:         repeat]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="IN">with</tag>
       <tag class="JJR">more</tag>
       <tag class="NN">evidence</tag>

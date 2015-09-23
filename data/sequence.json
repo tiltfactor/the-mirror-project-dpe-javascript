@@ -1,0 +1,10 @@
+[
+  [
+    {"path":"data/flanagan/A_Pure_Subjective_Commitment_is_Possible_.xml","filename":"A_Pure_Subjective_Commitment_is_Possible_.xml","directory":"./data/flanagan"},
+    {"path":"data/dickinson/OneSeries-ADay.xml","filename":"OneSeries-ADay.xml","directory":"./data/dickinson"}
+  ],
+  [
+    {"path":"data/flanagan/Throw_Away_Such_Pieces_.xml","filename":"Throw_Away_Such_Pieces_.xml","directory":"./data/flanagan"},
+    {"path":"data/dickinson/TwoSeries-XVII.xml","filename":"TwoSeries-XVII.xml","directory":"./data/dickinson"}
+  ]
+]

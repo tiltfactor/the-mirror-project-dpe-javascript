@@ -1,7 +1,22 @@
 <output>
   <line>
     <tags>
-      <tag class="JJ">I'll</tag>
+      <tag class="DT">A</tag>
+      <tag class="NNP">Pure</tag>
+      <tag class="NNP">Subjective</tag>
+      <tag class="NNP">Commitment</tag>
+      <tag class="VBZ">is</tag>
+      <tag class="NNP">Possible</tag>
+    </tags>
+    <original><![CDATA[A Pure Subjective Commitment is Possible]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">I'll</tag>
       <tag class="NN">tell</tag>
       <tag class="PRP">you</tag>
     </tags>

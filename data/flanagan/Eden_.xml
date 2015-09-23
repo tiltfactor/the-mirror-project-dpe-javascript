@@ -1,0 +1,164 @@
+<output>
+  <line>
+    <tags>
+      <tag class="WRB">When</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">computer</tag>
+      <tag class="NNS">sees</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">word</tag>
+      <tag class="NN">apple</tag>
+    </tags>
+    <original><![CDATA[When the computer sees the word apple,]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">It</tag>
+      <tag class="VBZ">sees</tag>
+      <tag class="DT">a</tag>
+      <tag class="NN">company</tag>
+    </tags>
+    <original><![CDATA[It sees a company]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="WRB">When</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">computer</tag>
+      <tag class="NNS">sees</tag>
+      <tag class="VBP">apple</tag>
+      <tag class="CC">and</tag>
+      <tag class="JJ">pear</tag>
+      <tag class="NN">together</tag>
+    </tags>
+    <original><![CDATA[When the computer sees apple and pear together]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">It</tag>
+      <tag class="VBZ">thinks</tag>
+      <tag class="IN">of</tag>
+      <tag class="NN">fruit</tag>
+    </tags>
+    <original><![CDATA[It thinks of fruit]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Understanding</tag>
+      <tag class="DT">an</tag>
+      <tag class="NN">entity</tag>
+      <tag class="VBZ">is</tag>
+    </tags>
+    <original><![CDATA[Understanding an entity is]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Abstraction</tag>
+      <tag class="IN">down</tag>
+      <tag class="DT">a</tag>
+      <tag class="NN">path</tag>
+    </tags>
+    <original><![CDATA[Abstraction down a path]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBN">Formed</tag>
+      <tag class="IN">by</tag>
+      <tag class="NNP">Bayesian</tag>
+      <tag class="NN">learning</tag>
+    </tags>
+    <original><![CDATA[Formed by Bayesian learning]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">The</tag>
+      <tag class="NN">concept</tag>
+      <tag class="NN">entity</tag>
+    </tags>
+    <original><![CDATA[The concept -> entity]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">Co-occurance</tag>
+    </tags>
+    <original><![CDATA[Co-occurance]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">For</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNS">trees</tag>
+      <tag class="VBN">used</tag>
+      <tag class="IN">in</tag>
+      <tag class="NN">science</tag>
+      <tag class="VBP">are</tag>
+      <tag class="RB">not</tag>
+      <tag class="VBN">brown</tag>
+      <tag class="CC">and</tag>
+      <tag class="JJ">green</tag>
+    </tags>
+    <original><![CDATA[For the trees used in science are not brown and green]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="CC">But</tag>
+      <tag class="JJ">probabilistic</tag>
+    </tags>
+    <original><![CDATA[But probabilistic]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">In</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNS">collocations</tag>
+      <tag class="NN">tree</tag>
+      <tag class="NN">pie</tag>
+    </tags>
+    <original><![CDATA[In the collocations 'apple tree', 'apple pie',]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">You</tag>
+      <tag class="MD">should</tag>
+      <tag class="VB">see</tag>
+      <tag class="DT">a</tag>
+      <tag class="NN">pink</tag>
+      <tag class="NN">box</tag>
+    </tags>
+    <original><![CDATA[You should see a pink box]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Explaining</tag>
+    </tags>
+    <original><![CDATA[Explaining]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Individual</tag>
+      <tag class="VBZ">is</tag>
+    </tags>
+    <original><![CDATA[Individual is ('apple')]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="WP">What</tag>
+      <tag class="NNS">properties</tag>
+      <tag class="PRP">it</tag>
+      <tag class="VBZ">has</tag>
+    </tags>
+    <original><![CDATA[What properties it has ('red')]]></original>
+  </line>
+</output>

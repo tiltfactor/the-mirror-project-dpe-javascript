@@ -1,6 +1,21 @@
 <output>
   <line>
     <tags>
+      <tag class="DT">the</tag>
+      <tag class="VBN">golden</tag>
+      <tag class="NN">carpet</tag>
+      <tag class="IN">of</tag>
+      <tag class="NNS">cigarettes</tag>
+      <tag class="VBN">rejected</tag>
+    </tags>
+    <original><![CDATA[the golden carpet of cigarettes rejected]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="CD">three</tag>
       <tag class="NNS">deities</tag>
       <tag class="IN">of</tag>

@@ -1,0 +1,356 @@
+<output>
+  <line>
+    <tags>
+      <tag class="NN">You</tag>
+      <tag class="NN">expert</tag>
+      <tag class="IN">in</tag>
+      <tag class="NN">enchantment</tag>
+    </tags>
+    <original><![CDATA[You: expert in enchantment]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBD">perched</tag>
+      <tag class="IN">on</tag>
+      <tag class="DT">the</tag>
+    </tags>
+    <original><![CDATA[perched on the]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">bone-littered</tag>
+      <tag class="NN">stove</tag>
+    </tags>
+    <original><![CDATA[bone-littered stove]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">swoop</tag>
+    </tags>
+    <original><![CDATA[swoop]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNS">rooms</tag>
+    </tags>
+    <original><![CDATA[                           rooms]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">between</tag>
+    </tags>
+    <original><![CDATA[               between]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNS">let's</tag>
+      <tag class="VBP">pull</tag>
+    </tags>
+    <original><![CDATA[let's pull]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP$">our</tag>
+      <tag class="NN">city</tag>
+    </tags>
+    <original><![CDATA[our city]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">down</tag>
+      <tag class="IN">from</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">sky</tag>
+      <tag class="PRP">you</tag>
+      <tag class="VBP">cry</tag>
+    </tags>
+    <original><![CDATA[down from the sky! you cry]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBP">descend</tag>
+      <tag class="IN">like</tag>
+      <tag class="NNS">demigods</tag>
+    </tags>
+    <original><![CDATA[descend like demigods]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">a</tag>
+      <tag class="RB">little</tag>
+      <tag class="JJ">dirty</tag>
+    </tags>
+    <original><![CDATA[a little dirty]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">from</tag>
+      <tag class="JJ">exhaust</tag>
+      <tag class="CC">and</tag>
+      <tag class="NNS">i-beams</tag>
+    </tags>
+    <original><![CDATA[from exhaust and i-beams]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">grief</tag>
+      <tag class="NNS">chews</tag>
+      <tag class="IN">up</tag>
+    </tags>
+    <original><![CDATA[grief chews up]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">the</tag>
+      <tag class="NN">street</tag>
+      <tag class="DT">a</tag>
+      <tag class="NN">girl</tag>
+      <tag class="IN">with</tag>
+      <tag class="JJ">tire</tag>
+    </tags>
+    <original><![CDATA[the street a girl with tire-]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNS">eyes</tag>
+      <tag class="NNS">smudges</tag>
+    </tags>
+    <original><![CDATA[eyes smudges]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">her</tag>
+      <tag class="VBZ">hands</tag>
+    </tags>
+    <original><![CDATA[her hands]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNS">ravens</tag>
+    </tags>
+    <original><![CDATA[ravens]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP$">our</tag>
+      <tag class="NNS">jeans</tag>
+    </tags>
+    <original><![CDATA[our jeans]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="RB">slaps</tag>
+      <tag class="IN">at</tag>
+      <tag class="DT">the</tag>
+    </tags>
+    <original><![CDATA[slaps at the]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNS">pools</tag>
+      <tag class="VBN">left</tag>
+    </tags>
+    <original><![CDATA[                           pools left]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">black</tag>
+    </tags>
+    <original><![CDATA[               black]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="RB">here</tag>
+      <tag class="VBZ">is</tag>
+      <tag class="WRB">where</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNS">gods</tag>
+      <tag class="VBP">lie</tag>
+    </tags>
+    <original><![CDATA[here is where the gods lie]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">baffled</tag>
+    </tags>
+    <original><![CDATA[baffled:]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">the</tag>
+      <tag class="JJ">carbuncled</tag>
+      <tag class="NN">girder</tag>
+      <tag class="WDT">that</tag>
+      <tag class="VBZ">is</tag>
+      <tag class="DT">this</tag>
+      <tag class="NN">city</tag>
+    </tags>
+    <original><![CDATA[the carbuncled girder that is this city]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBZ">snaps</tag>
+      <tag class="RP">out</tag>
+      <tag class="JJ">rust</tag>
+      <tag class="NNS">wheezes</tag>
+      <tag class="JJ">deck-plate</tag>
+    </tags>
+    <original><![CDATA[snaps out rust, wheezes deck-plate]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNS">mists</tag>
+      <tag class="VBP">desperate</tag>
+      <tag class="TO">to</tag>
+      <tag class="VB">command</tag>
+      <tag class="DT">the</tag>
+      <tag class="NNS">trestles</tag>
+    </tags>
+    <original><![CDATA[mists desperate to command the trestles]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">you</tag>
+      <tag class="VBP">caw</tag>
+    </tags>
+    <original><![CDATA[you caw]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBP">decide</tag>
+    </tags>
+    <original><![CDATA[decide]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="TO">to</tag>
+      <tag class="NN">alight</tag>
+    </tags>
+    <original><![CDATA[                         to alight]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">like</tag>
+      <tag class="NNP">Freyja</tag>
+    </tags>
+    <original><![CDATA[          like Freyja]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">on</tag>
+      <tag class="DT">the</tag>
+      <tag class="JJ">couch</tag>
+    </tags>
+    <original><![CDATA[on the couch]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">stare</tag>
+      <tag class="IN">at</tag>
+      <tag class="DT">a</tag>
+      <tag class="JJ">new</tag>
+      <tag class="NN">episode</tag>
+    </tags>
+    <original><![CDATA[stare at a new episode]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">of</tag>
+      <tag class="NNP">Lost</tag>
+    </tags>
+    <original><![CDATA[of Lost]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">black</tag>
+      <tag class="VBD">walnut</tag>
+    </tags>
+    <original><![CDATA[black walnut]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBN">held</tag>
+    </tags>
+    <original><![CDATA[held]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">between</tag>
+      <tag class="PRP$">your</tag>
+      <tag class="NN">teeth</tag>
+    </tags>
+    <original><![CDATA[between your teeth]]></original>
+  </line>
+</output>

@@ -1,0 +1,271 @@
+<output>
+  <line>
+    <tags>
+      <tag class="NN">Configure</tag>
+      <tag class="DT">a</tag>
+    </tags>
+    <original><![CDATA[Configure a]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="JJ">Wish</tag>
+      <tag class="DT">this</tag>
+      <tag class="NN">witness</tag>
+    </tags>
+    <original><![CDATA[                       Wish           this witness:]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">a</tag>
+      <tag class="NN">stretch</tag>
+      <tag class="IN">of</tag>
+      <tag class="NN">winter</tag>
+    </tags>
+    <original><![CDATA[       a stretch of winter]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">it</tag>
+      <tag class="VBZ">is</tag>
+      <tag class="VBG">snowing</tag>
+      <tag class="IN">into</tag>
+    </tags>
+    <original><![CDATA[       it is snowing into]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">snow</tag>
+      <tag class="DT">each</tag>
+      <tag class="NN">mouth</tag>
+      <tag class="VBG">humming</tag>
+      <tag class="IN">into</tag>
+      <tag class="NN">hum</tag>
+    </tags>
+    <original><![CDATA[       snow             each mouth humming            into hum   "Beautiful"]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">It</tag>
+      <tag class="VBZ">is</tag>
+      <tag class="RB">not</tag>
+      <tag class="JJ">possible</tag>
+      <tag class="TO">to</tag>
+      <tag class="VB">do</tag>
+      <tag class="DT">this</tag>
+      <tag class="IN">in</tag>
+      <tag class="DT">a</tag>
+      <tag class="JJ">general</tag>
+      <tag class="NN">way</tag>
+      <tag class="JJ">beautiful</tag>
+    </tags>
+    <original><![CDATA[It is not possible to do this in a general way beautiful]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="IN">among</tag>
+      <tag class="NN">wintry</tag>
+      <tag class="-NONE-">domains</tag>
+      <tag class="VBZ">domains</tag>
+      <tag class="JJ">such</tag>
+      <tag class="IN">as</tag>
+      <tag class="NN">wining</tag>
+      <tag class="CC">and</tag>
+      <tag class="NNP">dining</tag>
+      <tag class="NNS">films</tag>
+      <tag class="CC">and</tag>
+      <tag class="NN">sport</tag>
+    </tags>
+    <original><![CDATA[among wintry domains, domains such as wining and dining, films and sport]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNPS">Eyefuls</tag>
+      <tag class="IN">of</tag>
+      <tag class="CC">and</tag>
+    </tags>
+    <original><![CDATA[Eyefuls of  and ]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">the</tag>
+      <tag class="NN">plain</tag>
+      <tag class="NN">whited-out</tag>
+      <tag class="IN">of</tag>
+      <tag class="NNS">things</tag>
+      <tag class="RB">brilliantly</tag>
+      <tag class="VBD">kept</tag>
+      <tag class="-NONE-">bright</tag>
+      <tag class="VBD">kept</tag>
+      <tag class="JJ">broadcast</tag>
+    </tags>
+    <original><![CDATA[the plain whited-out of things brilliantly kept bright, kept broadcast]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">no</tag>
+      <tag class="NN">one</tag>
+      <tag class="NNS">walks</tag>
+      <tag class="DT">no</tag>
+      <tag class="NN">one</tag>
+      <tag class="NNS">walks</tag>
+      <tag class="IN">about</tag>
+      <tag class="RB">then</tag>
+    </tags>
+    <original><![CDATA[no one walks no one walks about          then -]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">man</tag>
+      <tag class="CC">and</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">sky</tag>
+      <tag class="NN">link</tag>
+      <tag class="NNS">themselves</tag>
+      <tag class="CC">and</tag>
+      <tag class="NN">call</tag>
+    </tags>
+    <original><![CDATA[        man and the sky link themselves and call]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">all-the-world</tag>
+      <tag class="NN">experience</tag>
+    </tags>
+    <original><![CDATA[all-the-world experience]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNP">Trauma</tag>
+      <tag class="VBZ">is</tag>
+      <tag class="RB">relatively</tag>
+      <tag class="JJ">simple</tag>
+    </tags>
+    <original><![CDATA[Trauma is relatively simple:]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NNS">names</tag>
+      <tag class="MD">should</tag>
+      <tag class="VB">follow</tag>
+      <tag class="PRP$">their</tag>
+      <tag class="NNS">bearers</tag>
+    </tags>
+    <original><![CDATA[      names should follow their bearers]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBZ">narrows</tag>
+      <tag class="MD">should</tag>
+      <tag class="VB">follow</tag>
+      <tag class="PRP$">their</tag>
+      <tag class="NNS">becks</tag>
+    </tags>
+    <original><![CDATA[      narrows should follow their becks]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBP">become</tag>
+      <tag class="DT">a</tag>
+      <tag class="NN">brilliance</tag>
+      <tag class="IN">of</tag>
+      <tag class="NNP">form</tag>
+      <tag class="DT">a</tag>
+      <tag class="NNP">fortress</tag>
+      <tag class="DT">a</tag>
+      <tag class="NN">forum</tag>
+    </tags>
+    <original><![CDATA[       become a brilliance of form, a fortress, a forum]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">therewith</tag>
+      <tag class="IN">in</tag>
+      <tag class="JJ">certain</tag>
+      <tag class="NNS">patterns</tag>
+    </tags>
+    <original><![CDATA[       therewith in certain patterns]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="PRP">It</tag>
+      <tag class="VBZ">is</tag>
+      <tag class="JJ">beautiful</tag>
+      <tag class="IN">that</tag>
+      <tag class="PRP">it</tag>
+      <tag class="-NONE-">is</tag>
+    </tags>
+    <original><![CDATA[It is beautiful that it is-]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="DT">a</tag>
+      <tag class="NN">synthesis</tag>
+      <tag class="IN">of</tag>
+      <tag class="DT">the</tag>
+      <tag class="NN">table</tag>
+      <tag class="IN">at</tag>
+      <tag class="WDT">which</tag>
+      <tag class="DT">the</tag>
+      <tag class="JJ">beautiful</tag>
+      <tag class="NN">world</tag>
+      <tag class="NNS">sits</tag>
+    </tags>
+    <original><![CDATA[a synthesis of the table at which the beautiful world sits]]></original>
+  </line>
+  <line>
+    <tags/>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="VBD">found</tag>
+      <tag class="NN">false</tag>
+      <tag class="IN">in</tag>
+      <tag class="PRP$">its</tag>
+      <tag class="JJ">own</tag>
+      <tag class="NN">room</tag>
+    </tags>
+    <original><![CDATA[               found false in its own room-]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="NN">table</tag>
+      <tag class="NN">window</tag>
+      <tag class="NN">dresser</tag>
+      <tag class="NN">drawer</tag>
+    </tags>
+    <original><![CDATA[               table window          dresser       drawer]]></original>
+  </line>
+</output>
