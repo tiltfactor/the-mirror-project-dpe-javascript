@@ -7,10 +7,10 @@ var World = (function(){
         // Set options to the options supplied
         // or an empty object if none are provided.
         options = options || {};
-     
+
         // FPS calc.
-        var self = this, 
-            lastLoop = new Date, 
+        var self = this,
+            lastLoop = new Date,
             thisLoop,
             count = 0,
             animContext;
@@ -49,11 +49,12 @@ var World = (function(){
                 this.wordClassIndex++;
                 log('Next class: ', this.wordClasses[this.wordClassIndex]);
                 this.dispatchEvent({
-                    type:'classchange', 
-                    newClass: this.wordClasses[this.wordClassIndex] 
+                    type:'classchange',
+                    newClass: this.wordClasses[this.wordClassIndex]
                 });
                 this.next();
             } else {
+                log('Fin');
                 // No? Then we stop.
                 this.dispatchEvent({type:'complete'});
             }
@@ -85,10 +86,7 @@ var World = (function(){
                 // If we have no swap and have the previous source we fade that
                 // back in and then start the process with a new class.
                 if(lastSource){
-                    move(lastSource)
-                        .set('opacity', 1)
-                        .duration(250)
-                        .end(this.nextClass.bind(this));
+                    TweenLite.to(lastSource, 0.25, { opacity: 1, onComplete: this.nextClass, onCompleteScope: this });
                 } else {
                     // log('nextClass', source, target);
                     // If there is no last source then we may have just
@@ -119,7 +117,7 @@ var World = (function(){
         /*
         setInterval(function(){
             log((1000/frameTime).toFixed(1));
-        },250); 
+        },250);
         */
 
         this.animate = function() {
@@ -159,7 +157,7 @@ var World = (function(){
                 worldEl = document.querySelector('.world');
 
             [].forEach.call(controls, function(el){
-               el.classList.remove('is-active'); 
+               el.classList.remove('is-active');
             });
 
             document.querySelector('.choose').style.display = 'none';
