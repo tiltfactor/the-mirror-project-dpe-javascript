@@ -2,20 +2,14 @@
 
 function SwapLines(source, target){
 
-    var self = this,
-        targetDup, sourceDup,
-        delayMs = 250, 
-
-        firstLetterSource = source.textContent.substr(0,1),
-        firstLetterTarget = target.textContent.substr(0,1),
-        isSourceCapitalised = firstLetterSource === firstLetterSource.toUpperCase(),
-        isTargetCapitalised = firstLetterTarget === firstLetterTarget.toUpperCase();
+    var self = this;
 
     this.world = World.getInstance();
     this.source = source;
+    this.target = target;
     this.sourceBbox = source.getBoundingClientRect();
     this.targetBbox = target.getBoundingClientRect();
-    
+
     // Direction of travel.
     this.rtl = this.sourceBbox.left > this.targetBbox.left;
 
@@ -31,20 +25,21 @@ function SwapLines(source, target){
         if(options.doCorrectCaps && isSourceCapitalised !== isTargetCapitalised){
             letter = source.textContent.substr(0,1);
             replacement = (isSourceCapitalised) ? letter.toLowerCase() : letter.toUpperCase();
-            replacement += source.textContent.substr(1) 
+            replacement += source.textContent.substr(1)
             isStringChanging = true;
         }
 
        targetLine.swap(source.textContent, replacement);
-    }); 
+    });
     */
 
 };
 
+
 SwapLines.prototype.initSource = function(source){
 
     var self = this,
-        sourceDup, 
+        sourceDup,
         bbox = this.sourceBbox,
         arcHeight = this.world.arcHeight,
         h,
@@ -74,6 +69,7 @@ SwapLines.prototype.initSource = function(source){
     this.sourceLine = new SourceLine(sourceDup);
     this.sourceLine.addEventListener('rendered', this.handleRendered.bind(this));
     this.sourceLine.render(this.rtl, h, v1, v2, this.targetBbox.top);
+
     this.sourceLine.addEventListener('progress', this.handleProgress.bind(this));
     this.sourceLine.addEventListener('complete', this.handleComplete.bind(this));
     this.sourceLine.addEventListener('ground-letter', this.handleGroundLetter.bind(this));
@@ -101,7 +97,7 @@ SwapLines.prototype.handleProgress = function(e){
         difference = this.targetBbox.width-this.sourceBbox.width,
         sourceText = this.sourceLine.wordEl.textContent;
 
-    // If rtl and difference is minus (i.e. we're creating space for the 
+    // If rtl and difference is minus (i.e. we're creating space for the
     // incoming word) then animation needs to be complete by the time
     // the first letter lands.
     this.targetLine.fillSpace((0.5+difference)|0, (0.5+timeRemaining/2)|0, sourceText);
@@ -111,11 +107,16 @@ SwapLines.prototype.handleProgress = function(e){
 };
 
 SwapLines.prototype.handleComplete = function(e){
-    var sourceDup = this.sourceLine.wordEl;
+    var sourceDup = this.sourceLine.wordEl,
+        capitalisedString = this.getCapitalisedString();
+
     sourceDup.parentNode.removeChild(sourceDup);
-    this.targetLine.clean(sourceDup.textContent);
+
+    this.targetLine.clean(sourceDup.textContent, capitalisedString);
+
     this.source.classList.remove('source');
     this.source.classList.add('was-source');
+
     this.dispatchEvent({type:'complete'});
 };
 
@@ -124,5 +125,23 @@ SwapLines.prototype.handleGroundLetter = function(e){
     this.targetLine.showLetter(letterEl.textContent, this.rtl);
     letterEl.classList.add('is-grounded');
 };
+
+SwapLines.prototype.getCapitalisedString = function(){
+
+    var replacement = this.source.textContent,
+        letter, source = this.source, target = this.target,
+        firstLetterSource = source.textContent.substr(0,1),
+        firstLetterTarget = target.textContent.substr(0,1),
+        isSourceCapitalised = firstLetterSource === firstLetterSource.toUpperCase(),
+        isTargetCapitalised = firstLetterTarget === firstLetterTarget.toUpperCase();
+
+    if(isSourceCapitalised !== isTargetCapitalised){
+        letter = source.textContent.substr(0,1);
+        replacement = (isSourceCapitalised) ? letter.toLowerCase() : letter.toUpperCase();
+        replacement += source.textContent.substr(1)
+    }
+
+    return replacement;
+}
 
 EventDispatcher.prototype.apply( SwapLines.prototype );

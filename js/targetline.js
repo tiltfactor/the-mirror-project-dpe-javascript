@@ -6,16 +6,9 @@ function TargetLine(target, rtl){
         line = target.parentNode,
         complete = function(){
             self.dispatchEvent({type:'complete'});
-        },
-            
-        removeRemainderSurround = function(){
-            // Remove the span surrounding (unwrap) the post-target/remaining text.
-            while(target.nextSibling.firstChild){
-                target.parentNode.appendChild(target.nextSibling.firstChild);
-            }
-            target.parentNode.removeChild(target.nextSibling);
         };
-        
+
+
     // Line, target and target letter classes.
     line.classList.add('is-swapping');
     target.classList.add('target');
@@ -27,7 +20,7 @@ function TargetLine(target, rtl){
         var tmpNodeList = target.querySelectorAll('.is-hidden'),
             targetLetterEls = [];
 
-        // Need and Array instead of NodeList for reversal.
+        // Need an Array instead of NodeList for reversal.
         [].forEach.call(tmpNodeList, function(el){
             targetLetterEls.push(el);
         });
@@ -46,12 +39,8 @@ function TargetLine(target, rtl){
         });
     };
 
-    /*
-     * Once target has been fully replaced, we remove extraneous surrounding 
-     * elements from letters.
-     * TODO - Deal with capitalisation change here.
-     */
-    this.clean = function(sourceStr, replacementStr){
+    this.removeExtraMarkup = function(sourceStr){
+
         // Remove content of target (letters surrounded by spans)...
         while (target.firstChild) {
             target.removeChild(target.firstChild);
@@ -62,15 +51,53 @@ function TargetLine(target, rtl){
         line.classList.remove('is-swapping');
         target.classList.remove('target');
         target.classList.add('was-target');
+
     };
 
     /*
-     * When the original target word has faded insert new source word here
-     * so that each letter can be revealed as it lands 
+     * Once target has been fully replaced, we change capitlisation if necessary
+     * and then remove extraneous surrounding elements from letters.
      */
-    this.swap = function(sourceStr){
-        var lSpan, l; 
+    this.clean = function(sourceStr, replacementStr){
 
+        // If capitalisation change is needed then do this first,
+        // otherwise remove extra markip immediately.
+        if(sourceStr !== replacementStr){
+            var firstLetterDup = Utils.duplicate(target.firstChild);
+            firstLetterDup.textContent = replacementStr.substr(0, 1);
+            firstLetterDup.style.opacity = 0;
+            target.insertBefore(firstLetterDup, target.childNodes[1]);
+            target.firstChild.style.position = 'absolute';
+            TweenLite.to(firstLetterDup, 0.25, { opacity: 1, delay: 0.25, onComplete: this.removeExtraMarkup, onCompleteParams:[replacementStr] });
+            TweenLite.to(target.firstChild, 0.25, { opacity: 0, onComplete: function(){
+                // Remove this letter once is has disappeared.
+                // this = TweenLite
+                this.target.parentNode.removeChild(this.target);
+            }});
+        } else {
+            this.removeExtraMarkup(sourceStr);
+        }
+    };
+
+    /*
+     * Remove wrapper around post target words (that were previsouly used to
+     * animate multiple words).
+     */
+    this.removePostTargetSurround = function(){
+        // Remove the span surrounding (unwrap) the post-target/remaining text.
+        while(target.nextSibling.firstChild){
+            target.parentNode.appendChild(target.nextSibling.firstChild);
+        }
+        target.parentNode.removeChild(target.nextSibling);
+    };
+
+    /*
+     * When the original target word has faded AND the words to the right of
+     * the target have finished animating insert new source word letter by letter
+     * so that each one can be revealed as it lands.
+     */
+    this.insertSourceLetters = function(sourceStr){
+        var lSpan, l;
 
         while (target.firstChild) {
             target.removeChild(target.firstChild);
@@ -78,14 +105,13 @@ function TargetLine(target, rtl){
         for (var i = 0, len = sourceStr.length; i < len; i++) {
             lSpan = document.createElement('span');
             lSpan.classList.add('target__letter--new', 'is-hidden');
-            l = document.createTextNode(sourceStr[i]); 
+            l = document.createTextNode(sourceStr[i]);
             // Used as selector later.
             lSpan.dataset['letter'] = sourceStr[i];
             lSpan.appendChild(l);
             target.appendChild(lSpan);
         }
-        removeRemainderSurround();
-        target.classList.remove('was-source');
+
     };
 
     /*
@@ -94,7 +120,7 @@ function TargetLine(target, rtl){
         // Replace with word in flight.
         replaceTarget(sourceStr);
         target.style.opacity = 1;
-        
+
         // If word is being replaced then hide now...
         if( sourceStr !== replacementStr){
             // ... and wait for transition to end.
@@ -141,7 +167,7 @@ function TargetLine(target, rtl){
             nodesToRight = [],
             found = false;
 
-        // Surround remaining words with span  for animation 
+        // Surround remaining words with span  for animation
         // by duplicating textnodes within.
         var span = document.createElement('span');
         for(var i = 0, len = childNodes.length; i < len; i++){
@@ -161,16 +187,18 @@ function TargetLine(target, rtl){
         span.style.display = "inline-block";
 
         // Animate
+        var completeFn = this.targetSpacingComplete;
         setTimeout(function(){
             // debugger;
-            move(span)
-                .translate(0-difference, 0)
-                .duration(duration)
-                .end(function(){
-                    complete()
-                    self.swap(replacement);
-                });
+            TweenLite.to(span, duration/1000, { x: 0-difference, onComplete: self.targetSpacingComplete, onCompleteScope: self, onCompleteParams:[replacement] });
         }, 1);
+    };
+
+    this.targetSpacingComplete = function(replacement){
+        this.insertSourceLetters(replacement);
+        this.removePostTargetSurround();
+        target.classList.remove('was-source');
+
     };
 }
 
