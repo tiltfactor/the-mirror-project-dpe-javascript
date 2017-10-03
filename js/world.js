@@ -41,7 +41,7 @@ var World = (function(){
             // Resetting lines for next pass/class.
             var lines = document.querySelectorAll('.world .line');
             [].forEach.call(lines, function(line){
-               	line.classList.remove('was-target', 'is-swapping');
+                line.classList.remove('was-target', 'is-swapping');
             });
 
             // Are there any more classes?
