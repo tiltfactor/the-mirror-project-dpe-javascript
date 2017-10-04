@@ -11,6 +11,7 @@ world.addEventListener('complete', function(){
 });
 
 var lr = new LoadRender();
+/*
 lr.addEventListener('rendered', function(data){
     // Utils.setHistory(data.files);
     var startBtn = document.querySelector('.world-start button');
@@ -23,6 +24,15 @@ lr.addEventListener('rendered', function(data){
         Utils.setActiveCb(world.wordClasses[0]);
     });
 });
+*/
+lr.addEventListener('rendered', function() {
+    setTimeout(function() {
+        world.start();
+        Utils.hideUnusedCb(world.allWordClasses.diff(world.wordClasses));
+        Utils.setActiveCb(world.wordClasses[0]);
+    }, options.startDelay);
+});
+
 
 // lr.force('./data/dickinson/OneSeries-VIII.xml', './data/flanagan/On_Being_From_.xml');
 // lr.loadLists('./data/test/content.json', './data/test/content.json');

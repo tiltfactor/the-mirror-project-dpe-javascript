@@ -46,11 +46,13 @@ function LoadRender(){
             world.sequence = data;
             world.seqIndex = 0;
             world.addEventListener('complete', function() {
-                world.seqIndex += 1;
-                if (world.seqIndex >= world.sequence.length) {
-                    world.seqIndex = 0;
-                }
-                start(data[world.seqIndex][0], data[world.seqIndex][1]);
+                setTimeout(function() {
+                    world.seqIndex += 1;
+                    if (world.seqIndex >= world.sequence.length) {
+                        world.seqIndex = 0;
+                    }
+                    start(data[world.seqIndex][0], data[world.seqIndex][1]);
+                }, options.endDelay);
             });
             start(data[world.seqIndex][0], data[world.seqIndex][1]);
         }, function(err) { console.error(err); });
@@ -162,6 +164,7 @@ function LoadRender(){
             rendered.push(true);
             if(rendered.length >= 2){
                 self.dispatchEvent({type:'rendered'});
+                document.querySelectorAll('.poem-container p').forEach(Utils.centreColumnContent);
             }
         },
         function(err){console.error("Couldn't load" + err)});
@@ -173,6 +176,7 @@ function LoadRender(){
             rendered.push(true);
             if(rendered.length >= 2){
                 self.dispatchEvent({type:'rendered', files: [file1, file2]});
+                document.querySelectorAll('.poem-container p').forEach(Utils.centreColumnContent);
             }
         },
         function(err){console.error("Couldn't load" + err)});
@@ -196,9 +200,9 @@ function LoadRender(){
             renderLineTags(lineEl, tags);
         });
 
-        setTimeout(function(){
-            Utils.centreColumnContent(container);
-        }, 500);
+//        setTimeout(function(){
+//            Utils.centreColumnContent(container);
+//        }, 500);
 
         return container;
     }
