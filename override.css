@@ -1,0 +1,19 @@
+.choose {
+    display: none;
+}
+
+.world {
+    display: block;
+}
+
+.controls {
+    display: none;
+}
+
+.world-start {
+    display: none;
+}
+
+.poem-container {
+    margin-top: 50px;
+}
