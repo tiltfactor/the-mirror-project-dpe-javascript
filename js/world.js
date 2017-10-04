@@ -27,6 +27,9 @@ var World = (function(){
         this.allWordClasses = ['NN', 'DT', 'IN', 'NNP', 'JJ', 'NNS', 'PRP', 'VBZ', 'RB', 'VBP', 'VB', 'CC', 'PRP$', 'TO', 'VBD', 'VBN', 'VBG', 'WRB', 'MD', 'CD', 'WP', 'EX', 'RP', 'JJR', 'WDT', 'JJS', 'RBR', 'WP$'];
         this.wordClasses = ['NN'];
 
+        this.sequence = [];
+        this.seqIndex = 0;
+
         this.setWordClass = function(target){
             var wc = target.id;
             if(target.checked === false){

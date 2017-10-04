@@ -25,9 +25,9 @@ lr.addEventListener('rendered', function(data){
 });
 
 // lr.force('./data/dickinson/OneSeries-VIII.xml', './data/flanagan/On_Being_From_.xml');
-lr.loadLists('./data/flanagan/content.json', './data/dickinson/content.json');
-// lr.loadSequence('./data/sequence.json');
-lr.loadAsync();
+// lr.loadLists('./data/test/content.json', './data/test/content.json');
+lr.loadSequence('./data/sequence.json');
+// lr.loadAsync();
 
 /*
  * CONTROLS and SETTINGS

@@ -6,8 +6,8 @@ function LoadRender(){
         selectedFiles = [];
 
     this.force = function(file1, file2){
-        file1 = {fullpath:file1 || 'data/flanagan/Insist__________repeat_.xml'};
-        file2 = {fullpath:file2 || 'data/dickinson/OneSeries-IX.xml'};
+        file1 = {path:file1 || 'data/flanagan/Insist__________repeat_.xml'};
+        file2 = {path:file2 || 'data/dickinson/OneSeries-IX.xml'};
         start(file1, file2);
     };
 
@@ -38,7 +38,23 @@ function LoadRender(){
         },
         function(err){console.error("Couldn't load" + err)});
 
-    }
+    };
+
+    this.loadSequence = function(seqFile) {
+        load(seqFile, true, function(data) {
+            var world = World.getInstance();
+            world.sequence = data;
+            world.seqIndex = 0;
+            world.addEventListener('complete', function() {
+                world.seqIndex += 1;
+                if (world.seqIndex >= world.sequence.length) {
+                    world.seqIndex = 0;
+                }
+                start(data[world.seqIndex][0], data[world.seqIndex][1]);
+            });
+            start(data[world.seqIndex][0], data[world.seqIndex][1]);
+        }, function(err) { console.error(err); });
+    };
 
     function load(path, isJSON, success, error){
         var xhr = new XMLHttpRequest();
@@ -77,7 +93,7 @@ function LoadRender(){
 
             cb.type = "checkbox";
             cb.addEventListener("change", cbChangeHandler);
-            cb.dataset.fullpath = file.path;
+            cb.dataset.path = file.path;
             cb.dataset.directory = file.directory;
             cb.dataset.filename = file.filename;
 
@@ -139,8 +155,8 @@ function LoadRender(){
         document.querySelector('.choose').style.display = 'none';
         document.querySelector('.world').style.display = 'block';
 
-        load(file1.fullpath, false, function(data){
-            var fileName = file1.fullpath.split('/').pop();
+        load(file1.path, false, function(data){
+            var fileName = file1.path.split('/').pop();
             self.poem1 = renderPoem(data.firstChild, true);
             self.poem1.setAttribute('data-filename', fileName.replace('.xml', ''));
             rendered.push(true);
@@ -150,8 +166,8 @@ function LoadRender(){
         },
         function(err){console.error("Couldn't load" + err)});
 
-        load(file2.fullpath, false, function(data){
-            var fileName = file2.fullpath.split('/').pop();
+        load(file2.path, false, function(data){
+            var fileName = file2.path.split('/').pop();
             self.poem2 = renderPoem(data.firstChild, false);
             self.poem2.setAttribute('data-filename', fileName.replace('.xml', ''));
             rendered.push(true);

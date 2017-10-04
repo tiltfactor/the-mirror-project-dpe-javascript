@@ -122,9 +122,9 @@ Utils.initCheckboxes = function(all, selected, container, callback){
 };
 
 Utils.setHistory = function(files){
-    log(encodeURIComponent(files[0].fullpath));
+    log(encodeURIComponent(files[0].path));
     var stateObj = files;
-    history.pushState(stateObj, "", encodeURIComponent(files[0].fullpath)+'/'+encodeURIComponent(files[1].fullpath));
+    history.pushState(stateObj, "", encodeURIComponent(files[0].path)+'/'+encodeURIComponent(files[1].path));
 };
 
 Utils.hideUnusedCb = function(activeClasses){
