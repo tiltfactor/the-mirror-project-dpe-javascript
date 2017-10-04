@@ -19,6 +19,12 @@ function PhysicsObject(el, options){
 
 PhysicsObject.prototype.render = function(Action){
 
+    // If this object has no height or no width, do not try to render it
+    if (this.boundBox.height <= 0 || this.boundBox.width <= 0) {
+        this.dispatchEvent({type:'rendered'});
+        return;
+    }
+
     var self = this;
 
     var createCanvasHTMLCopy = function(el){
