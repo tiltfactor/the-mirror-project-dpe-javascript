@@ -15,6 +15,8 @@ var World = (function(){
             count = 0,
             animContext;
 
+        var active = false;
+
         // Options.
         this.g = options.g || 0.035;
         this.arcHeight = options.arcHeight || 200;
@@ -59,6 +61,7 @@ var World = (function(){
             } else {
                 log('Fin');
                 // No? Then we stop.
+                active = false;
                 this.dispatchEvent({type:'complete'});
             }
         };
@@ -124,6 +127,11 @@ var World = (function(){
         */
 
         this.animate = function() {
+            if (!active) {
+                count = 0;
+                return;
+            }
+
             // FPS calc.
             var thisFrameTime = (thisLoop=new Date) - lastLoop;
             this.frameTime += (thisFrameTime - this.frameTime) / 25;
@@ -167,6 +175,8 @@ var World = (function(){
             worldEl.style.display = 'block';
             // Add mode to body.
             document.body.classList.add(options.animationMode.split(":")[0]);
+
+            active = true;
 
             this.next();
             this.animate();
