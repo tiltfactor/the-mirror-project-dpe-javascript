@@ -26,11 +26,12 @@ lr.addEventListener('rendered', function(data){
 });
 */
 lr.addEventListener('rendered', function() {
+    TweenLite.to(document.querySelector('.world'), options.startFade, { opacity : 1 });
     setTimeout(function() {
         world.start();
         Utils.hideUnusedCb(world.allWordClasses.diff(world.wordClasses));
         Utils.setActiveCb(world.wordClasses[0]);
-    }, options.startDelay);
+    }, (options.startFade + options.startDelay) * 1000);
 });
 
 

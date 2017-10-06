@@ -51,8 +51,12 @@ function LoadRender(){
                     if (world.seqIndex >= world.sequence.length) {
                         world.seqIndex = 0;
                     }
-                    start(data[world.seqIndex][0], data[world.seqIndex][1]);
-                }, options.endDelay);
+                    TweenLite.to(document.querySelector('.world'), options.endFade, {
+                        opacity : 0,
+                        onComplete: start,
+                        onCompleteParams: data[world.seqIndex]
+                    });
+                }, options.endDelay * 1000);
             });
             start(data[world.seqIndex][0], data[world.seqIndex][1]);
         }, function(err) { console.error(err); });
