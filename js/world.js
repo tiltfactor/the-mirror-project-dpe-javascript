@@ -177,6 +177,7 @@ var World = (function(){
             document.body.classList.add(options.animationMode.split(":")[0]);
 
             active = true;
+            this.wordClassIndex = 0;
 
             this.next();
             this.animate();
