@@ -10,5 +10,17 @@
       "filename" : "poem1.xml",
       "directory" : "./data/flanagan-fr"
     }
+  ],
+  [
+    {
+      "path" : "data/maar-fr/poem2.xml",
+      "filename" : "poem2.xml",
+      "directory" : "./data/maar-fr"
+    },
+    {
+      "path" : "data/flanagan-fr/poem2.xml",
+      "filename" : "poem2.xml",
+      "directory" : "./data/flanagan-fr"
+    }
   ]
 ]
