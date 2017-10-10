@@ -26,8 +26,13 @@ var World = (function(){
         this.animList = [];
 
         this.wordClassIndex = 0;
-        this.allWordClasses = ['NN', 'DT', 'IN', 'NNP', 'JJ', 'NNS', 'PRP', 'VBZ', 'RB', 'VBP', 'VB', 'CC', 'PRP$', 'TO', 'VBD', 'VBN', 'VBG', 'WRB', 'MD', 'CD', 'WP', 'EX', 'RP', 'JJR', 'WDT', 'JJS', 'RBR', 'WP$'];
-        this.wordClasses = ['NN'];
+        this.allWordClasses = ["noun-masc-sing", "noun-fem-sing",
+                               "noun-masc-sing-article", "noun-fem-sing-article",
+                               "noun-masc-plur", "noun-fem-plur",
+                               "noun-masc-plur-article", "noun-fem-plur-article",
+                               "adj-masc-sing", "adj-fem-sing",
+                               "adj-masc-plur", "adj-fem-plur"];
+        this.wordClasses = this.allWordClasses;
 
         this.sequence = [];
         this.seqIndex = 0;

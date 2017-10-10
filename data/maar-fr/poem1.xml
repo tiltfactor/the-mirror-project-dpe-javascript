@@ -1,0 +1,53 @@
+<output>
+  <line>
+    <tags>
+      <tag class="noun-fem-sing-article">l'âme</tag>
+      <tag class="adj-fem-sing">calme</tag>
+      <tag class="noun-masc-sing-article">l'exil</tag>
+      <tag class="adj-masc-sing">suspendu</tag>
+    </tags>
+    <original><![CDATA[l'âme qui pleurait encore hier est calme - c'est l'exil suspendu]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="noun-masc-sing">pays</tag>
+      <tag class="noun-masc-sing">art</tag>
+      <tag class="noun-fem-sing">nature</tag>
+    </tags>
+    <original><![CDATA[un pays sans art seulement nature]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="noun-fem-sing">mémoire</tag>
+      <tag class="noun-masc-sing">magnolia</tag>
+      <tag class="adj-fem-sing">pure</tag>
+      <tag class="noun-masc-sing">point</tag>
+    </tags>
+    <original><![CDATA[mémoire magnolia pure à ce point]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="adj-fem-sing">aveugle</tag>
+    </tags>
+    <original><![CDATA[je suis aveugle]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="noun-masc-sing">peu</tag>
+      <tag class="noun-fem-sing">terre</tag>
+    </tags>
+    <original><![CDATA[et fait d'un peu de terre]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="noun-masc-sing">regard</tag>
+    </tags>
+    <original><![CDATA[mais ton regard ne me quitte jamais]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="noun-masc-sing">ange</tag>
+    </tags>
+    <original><![CDATA[et ton ange me garde]]></original>
+  </line>
+</output>
