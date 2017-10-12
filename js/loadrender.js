@@ -42,23 +42,8 @@ function LoadRender(){
 
     this.loadSequence = function(seqFile) {
         load(seqFile, true, function(data) {
-            var world = World.getInstance();
-            world.sequence = data;
-            world.seqIndex = 0;
-            world.addEventListener('complete', function() {
-                setTimeout(function() {
-                    world.seqIndex += 1;
-                    if (world.seqIndex >= world.sequence.length) {
-                        world.seqIndex = 0;
-                    }
-                    TweenLite.to(document.querySelector('.world'), options.endFade, {
-                        opacity : 0,
-                        onComplete: start,
-                        onCompleteParams: data[world.seqIndex]
-                    });
-                }, options.endDelay * 1000);
-            });
-            start(data[world.seqIndex][0], data[world.seqIndex][1]);
+            var evt = new CustomEvent('sequence-loaded', { detail : { sequence : data } });
+            self.dispatchEvent(evt);
         }, function(err) { console.error(err); });
     };
 
@@ -151,10 +136,10 @@ function LoadRender(){
     }
 
     function startHandler(e){
-        start(selectedFiles[0].dataset, selectedFiles[1].dataset);
+        self.start(selectedFiles[0].dataset, selectedFiles[1].dataset);
     }
 
-    function start(file1, file2){
+    this.start = function(file1, file2){
 
         var rendered = [];
 

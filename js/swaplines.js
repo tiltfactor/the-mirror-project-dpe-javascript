@@ -1,10 +1,10 @@
 "use strict";
 
-function SwapLines(source, target){
+function SwapLines(world, source, target){
 
     var self = this;
 
-    this.world = World.getInstance();
+    this.world = world;
     this.source = source;
     this.target = target;
     this.sourceBbox = source.getBoundingClientRect();
@@ -66,7 +66,7 @@ SwapLines.prototype.initSource = function(source){
             + bbox.top + "px, 0)";
     });
 
-    this.sourceLine = new SourceLine(sourceDup);
+    this.sourceLine = new SourceLine(this.world, sourceDup);
     this.sourceLine.addEventListener('rendered', this.handleRendered.bind(this));
     this.sourceLine.render(this.rtl, h, v1, v2, this.targetBbox.top);
 
@@ -92,7 +92,7 @@ SwapLines.prototype.initTarget = function(target){
 SwapLines.prototype.handleProgress = function(e){
     // targetLineAnimations(e.framesRemaining);
     var framesRemaining = e.framesRemaining,
-        fps = (1000/World.getInstance().frameTime).toFixed(1),
+        fps = (1000/this.world.frameTime).toFixed(1),
         timeRemaining = (framesRemaining/fps)*1000,
         difference = this.targetBbox.width-this.sourceBbox.width,
         sourceText = this.sourceLine.wordEl.textContent;

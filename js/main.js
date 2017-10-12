@@ -1,6 +1,6 @@
 "use strict";
 
-var world = World.getInstance(options.world);
+var world = new World(options.world);
 world.addEventListener('classchange', function(data){
     Utils.setActiveCb(data.newClass);
 });
@@ -25,6 +25,25 @@ lr.addEventListener('rendered', function(data){
     });
 });
 */
+lr.addEventListener('sequence-loaded', function(evt) {
+    world.sequence = evt.detail.sequence;
+    world.seqIndex = 0;
+    world.addEventListener('complete', function() {
+        setTimeout(function() {
+            world.seqIndex += 1;
+            if (world.seqIndex >= world.sequence.length) {
+                world.seqIndex = 0;
+            }
+            TweenLite.to(document.querySelector('.world'), options.endFade, {
+                opacity : 0,
+                onComplete: start,
+                onCompleteParams: world.sequence[world.seqIndex]
+            });
+        }, options.endDelay * 1000);
+    });
+    lr.start(world.sequence[world.seqIndex][0], world.sequence[world.seqIndex][1]);
+});
+
 lr.addEventListener('rendered', function() {
     TweenLite.to(document.querySelector('.world'), options.startFade, { opacity : 1 });
     setTimeout(function() {
