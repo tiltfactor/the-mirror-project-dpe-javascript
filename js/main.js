@@ -36,15 +36,24 @@ lr.addEventListener('sequence-loaded', function(evt) {
             }
             TweenLite.to(document.querySelector('.world'), options.endFade, {
                 opacity : 0,
-                onComplete: start,
+                onComplete: lr.loadPoemSet,
                 onCompleteParams: world.sequence[world.seqIndex]
             });
         }, options.endDelay * 1000);
     });
-    lr.start(world.sequence[world.seqIndex][0], world.sequence[world.seqIndex][1]);
+
+    lr.loadPoemSet(world.sequence[world.seqIndex][0], world.sequence[world.seqIndex][1]);
 });
 
-lr.addEventListener('rendered', function() {
+var numLoaded = 0;
+lr.addEventListener('poem-loaded', function() {
+    numLoaded += 1;
+    if (numLoaded < 2) {
+        return;
+    }
+    numLoaded = 0;
+
+    document.querySelectorAll('.poem-container p').forEach(Utils.centreColumnContent);
     TweenLite.to(document.querySelector('.world'), options.startFade, { opacity : 1 });
     setTimeout(function() {
         world.start();

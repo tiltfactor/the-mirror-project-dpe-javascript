@@ -136,45 +136,26 @@ function LoadRender(){
     }
 
     function startHandler(e){
-        self.start(selectedFiles[0].dataset, selectedFiles[1].dataset);
+        self.loadPoemSet(selectedFiles[0].dataset, selectedFiles[1].dataset);
     }
 
-    this.start = function(file1, file2){
-
-        var rendered = [];
-
-        document.querySelector('.choose').style.display = 'none';
-        document.querySelector('.world').style.display = 'block';
-
-        load(file1.path, false, function(data){
-            var fileName = file1.path.split('/').pop();
-            self.poem1 = renderPoem(data.firstChild, true);
-            self.poem1.setAttribute('data-filename', fileName.replace('.xml', ''));
-            rendered.push(true);
-            if(rendered.length >= 2){
-                self.dispatchEvent({type:'rendered'});
-                document.querySelectorAll('.poem-container p').forEach(Utils.centreColumnContent);
-            }
-        },
-        function(err){console.error("Couldn't load" + err)});
-
-        load(file2.path, false, function(data){
-            var fileName = file2.path.split('/').pop();
-            self.poem2 = renderPoem(data.firstChild, false);
-            self.poem2.setAttribute('data-filename', fileName.replace('.xml', ''));
-            rendered.push(true);
-            if(rendered.length >= 2){
-                self.dispatchEvent({type:'rendered', files: [file1, file2]});
-                document.querySelectorAll('.poem-container p').forEach(Utils.centreColumnContent);
-            }
-        },
-        function(err){console.error("Couldn't load" + err)});
+    this.loadPoemSet = function(file1, file2) {
+        loadPoem(file1, document.querySelector('.poem1'));
+        loadPoem(file2, document.querySelector('.poem2'));
     }
 
-    function renderPoem(output, isLeft){
+    function loadPoem(file, container){
+        load(file.path, false, function(data){
+            var fileName = file.path.split('/').pop();
+            renderPoem(data.firstChild, container);
+            container.setAttribute('data-filename', fileName.replace('.xml', ''));
+            self.dispatchEvent({type:'poem-loaded'});
+        }, function(err){ console.error("Couldn't load" + err); });
+    }
 
-        var container = document.querySelector((isLeft)?'.poem1':'.poem2'),
-            lines = Utils.getChildren(output.childNodes),
+    function renderPoem(data, container){
+
+        var lines = Utils.getChildren(data.childNodes),
             lineEl, original, tags;
 
         container.innerHTML = "";
