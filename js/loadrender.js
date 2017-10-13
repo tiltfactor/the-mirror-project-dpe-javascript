@@ -82,10 +82,6 @@ function LoadRender(){
 
         docfrag.appendChild(ul);
         el.appendChild(docfrag);
-
-        setTimeout(function(){
-            Utils.centreColumnContent(ul);
-        }, 500);
     };
 
     function cbChangeHandler(e){

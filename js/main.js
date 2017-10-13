@@ -40,7 +40,6 @@ lr.addEventListener('poem-loaded', function() {
     }
     numLoaded = 0;
 
-    document.querySelectorAll('.poem-container p').forEach(Utils.centreColumnContent);
     TweenLite.to(document.querySelector('.world'), options.startFade, { opacity : 1 });
     setTimeout(function() {
         world.start();

@@ -4,6 +4,7 @@
 
 .world {
     display: block;
+    opacity : 0;
 }
 
 .controls {
@@ -16,4 +17,12 @@
 
 .poem-container {
     margin-top: 200px;
+}
+
+.poem1, .poem2 {
+    width: 75%;
+}
+
+.line {
+    white-space: pre-wrap;
 }
