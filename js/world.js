@@ -116,13 +116,6 @@ function World( options )  {
 
     };
 
-
-    /*
-    setInterval(function(){
-        log((1000/frameTime).toFixed(1));
-    },250);
-    */
-
     this.animate = function() {
         if (!active) {
             count = 0;

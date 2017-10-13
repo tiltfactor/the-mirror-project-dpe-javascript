@@ -5,29 +5,19 @@ function LoadRender(){
     var self = this,
         selectedFiles = [];
 
-    this.force = function(file1, file2){
-        file1 = {path:file1 || 'data/flanagan/Insist__________repeat_.xml'};
-        file2 = {path:file2 || 'data/dickinson/OneSeries-IX.xml'};
-        start(file1, file2);
-    };
-
     this.loadAsync = function(){
         var files = [
             'data/pos_tags.json'
-            ];
+        ];
 
         files.forEach(function(path){
             load(path, true, function(data){
                 window.options.postags = data;
-
             });
         });
-
-
     };
 
     this.loadLists = function(listFile1, listFile2){
-
         load(listFile1, true, function(data){
             renderFiles(data, document.querySelector('.choose .left'));
         },
@@ -37,7 +27,6 @@ function LoadRender(){
             renderFiles(data, document.querySelector('.choose .right'));
         },
         function(err){console.error("Couldn't load" + err)});
-
     };
 
     this.loadSequence = function(seqFile) {
@@ -170,10 +159,6 @@ function LoadRender(){
             renderLineTags(lineEl, tags);
         });
 
-//        setTimeout(function(){
-//            Utils.centreColumnContent(container);
-//        }, 500);
-
         return container;
     }
 
@@ -185,21 +170,11 @@ function LoadRender(){
             var replacement = '<span data-tag="'+tag.getAttribute('class')+'">$&</span>';
             var startStr = lineStr.substr(0, lineStr.length+position); // from start to position.
             var searchStr = lineStr.substr(position); // from position to end.
-            //console.log(searchStr, position, lineStr.length+position);
 
             var index = searchStr.indexOf(tag.textContent);
             lineStr = startStr + searchStr.replace(tag.textContent, replacement);
 
             position= 0-(searchStr.length-(index+tag.textContent.length));
-
-            /*
-            console.log("<====");
-            console.log(lineStr);
-            console.log(startStr, 0, lineStr.length+position);
-            console.log(searchStr, position);
-            console.log("====>");
-            */
-
         });
 
         lineEl.innerHTML = lineStr;

@@ -11,20 +11,7 @@ world.addEventListener('complete', function(){
 });
 
 var lr = new LoadRender();
-/*
-lr.addEventListener('rendered', function(data){
-    // Utils.setHistory(data.files);
-    var startBtn = document.querySelector('.world-start button');
-    startBtn.disabled = false;
-    startBtn.addEventListener('click', function(e){
-        e.currentTarget.disabled = 'disabled';
-        world.start();
-        // log(world.allWordClasses.diff(world.wordClasses));
-        Utils.hideUnusedCb(world.allWordClasses.diff(world.wordClasses));
-        Utils.setActiveCb(world.wordClasses[0]);
-    });
-});
-*/
+
 lr.addEventListener('sequence-loaded', function(evt) {
     world.sequence = evt.detail.sequence;
     world.seqIndex = 0;
@@ -62,8 +49,6 @@ lr.addEventListener('poem-loaded', function() {
     }, (options.startFade + options.startDelay) * 1000);
 });
 
-
-// lr.force('./data/dickinson/OneSeries-VIII.xml', './data/flanagan/On_Being_From_.xml');
 // lr.loadLists('./data/test/content.json', './data/test/content.json');
 lr.loadSequence('./data/sequence.json');
 // lr.loadAsync();
