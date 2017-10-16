@@ -17,18 +17,20 @@ world.addEventListener('complete', function(){
 });
 */
 
+function loadNextSet() {
+    poemIndex += 1;
+    if (poemIndex >= poemSequence.length) {
+        poemIndex = 0;
+    }
+    lr.loadPoemSet(poemSequence[poemIndex][0], poemSequence[poemIndex][1]);
+}
+
 world.addEventListener('complete', function() {
-    setTimeout(function() {
-        world.seqIndex += 1;
-        if (poemIndex >= poemSequence.length) {
-            poemIndex = 0;
-        }
-        TweenLite.to(document.querySelector('.world'), options.endFade, {
-            opacity : 0,
-            onComplete: lr.loadPoemSet,
-            onCompleteParams: poemSequence[poemIndex]
-        });
-    }, options.endDelay * 1000);
+    TweenLite.to(document.querySelector('.world'), options.endFade, {
+        opacity : 0,
+        delay : options.endDelay,
+        onComplete: loadNextSet
+    });
 });
 
 lr.addEventListener('sequence-loaded', function(evt) {
@@ -53,6 +55,7 @@ lr.addEventListener('poem-loaded', function() {
         Utils.setActiveCb(world.wordClasses[0]);
     }, (options.startFade + options.startDelay) * 1000);
 });
+
 
 // lr.loadLists('./data/test/content.json', './data/test/content.json');
 lr.loadSequence('./data/sequence.json');
