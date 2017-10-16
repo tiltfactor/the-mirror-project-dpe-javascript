@@ -1,6 +1,12 @@
 "use strict";
 
-var world = new World(options.world);
+var world = new World(options.world),
+    poemSequence = [],
+    poemIndex = 0,
+    lr = new LoadRender();
+
+
+/*
 world.addEventListener('classchange', function(data){
     Utils.setActiveCb(data.newClass);
 });
@@ -9,27 +15,27 @@ world.addEventListener('complete', function(){
     var controlsPDF = document.querySelector('.controls--pdf');
     controlsPDF.classList.add('is-active');
 });
+*/
 
-var lr = new LoadRender();
+world.addEventListener('complete', function() {
+    setTimeout(function() {
+        world.seqIndex += 1;
+        if (poemIndex >= poemSequence.length) {
+            poemIndex = 0;
+        }
+        TweenLite.to(document.querySelector('.world'), options.endFade, {
+            opacity : 0,
+            onComplete: lr.loadPoemSet,
+            onCompleteParams: poemSequence[poemIndex]
+        });
+    }, options.endDelay * 1000);
+});
 
 lr.addEventListener('sequence-loaded', function(evt) {
-    world.sequence = evt.detail.sequence;
-    world.seqIndex = 0;
-    world.addEventListener('complete', function() {
-        setTimeout(function() {
-            world.seqIndex += 1;
-            if (world.seqIndex >= world.sequence.length) {
-                world.seqIndex = 0;
-            }
-            TweenLite.to(document.querySelector('.world'), options.endFade, {
-                opacity : 0,
-                onComplete: lr.loadPoemSet,
-                onCompleteParams: world.sequence[world.seqIndex]
-            });
-        }, options.endDelay * 1000);
-    });
+    poemSequence = evt.detail.sequence;
+    poemIndex = 0;
 
-    lr.loadPoemSet(world.sequence[world.seqIndex][0], world.sequence[world.seqIndex][1]);
+    lr.loadPoemSet(poemSequence[poemIndex][0], poemSequence[poemIndex][1]);
 });
 
 var numLoaded = 0;
