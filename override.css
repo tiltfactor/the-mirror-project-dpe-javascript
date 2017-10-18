@@ -19,10 +19,40 @@
     margin-top: 200px;
 }
 
+body {
+    width: 90%;
+}
+
 .poem1, .poem2 {
     width: 75%;
 }
 
 .line {
     white-space: pre-wrap;
+}
+
+#settings-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+
+#settings-panel {
+    display: none;
+    position: fixed;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid black;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    width: 250px;
+    padding: 10px;
+}
+
+#settings-panel input[type='range'] {
+    width: 100%;
 }

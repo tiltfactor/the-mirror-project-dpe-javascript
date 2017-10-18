@@ -80,6 +80,19 @@
         </div>
     </section>
 
+    <form id="settings-panel">
+        <label for="font-size-slider">Font size:</label>
+        <output id="font-size-output" for="font-size-slider"></output>
+        <input id="font-size-slider" type="range"/>
+        <label for="poem-width-slider">Poem width</label>
+        <output id="poem-width-output" for="poem-width-slider"></output>
+        <input id="poem-width-slider" type="range"/>
+        <label for="book-width-slider">Book width</label>
+        <output id="book-width-output" for="book-width-slider"></output>
+        <input id="book-width-slider" type="range"/>
+    </form>
+    <button id="settings-button">Settings</button>
+
     <script>
         window.options = {
             doCorrectCaps : false,
@@ -112,6 +125,7 @@
     <script src="js/utils.js"></script>
     <script src="js/world.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/controls.js"></script>
 
 </body>
 </html>
