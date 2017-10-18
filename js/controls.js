@@ -13,6 +13,9 @@ var settingsButton = document.getElementById('settings-button'),
 settingsButton.addEventListener('click', function() {
     settingsVisible = !settingsVisible;
     settingsPanel.style.display = settingsVisible ? 'block' : 'none';
+    document.querySelectorAll('body, .poem-container, .poem1, .poem2').forEach(
+        (el) => el.classList.toggle('bordered')
+    );
 });
 
 function initSlider(sliderEl, outputEl, attributes, valueFunc, changeFunc) {

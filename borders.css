@@ -1,0 +1,18 @@
+.bordered.poem-container {
+  border-right: 1px solid blue;
+  width: calc(50% - 1px);
+  border-collapse: collapse;
+}
+
+.poem-container ~ .poem-container {
+  border-right: 0;
+  width: 50%;
+}
+
+body.bordered {
+  border: 1px solid blue;
+}
+
+.bordered.poem1, .bordered.poem2 {
+  border: 1px solid green;
+}
