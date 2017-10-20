@@ -31,6 +31,17 @@ function initSlider(sliderEl, outputEl, attributes, valueFunc, changeFunc) {
     });
 }
 
+initSlider(fontSizeSlider, fontSizeOutput,
+    {
+        min : 10,
+        max : 50,
+        step : 1,
+        value : 25
+    },
+    (value) => value + 'px',
+    (value) => document.querySelector('body').style['font-size'] = value + 'px'
+);
+
 initSlider(poemWidthSlider, poemWidthOutput,
     {
         min : 0,
