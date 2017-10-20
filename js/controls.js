@@ -53,5 +53,5 @@ initSlider(bookWidthSlider, bookWidthOutput,
         value : 80
     },
     (value) => value + '%',
-    (value) => document.querySelector('body').style.width = value + '%'
+    (value) => document.querySelector('.book').style.width = value + '%'
 );
