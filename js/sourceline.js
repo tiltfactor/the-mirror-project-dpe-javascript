@@ -1,13 +1,13 @@
 "use strict";
 
-function SourceLine(wordEl){
+function SourceLine(world, wordEl){
 
     // TODO: Make configurable.
     this.delayMs = 250;
     this.wordEl = wordEl;
     this.renderedBoxes = [],
     this.letterEls = [],
-    this.world = World.getInstance();
+    this.world = world;
 
     // Create array in order to reverse;.
     this.letterEls = [].map.call(wordEl.childNodes, function(element) {

@@ -4,6 +4,7 @@
 
 .world {
     display: block;
+    opacity : 0;
 }
 
 .controls {
@@ -15,5 +16,47 @@
 }
 
 .poem-container {
-    margin-top: 200px;
+    margin-top: 0;
+}
+
+.book {
+    width: 90%;
+    padding: 100px 0;
+    margin: 100px auto;
+    overflow: auto;
+}
+
+.poem1, .poem2 {
+    width: 75%;
+}
+
+.line {
+    white-space: pre-wrap;
+}
+
+#settings-button {
+    font-size: 14pt;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+
+#settings-panel {
+    display: none;
+    position: fixed;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid black;
+    font-size: 14pt;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    width: 250px;
+    padding: 10px;
+}
+
+#settings-panel input[type='range'] {
+    width: 100%;
 }

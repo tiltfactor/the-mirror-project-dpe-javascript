@@ -1,6 +1,12 @@
 "use strict";
 
-var world = World.getInstance(options.world);
+var world = new World(options.world),
+    poemSequence = [],
+    poemIndex = 0,
+    lr = new LoadRender();
+
+
+/*
 world.addEventListener('classchange', function(data){
     Utils.setActiveCb(data.newClass);
 });
@@ -9,23 +15,39 @@ world.addEventListener('complete', function(){
     var controlsPDF = document.querySelector('.controls--pdf');
     controlsPDF.classList.add('is-active');
 });
+*/
 
-var lr = new LoadRender();
-/*
-lr.addEventListener('rendered', function(data){
-    // Utils.setHistory(data.files);
-    var startBtn = document.querySelector('.world-start button');
-    startBtn.disabled = false;
-    startBtn.addEventListener('click', function(e){
-        e.currentTarget.disabled = 'disabled';
-        world.start();
-        // log(world.allWordClasses.diff(world.wordClasses));
-        Utils.hideUnusedCb(world.allWordClasses.diff(world.wordClasses));
-        Utils.setActiveCb(world.wordClasses[0]);
+function loadNextSet() {
+    poemIndex += 1;
+    if (poemIndex >= poemSequence.length) {
+        poemIndex = 0;
+    }
+    lr.loadPoemSet(poemSequence[poemIndex][0], poemSequence[poemIndex][1]);
+}
+
+world.addEventListener('complete', function() {
+    TweenLite.to(document.querySelector('.world'), options.endFade, {
+        opacity : 0,
+        delay : options.endDelay,
+        onComplete: loadNextSet
     });
 });
-*/
-lr.addEventListener('rendered', function() {
+
+lr.addEventListener('sequence-loaded', function(evt) {
+    poemSequence = evt.detail.sequence;
+    poemIndex = 0;
+
+    lr.loadPoemSet(poemSequence[poemIndex][0], poemSequence[poemIndex][1]);
+});
+
+var numLoaded = 0;
+lr.addEventListener('poem-loaded', function() {
+    numLoaded += 1;
+    if (numLoaded < 2) {
+        return;
+    }
+    numLoaded = 0;
+
     TweenLite.to(document.querySelector('.world'), options.startFade, { opacity : 1 });
     setTimeout(function() {
         world.start();
@@ -35,7 +57,6 @@ lr.addEventListener('rendered', function() {
 });
 
 
-// lr.force('./data/dickinson/OneSeries-VIII.xml', './data/flanagan/On_Being_From_.xml');
 // lr.loadLists('./data/test/content.json', './data/test/content.json');
 lr.loadSequence('./data/sequence.json');
 // lr.loadAsync();

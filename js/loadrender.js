@@ -5,29 +5,19 @@ function LoadRender(){
     var self = this,
         selectedFiles = [];
 
-    this.force = function(file1, file2){
-        file1 = {path:file1 || 'data/flanagan/Insist__________repeat_.xml'};
-        file2 = {path:file2 || 'data/dickinson/OneSeries-IX.xml'};
-        start(file1, file2);
-    };
-
     this.loadAsync = function(){
         var files = [
             'data/pos_tags.json'
-            ];
+        ];
 
         files.forEach(function(path){
             load(path, true, function(data){
                 window.options.postags = data;
-
             });
         });
-
-
     };
 
     this.loadLists = function(listFile1, listFile2){
-
         load(listFile1, true, function(data){
             renderFiles(data, document.querySelector('.choose .left'));
         },
@@ -37,28 +27,12 @@ function LoadRender(){
             renderFiles(data, document.querySelector('.choose .right'));
         },
         function(err){console.error("Couldn't load" + err)});
-
     };
 
     this.loadSequence = function(seqFile) {
         load(seqFile, true, function(data) {
-            var world = World.getInstance();
-            world.sequence = data;
-            world.seqIndex = 0;
-            world.addEventListener('complete', function() {
-                setTimeout(function() {
-                    world.seqIndex += 1;
-                    if (world.seqIndex >= world.sequence.length) {
-                        world.seqIndex = 0;
-                    }
-                    TweenLite.to(document.querySelector('.world'), options.endFade, {
-                        opacity : 0,
-                        onComplete: start,
-                        onCompleteParams: data[world.seqIndex]
-                    });
-                }, options.endDelay * 1000);
-            });
-            start(data[world.seqIndex][0], data[world.seqIndex][1]);
+            var evt = new CustomEvent('sequence-loaded', { detail : { sequence : data } });
+            self.dispatchEvent(evt);
         }, function(err) { console.error(err); });
     };
 
@@ -108,10 +82,6 @@ function LoadRender(){
 
         docfrag.appendChild(ul);
         el.appendChild(docfrag);
-
-        setTimeout(function(){
-            Utils.centreColumnContent(ul);
-        }, 500);
     };
 
     function cbChangeHandler(e){
@@ -151,45 +121,26 @@ function LoadRender(){
     }
 
     function startHandler(e){
-        start(selectedFiles[0].dataset, selectedFiles[1].dataset);
+        self.loadPoemSet(selectedFiles[0].dataset, selectedFiles[1].dataset);
     }
 
-    function start(file1, file2){
-
-        var rendered = [];
-
-        document.querySelector('.choose').style.display = 'none';
-        document.querySelector('.world').style.display = 'block';
-
-        load(file1.path, false, function(data){
-            var fileName = file1.path.split('/').pop();
-            self.poem1 = renderPoem(data.firstChild, true);
-            self.poem1.setAttribute('data-filename', fileName.replace('.xml', ''));
-            rendered.push(true);
-            if(rendered.length >= 2){
-                self.dispatchEvent({type:'rendered'});
-                document.querySelectorAll('.poem-container p').forEach(Utils.centreColumnContent);
-            }
-        },
-        function(err){console.error("Couldn't load" + err)});
-
-        load(file2.path, false, function(data){
-            var fileName = file2.path.split('/').pop();
-            self.poem2 = renderPoem(data.firstChild, false);
-            self.poem2.setAttribute('data-filename', fileName.replace('.xml', ''));
-            rendered.push(true);
-            if(rendered.length >= 2){
-                self.dispatchEvent({type:'rendered', files: [file1, file2]});
-                document.querySelectorAll('.poem-container p').forEach(Utils.centreColumnContent);
-            }
-        },
-        function(err){console.error("Couldn't load" + err)});
+    this.loadPoemSet = function(file1, file2) {
+        loadPoem(file1, document.querySelector('.poem1'));
+        loadPoem(file2, document.querySelector('.poem2'));
     }
 
-    function renderPoem(output, isLeft){
+    function loadPoem(file, container){
+        load(file.path, false, function(data){
+            var fileName = file.path.split('/').pop();
+            renderPoem(data.firstChild, container);
+            container.setAttribute('data-filename', fileName.replace('.xml', ''));
+            self.dispatchEvent({type:'poem-loaded'});
+        }, function(err){ console.error("Couldn't load" + err); });
+    }
 
-        var container = document.querySelector((isLeft)?'.poem1':'.poem2'),
-            lines = Utils.getChildren(output.childNodes),
+    function renderPoem(data, container){
+
+        var lines = Utils.getChildren(data.childNodes),
             lineEl, original, tags;
 
         container.innerHTML = "";
@@ -204,10 +155,6 @@ function LoadRender(){
             renderLineTags(lineEl, tags);
         });
 
-//        setTimeout(function(){
-//            Utils.centreColumnContent(container);
-//        }, 500);
-
         return container;
     }
 
@@ -219,21 +166,11 @@ function LoadRender(){
             var replacement = '<span data-tag="'+tag.getAttribute('class')+'">$&</span>';
             var startStr = lineStr.substr(0, lineStr.length+position); // from start to position.
             var searchStr = lineStr.substr(position); // from position to end.
-            //console.log(searchStr, position, lineStr.length+position);
 
             var index = searchStr.indexOf(tag.textContent);
             lineStr = startStr + searchStr.replace(tag.textContent, replacement);
 
             position= 0-(searchStr.length-(index+tag.textContent.length));
-
-            /*
-            console.log("<====");
-            console.log(lineStr);
-            console.log(startStr, 0, lineStr.length+position);
-            console.log(searchStr, position);
-            console.log("====>");
-            */
-
         });
 
         lineEl.innerHTML = lineStr;

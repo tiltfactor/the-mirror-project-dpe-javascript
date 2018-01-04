@@ -34,21 +34,6 @@ var Utils = Utils || {
     }
 };
 
-Utils.centreColumnContent = function(el){
-    var max = 0, bounds, viewportW = document.documentElement.clientWidth;
-
-    [].forEach.call(el.children, function(line){
-        line.style['min-width'] = 0;
-        bounds = line.getBoundingClientRect();
-        max = Math.max(bounds.width, max);
-        line.style['min-width'] = null;
-    });
-
-    max = Math.min(max, viewportW);
-    el.style['width'] = max + "px";
-};
-
-
 // Polyfill for safari, which doesn't seem to support Node.children.
 Utils.getChildren = function(childNodes){
     var children = [];
