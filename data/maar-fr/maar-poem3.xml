@@ -1,12 +1,27 @@
 <output>
   <line>
     <tags>
-      <tag class="noun-fem-sing-article">l'âme</tag>
+    </tags>
+    <original><![CDATA[<strong>Sans Titre (date inconnue)</strong>]]></original>
+  </line>
+  <line>
+    <tags>
+    </tags>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
+      <tag class="noun-fem-sing-article">L'âme</tag>
       <tag class="adj-fem-sing">calme</tag>
+    </tags>
+    <original><![CDATA[L'âme qui pleurait encore hier est calme]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-masc-sing-article">l'exil</tag>
       <tag class="adj-masc-sing">suspendu</tag>
     </tags>
-    <original><![CDATA[l'âme qui pleurait encore hier est calme - c'est l'exil suspendu]]></original>
+    <original><![CDATA[- c'est l'exil suspendu]]></original>
   </line>
   <line>
     <tags>
@@ -18,12 +33,12 @@
   </line>
   <line>
     <tags>
-      <tag class="noun-fem-sing">mémoire</tag>
+      <tag class="noun-fem-sing">Mémoire</tag>
       <tag class="noun-masc-sing">magnolia</tag>
       <tag class="adj-fem-sing">pure</tag>
       <tag class="noun-masc-sing">point</tag>
     </tags>
-    <original><![CDATA[mémoire magnolia pure à ce point]]></original>
+    <original><![CDATA[Mémoire magnolia pure à ce point]]></original>
   </line>
   <line>
     <tags>
@@ -42,12 +57,12 @@
     <tags>
       <tag class="noun-masc-sing">regard</tag>
     </tags>
-    <original><![CDATA[mais ton regard ne me quitte jamais]]></original>
+    <original><![CDATA[Mais ton regard ne me quitte jamais]]></original>
   </line>
   <line>
     <tags>
       <tag class="noun-masc-sing">ange</tag>
     </tags>
-    <original><![CDATA[et ton ange me garde]]></original>
+    <original><![CDATA[Mt ton ange me garde]]></original>
   </line>
 </output>

@@ -1,25 +1,109 @@
 [
   [
     {
-      "path" : "data/maar-fr/poem1.xml",
-      "filename" : "poem1.xml",
+      "path" : "data/maar-fr/maar-poem1.xml",
+      "filename" : "maar-poem1.xml",
       "directory" : "./data/maar-fr"
     },
     {
-      "path" : "data/flanagan-fr/poem1.xml",
-      "filename" : "poem1.xml",
+      "path" : "data/flanagan-fr/flanagan-poem1.xml",
+      "filename" : "flanagan-poem1.xml",
       "directory" : "./data/flanagan-fr"
     }
   ],
   [
     {
-      "path" : "data/maar-fr/poem2.xml",
-      "filename" : "poem2.xml",
+      "path" : "data/maar-fr/maar-poem2.xml",
+      "filename" : "maar-poem2.xml",
       "directory" : "./data/maar-fr"
     },
     {
-      "path" : "data/flanagan-fr/poem2.xml",
-      "filename" : "poem2.xml",
+      "path" : "data/flanagan-fr/flanagan-poem2.xml",
+      "filename" : "flanagan-poem2.xml",
+      "directory" : "./data/flanagan-fr"
+    }
+  ],
+  [
+    {
+      "path" : "data/maar-fr/maar-poem3.xml",
+      "filename" : "maar-poem3.xml",
+      "directory" : "./data/maar-fr"
+    },
+    {
+      "path" : "data/flanagan-fr/flanagan-poem3.xml",
+      "filename" : "flanagan-poem3.xml",
+      "directory" : "./data/flanagan-fr"
+    }
+  ],
+  [
+    {
+      "path" : "data/maar-fr/maar-poem4.xml",
+      "filename" : "maar-poem4.xml",
+      "directory" : "./data/maar-fr"
+    },
+    {
+      "path" : "data/flanagan-fr/flanagan-poem4.xml",
+      "filename" : "flanagan-poem4.xml",
+      "directory" : "./data/flanagan-fr"
+    }
+  ],
+  [
+    {
+      "path" : "data/maar-fr/maar-poem5.xml",
+      "filename" : "maar-poem5.xml",
+      "directory" : "./data/maar-fr"
+    },
+    {
+      "path" : "data/flanagan-fr/flanagan-poem5.xml",
+      "filename" : "flanagan-poem5.xml",
+      "directory" : "./data/flanagan-fr"
+    }
+  ],
+  [
+    {
+      "path" : "data/maar-fr/maar-poem6.xml",
+      "filename" : "maar-poem6.xml",
+      "directory" : "./data/maar-fr"
+    },
+    {
+      "path" : "data/flanagan-fr/flanagan-poem6.xml",
+      "filename" : "flanagan-poem6.xml",
+      "directory" : "./data/flanagan-fr"
+    }
+  ],
+  [
+    {
+      "path" : "data/maar-fr/maar-poem7.xml",
+      "filename" : "maar-poem7.xml",
+      "directory" : "./data/maar-fr"
+    },
+    {
+      "path" : "data/flanagan-fr/flanagan-poem7.xml",
+      "filename" : "flanagan-poem7.xml",
+      "directory" : "./data/flanagan-fr"
+    }
+  ],
+  [
+    {
+      "path" : "data/maar-fr/maar-poem8.xml",
+      "filename" : "maar-poem8.xml",
+      "directory" : "./data/maar-fr"
+    },
+    {
+      "path" : "data/flanagan-fr/flanagan-poem8.xml",
+      "filename" : "flanagan-poem8.xml",
+      "directory" : "./data/flanagan-fr"
+    }
+  ],
+  [
+    {
+      "path" : "data/maar-fr/maar-poem9.xml",
+      "filename" : "maar-poem9.xml",
+      "directory" : "./data/maar-fr"
+    },
+    {
+      "path" : "data/flanagan-fr/flanagan-poem9.xml",
+      "filename" : "flanagan-poem9.xml",
       "directory" : "./data/flanagan-fr"
     }
   ]
