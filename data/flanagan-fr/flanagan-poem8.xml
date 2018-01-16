@@ -19,7 +19,7 @@
   <line>
     <tags>
     </tags>
-    <original><![CDATA[J'ai vu sans toi, son]]></original>
+    <original><![CDATA[J'ai vu sans toi, ses]]></original>
   </line>
   <line>
     <tags>
@@ -46,7 +46,7 @@
     <tags>
       <tag class="noun-fem-sing">gorge</tag>
     </tags>
-    <original><![CDATA[Regarde ma gorge mais je sais]]></original>
+    <original><![CDATA[Regarder ma gorge mais je sais]]></original>
   </line>
   <line>
     <tags>
@@ -59,7 +59,7 @@
     <tags>
       <tag class="noun-fem-sing">journée</tag>
     </tags>
-    <original><![CDATA[Ils abandonnent votre journée]]></original>
+    <original><![CDATA[Elles abandonnent votre journée]]></original>
   </line>
   <line>
     <tags>
@@ -81,8 +81,8 @@
   </line>
   <line>
     <tags>
-      <tag class="noun-masc-sing">Or</tag>
+      <tag class="noun-masc-sing-article">l'or</tag>
     </tags>
-    <original><![CDATA[Or]]></original>
+    <original><![CDATA[De l'or]]></original>
   </line>
 </output>

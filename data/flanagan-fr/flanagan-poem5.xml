@@ -33,12 +33,12 @@
   <line>
     <tags>
     </tags>
-    <original><![CDATA[commencer à dépendre l'un sur l'autre complètement]]></original>
+    <original><![CDATA[commencent dépendre l'un de l'autre complètement]]></original>
   </line>
   <line>
     <tags>
     </tags>
-    <original><![CDATA[alors il y a toi]]></original>
+    <original><![CDATA[et puis il y a toi]]></original>
   </line>
   <line>
     <tags>
@@ -52,7 +52,7 @@
       <tag class="noun-masc-sing">monde</tag>
       <tag class="noun-masc-plur">doigts</tag>
     </tags>
-    <original><![CDATA[créer le monde avec les doigts qui tracent le]]></original>
+    <original><![CDATA[mâchée le monde avec les doigts qui tracent]]></original>
   </line>
   <line>
     <tags>
@@ -60,18 +60,13 @@
       <tag class="adj-fem-sing">noble</tag>
       <tag class="noun-fem-sing">vérité</tag>
     </tags>
-    <original><![CDATA[paysage - une noble vérité mâché]]></original>
+    <original><![CDATA[le paysage - une noble vérité mâchée]]></original>
   </line>
   <line>
     <tags>
       <tag class="noun-fem-sing">faim</tag>
     </tags>
-    <original><![CDATA[par quelqu'un faim]]></original>
-  </line>
-  <line>
-    <tags>
-    </tags>
-    <original><![CDATA[quelques uns]]></original>
+    <original><![CDATA[par quelqu'un et sa faim quelques uns]]></original>
   </line>
   <line>
     <tags>
@@ -79,6 +74,6 @@
       <tag class="adj-fem-plur">détrempé</tag>
       <tag class="noun-fem-plur">erreurs</tag>
     </tags>
-    <original><![CDATA[super détrempé erreurs]]></original>
+    <original><![CDATA[erreurs super détrempée]]></original>
   </line>
 </output>

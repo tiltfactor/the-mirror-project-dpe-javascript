@@ -21,7 +21,7 @@
       <tag class="noun-masc-sing">temps</tag>
       <tag class="adj-fem-sing">lente</tag>
     </tags>
-    <original><![CDATA[temps d'accident de voiture, temps d'attention lente]]></original>
+    <original><![CDATA[le temps d'accident de voiture, le temps d'attention lente]]></original>
   </line>
   <line>
     <tags>
@@ -38,10 +38,9 @@
   </line>
   <line>
     <tags>
-      <tag class="noun-masc-plur">enroulements</tag>
       <tag class="noun-masc-sing">jour</tag>
     </tags>
-    <original><![CDATA[il a besoin de 10 enroulements par jour]]></original>
+    <original><![CDATA[elle a besoin d’être remontée 10 fois par jour]]></original>
   </line>
   <line>
     <tags>
@@ -52,9 +51,8 @@
     <tags>
       <tag class="noun-masc-sing">nombre</tag>
       <tag class="adj-masc-sing">infini</tag>
-      <tag class="noun-masc-plur">astronomes</tag>
     </tags>
-    <original><![CDATA[à côté d'un nombre infini des astronomes]]></original>
+    <original><![CDATA[à côté d'un nombre infini d'astronomes]]></original>
   </line>
   <line>
     <tags>
@@ -80,7 +78,7 @@
       <tag class="noun-masc-sing">nuage</tag>
       <tag class="adj-masc-sing">sombre</tag>
     </tags>
-    <original><![CDATA[Pour toujours est votre visage un nuage sombre]]></original>
+    <original><![CDATA[Forever est votre visage un nuage sombre]]></original>
   </line>
   <line>
     <tags>
