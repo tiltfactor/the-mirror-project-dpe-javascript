@@ -13,36 +13,96 @@
     <tags>
       <tag class="noun-fem-sing">porte</tag>
       <tag class="noun-masc-sing">lit</tag>
+    </tags>
+    <original><![CDATA[À mon insu, une porte s'ouvre sous notre lit.]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-masc-sing">moment</tag>
       <tag class="noun-masc-sing">transfert</tag>
+    </tags>
+    <original><![CDATA[Pendant un moment, il y a transfert, comme si les]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-masc-plur">trains</tag>
       <tag class="noun-masc-sing">ciel</tag>
+    </tags>
+    <original><![CDATA[trains liés faisaient bouffer le ciel. Je sais par les]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-fem-plur">marques</tag>
       <tag class="noun-fem-plur">gouttes</tag>
       <tag class="noun-fem-sing">viscosité</tag>
       <tag class="noun-masc-plur">hommes</tag>
+    </tags>
+    <original><![CDATA[marques de gouttes tout sur la viscosité des hommes.]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-fem-plur">clarinettes</tag>
+    </tags>
+    <original><![CDATA[Pense juste, nous aurions pu être des clarinettes avec]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-masc-sing">vagabondage</tag>
       <tag class="noun-masc-plur">Instruments</tag>
       <tag class="adj-masc-plur">noirs</tag>
       <tag class="noun-fem-sing">Personne</tag>
+    </tags>
+    <original><![CDATA[tout ce vagabondage. Instruments noirs. Personne n'a]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-masc-sing">désir</tag>
+    </tags>
+    <original><![CDATA[correctement nommé le désir, sauf par ce qui n'est]]></original>
+  </line>
+  <line>
+    <tags>
+    </tags>
+    <original><![CDATA[pas goûté, même suppurant. Là-bas avec cette]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-fem-sing">fille</tag>
       <tag class="adj-fem-sing">géante</tag>
       <tag class="noun-fem-sing">domination</tag>
+    </tags>
+    <original><![CDATA[fille géante, pas d'actes de domination.]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-masc-sing">fumoir</tag>
       <tag class="noun-fem-sing">ville</tag>
       <tag class="noun-fem-plur">éponges</tag>
+    </tags>
+    <original><![CDATA[Un fumoir, cette ville, rendant les éponges perdues]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="adj-fem-plur">indivisibles</tag>
       <tag class="noun-masc-sing">ciel</tag>
       <tag class="noun-masc-plur">anges</tag>
+    </tags>
+    <original><![CDATA[indivisibles au toucher. Le ciel contient des anges]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="adj-masc-plur">endormis</tag>
       <tag class="adj-masc-plur">fatigués</tag>
       <tag class="noun-fem-sing">insulte</tag>
       <tag class="adj-fem-sing">terrible</tag>
+    </tags>
+    <original><![CDATA[endormis et fatigués. Une insulte terrible qu'est cette]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-fem-sing">jupe</tag>
       <tag class="noun-masc-sing">or</tag>
     </tags>
-    <original><![CDATA[À mon insu, une porte s'ouvre sous notre lit. Pendant un moment, il y a transfert, comme si les trains liés faisaient bouffer le ciel. Je sais par les marques de gouttes tout sur la viscosité des hommes. Pense juste, nous aurions pu être des clarinettes avec tout ce vagabondage. Instruments noirs. Personne n'a correctement nommé le désir, sauf par ce qui n'est pas goûté, même suppurant. Là-bas avec cette fille géante, pas d'actes de domination. Un fumoir, cette ville, rendant les éponges perdues indivisibles au toucher. Le ciel contient des anges endormis et fatigués. Une insulte terrible qu'est cette jupe, coagulée en or.]]></original>
+    <original><![CDATA[jupe, coagulée en or.]]></original>
   </line>
 </output>
