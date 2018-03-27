@@ -31,6 +31,7 @@ function initSlider(sliderEl, outputEl, attributes, valueFunc, changeFunc) {
     });
 }
 
+/*
 initSlider(fontSizeSlider, fontSizeOutput,
     {
         min : 10,
@@ -66,3 +67,4 @@ initSlider(bookWidthSlider, bookWidthOutput,
     (value) => value + '%',
     (value) => document.querySelector('.book').style.width = value + '%'
 );
+*/
