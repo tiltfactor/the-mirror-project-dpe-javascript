@@ -1,3 +1,7 @@
+body {
+    font-size: 24pt;
+}
+
 .choose {
     display: none;
 }
@@ -20,14 +24,24 @@
 }
 
 .book {
-    width: 90%;
+    width: 1880px; /* width: 90%; */
     padding: 100px 0;
-    margin: 100px auto;
+    margin: 50px auto;
     overflow: auto;
 }
 
+.poem1 {
+    position: relative;
+    left: 50px;
+}
+
+.poem2 {
+    position: relative;
+    right: 50px;
+}
+
 .poem1, .poem2 {
-    width: 75%;
+    width: 705px; /* width: 75%; */
 }
 
 .line {
@@ -35,6 +49,7 @@
 }
 
 #settings-button {
+    /* display: none; */
     font-size: 14pt;
     position: fixed;
     bottom: 0;
