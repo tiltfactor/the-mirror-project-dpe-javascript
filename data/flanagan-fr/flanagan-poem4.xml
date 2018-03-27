@@ -19,7 +19,7 @@
   <line>
     <tags>
       <tag class="noun-masc-sing">moment</tag>
-      <tag class="noun-masc-sing">transfert</tag>
+      <tag class="Xnoun-masc-sing">transfert</tag>
     </tags>
     <original><![CDATA[Pendant un moment, il y a transfert, comme si les]]></original>
   </line>
@@ -54,7 +54,7 @@
   </line>
   <line>
     <tags>
-      <tag class="noun-masc-sing">vagabondage</tag>
+      <tag class="Xnoun-masc-sing">vagabondage</tag>
       <tag class="noun-masc-plur">Instruments</tag>
       <tag class="adj-masc-plur">noirs</tag>
       <tag class="noun-fem-sing">Personne</tag>
@@ -76,7 +76,7 @@
   <line>
     <tags>
       <tag class="adj-fem-sing">géante</tag>
-      <tag class="noun-fem-sing">domination</tag>
+      <tag class="Xnoun-fem-sing">domination</tag>
       <tag class="noun-masc-sing">fumoir</tag>
     </tags>
     <original><![CDATA[géante, pas d'actes de domination. Un fumoir, cette]]></original>
@@ -84,7 +84,7 @@
   <line>
     <tags>
       <tag class="noun-fem-sing">ville</tag>
-      <tag class="noun-fem-plur">éponges</tag>
+      <tag class="Xnoun-fem-plur">éponges</tag>
       <tag class="adj-fem-plur">indivisibles</tag>
     </tags>
     <original><![CDATA[ville, rendant les éponges perdues indivisibles au]]></original>
@@ -100,9 +100,9 @@
   </line>
   <line>
     <tags>
-      <tag class="noun-fem-sing">insulte</tag>
+      <tag class="Xnoun-fem-sing">insulte</tag>
       <tag class="adj-fem-sing">terrible</tag>
-      <tag class="noun-fem-sing">jupe</tag>
+      <tag class="Xnoun-fem-sing">jupe</tag>
     </tags>
     <original><![CDATA[fatigués. Une insulte terrible cette jupe, coagulée d'or.]]></original>
   </line>

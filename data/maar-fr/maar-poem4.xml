@@ -25,7 +25,7 @@
   </line>
   <line>
     <tags>
-      <tag class="noun-masc-sing">œil</tag>
+      <tag class="Xnoun-masc-sing">œil</tag>
       <tag class="noun-fem-sing-article">l’heure</tag>
       <tag class="noun-fem-sing">cloche</tag>
     </tags>
@@ -56,7 +56,7 @@
   <line>
     <tags>
       <tag class="noun-fem-sing-article">l’ombre</tag>
-      <tag class="noun-fem-sing">mante religieuse</tag>
+      <tag class="Xnoun-fem-sing">mante religieuse</tag>
     </tags>
     <original><![CDATA[s’endort à l’ombre qui dessine la mante religieuse]]></original>
   </line>
@@ -69,7 +69,7 @@
   </line>
   <line>
     <tags>
-      <tag class="noun-fem-sing">chanson</tag>
+      <tag class="Xnoun-fem-sing">chanson</tag>
       <tag class="noun-masc-sing">bout</tag>
       <tag class="noun-masc-sing-article">l’hameçon</tag>
     </tags>
@@ -87,7 +87,7 @@
   <line>
     <tags>
       <tag class="noun-masc-sing">bouquet</tag>
-      <tag class="noun-fem-sing">détresse</tag>
+      <tag class="Xnoun-fem-sing">détresse</tag>
     </tags>
     <original><![CDATA[et le bouquet d’étoiles de mer crie sa détresse dans la]]></original>
   </line>
@@ -111,9 +111,9 @@
   </line>
   <line>
     <tags>
-      <tag class="noun-masc-sing">rideau</tag>
+      <tag class="Xnoun-masc-sing">rideau</tag>
       <tag class="noun-fem-plur">flammes</tag>
-      <tag class="noun-masc-sing">bord</tag>
+      <tag class="Xnoun-masc-sing">bord</tag>
       <tag class="noun-fem-sing">fenêtre</tag>
     </tags>
     <original><![CDATA[rideau de flammes qui bout sur le bord de la fenêtre]]></original>
