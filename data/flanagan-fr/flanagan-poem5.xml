@@ -13,7 +13,7 @@
     <tags>
       <tag class="adj-fem-plur">énormes</tag>
     </tags>
-    <original><![CDATA[imaginez ces énormes]]></original>
+    <original><![CDATA[imagine ces énormes]]></original>
   </line>
   <line>
     <tags>
@@ -33,7 +33,7 @@
   <line>
     <tags>
     </tags>
-    <original><![CDATA[commencent dépendre l'un de l'autre complètement]]></original>
+    <original><![CDATA[commencent à dépendre l'un de l'autre complètement]]></original>
   </line>
   <line>
     <tags>
@@ -65,15 +65,9 @@
   <line>
     <tags>
       <tag class="noun-fem-sing">faim</tag>
-    </tags>
-    <original><![CDATA[par quelqu'un et sa faim quelques uns]]></original>
-  </line>
-  <line>
-    <tags>
-      <tag class="adj-fem-plur">super</tag>
-      <tag class="adj-fem-plur">détrempé</tag>
       <tag class="noun-fem-plur">erreurs</tag>
+      <tag class="adj-fem-plur">détrempées</tag>
     </tags>
-    <original><![CDATA[erreurs super détrempée]]></original>
+    <original><![CDATA[la faim de quelqu'un et ses erreurs détrempées]]></original>
   </line>
 </output>

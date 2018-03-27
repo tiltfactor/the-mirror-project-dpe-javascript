@@ -14,7 +14,7 @@
       <tag class="noun-masc-sing">coucher</tag>
       <tag class="noun-masc-sing">soleil</tag>
     </tags>
-    <original><![CDATA[Regardez ce coucher de soleil]]></original>
+    <original><![CDATA[Regarde ce coucher de soleil]]></original>
   </line>
   <line>
     <tags>
@@ -24,23 +24,23 @@
   <line>
     <tags>
       <tag class="noun-fem-plur">Vrilles</tag>
-      <tag class="adj-fem-plur">bleues</tag>
-      <tag class="adj-fem-plur">fumeuses</tag>
+      <tag class="adj-fem-plur">bleutées</tag>
+      <tag class="noun-fem-sing">fumée</tag>
     </tags>
-    <original><![CDATA[Vrilles bleues fumeuses]]></original>
+    <original><![CDATA[Vrilles bleutées de fumée]]></original>
   </line>
   <line>
     <tags>
       <tag class="noun-masc-sing">cou</tag>
       <tag class="noun-fem-sing">rose</tag>
     </tags>
-    <original><![CDATA[Touchez mon cou, rose]]></original>
+    <original><![CDATA[Touche mon cou, rose]]></original>
   </line>
   <line>
     <tags>
       <tag class="noun-fem-sing">gorge</tag>
     </tags>
-    <original><![CDATA[Remplit ma gorge. Vous ne pouvez pas]]></original>
+    <original><![CDATA[Remplit ma gorge. Tu ne peux pas]]></original>
   </line>
   <line>
     <tags>
@@ -53,7 +53,7 @@
       <tag class="noun-fem-plur">couleurs</tag>
       <tag class="adj-fem-plur">douces</tag>
     </tags>
-    <original><![CDATA[Vous trouvez des couleurs si douces]]></original>
+    <original><![CDATA[Tu trouves des couleurs si douces]]></original>
   </line>
   <line>
     <tags>
@@ -75,14 +75,13 @@
   </line>
   <line>
     <tags>
-      <tag class="adj-masc-sing">Lourd</tag>
+      <tag class="adj-masc-sing">Remplis</tag>
     </tags>
-    <original><![CDATA[Lourd avec]]></original>
+    <original><![CDATA[Remplis]]></original>
   </line>
   <line>
     <tags>
-      <tag class="noun-masc-sing-article">l'or</tag>
     </tags>
-    <original><![CDATA[De l'or]]></original>
+    <original><![CDATA[D'or]]></original>
   </line>
 </output>

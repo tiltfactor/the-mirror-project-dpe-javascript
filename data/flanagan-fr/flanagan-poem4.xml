@@ -26,24 +26,31 @@
   <line>
     <tags>
       <tag class="noun-masc-plur">trains</tag>
-      <tag class="noun-masc-sing">ciel</tag>
+      <tag class="noun-fem-plur">bouffées</tag>
+      <tag class="noun-fem-sing">fumée</tag>
     </tags>
-    <original><![CDATA[trains liés faisaient bouffer le ciel. Je sais par les]]></original>
+    <original><![CDATA[trains en partence envoyaient des bouffées de fumée]]></original>
   </line>
   <line>
     <tags>
+      <tag class="noun-masc-sing">ciel</tag>
       <tag class="noun-fem-plur">marques</tag>
       <tag class="noun-fem-plur">gouttes</tag>
+    </tags>
+    <original><![CDATA[dans le ciel. Je sais par les marques de gouttes]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-fem-sing">viscosité</tag>
       <tag class="noun-masc-plur">hommes</tag>
     </tags>
-    <original><![CDATA[marques de gouttes tout sur la viscosité des hommes.]]></original>
+    <original><![CDATA[tout sur la viscosité des hommes. Pense donc,]]></original>
   </line>
   <line>
     <tags>
       <tag class="noun-fem-plur">clarinettes</tag>
     </tags>
-    <original><![CDATA[Pense juste, nous aurions pu être des clarinettes avec]]></original>
+    <original><![CDATA[nous aurions pu être des clarinettes avec tout ce]]></original>
   </line>
   <line>
     <tags>
@@ -52,7 +59,7 @@
       <tag class="adj-masc-plur">noirs</tag>
       <tag class="noun-fem-sing">Personne</tag>
     </tags>
-    <original><![CDATA[tout ce vagabondage. Instruments noirs. Personne n'a]]></original>
+    <original><![CDATA[vagabondage. Instruments noirs. Personne n'a]]></original>
   </line>
   <line>
     <tags>
@@ -62,47 +69,41 @@
   </line>
   <line>
     <tags>
+      <tag class="noun-fem-sing">fille</tag>
     </tags>
-    <original><![CDATA[pas goûté, même suppurant. Là-bas avec cette]]></original>
+    <original><![CDATA[pas goûté, même suppurant. Là-bas avec cette fille]]></original>
   </line>
   <line>
     <tags>
-      <tag class="noun-fem-sing">fille</tag>
       <tag class="adj-fem-sing">géante</tag>
       <tag class="noun-fem-sing">domination</tag>
+      <tag class="noun-masc-sing">fumoir</tag>
     </tags>
-    <original><![CDATA[fille géante, pas d'actes de domination.]]></original>
+    <original><![CDATA[géante, pas d'actes de domination. Un fumoir, cette]]></original>
   </line>
   <line>
     <tags>
-      <tag class="noun-masc-sing">fumoir</tag>
       <tag class="noun-fem-sing">ville</tag>
       <tag class="noun-fem-plur">éponges</tag>
+      <tag class="adj-fem-plur">indivisibles</tag>
     </tags>
-    <original><![CDATA[Un fumoir, cette ville, rendant les éponges perdues]]></original>
+    <original><![CDATA[ville, rendant les éponges perdues indivisibles au]]></original>
   </line>
   <line>
     <tags>
-      <tag class="adj-fem-plur">indivisibles</tag>
       <tag class="noun-masc-sing">ciel</tag>
       <tag class="noun-masc-plur">anges</tag>
-    </tags>
-    <original><![CDATA[indivisibles au toucher. Le ciel contient des anges]]></original>
-  </line>
-  <line>
-    <tags>
       <tag class="adj-masc-plur">endormis</tag>
       <tag class="adj-masc-plur">fatigués</tag>
-      <tag class="noun-fem-sing">insulte</tag>
-      <tag class="adj-fem-sing">terrible</tag>
     </tags>
-    <original><![CDATA[endormis et fatigués. Une insulte terrible qu'est cette]]></original>
+    <original><![CDATA[toucher. Le ciel contient des anges endormis et]]></original>
   </line>
   <line>
     <tags>
+      <tag class="noun-fem-sing">insulte</tag>
+      <tag class="adj-fem-sing">terrible</tag>
       <tag class="noun-fem-sing">jupe</tag>
-      <tag class="noun-masc-sing">or</tag>
     </tags>
-    <original><![CDATA[jupe, coagulée en or.]]></original>
+    <original><![CDATA[fatigués. Une insulte terrible cette jupe, coagulée d'or.]]></original>
   </line>
 </output>

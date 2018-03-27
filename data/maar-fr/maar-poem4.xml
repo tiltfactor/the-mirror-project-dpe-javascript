@@ -11,105 +11,111 @@
   </line>
   <line>
     <tags>
+    </tags>
+    <original><![CDATA[]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="adj-masc-sing-article">l’attendrissant</tag>
       <tag class="noun-masc-sing">souvenir</tag>
       <tag class="noun-masc-sing">verre</tag>
       <tag class="adj-masc-sing">brisé</tag>
     </tags>
-    <original><![CDATA[    Si l’attendrissant souvenir du verre brisé dans son]]></original>
+    <original><![CDATA[    Si l’attendrissant souvenir du verre brisé dans]]></original>
   </line>
   <line>
     <tags>
-      <tag class="noun-masc-sing">oeil</tag>
+      <tag class="noun-masc-sing">œil</tag>
       <tag class="noun-fem-sing-article">l’heure</tag>
       <tag class="noun-fem-sing">cloche</tag>
+    </tags>
+    <original><![CDATA[son œil ne sonne l’heure à la cloche qui parfume]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-masc-sing">bleu</tag>
-    </tags>
-    <original><![CDATA[oeil ne sonne l’heure à la cloche qui parfume le bleu]]></original>
-  </line>
-  <line>
-    <tags>
       <tag class="noun-fem-sing">robe</tag>
-      <tag class="noun-fem-sing-article">l’enveloppe</tag>
     </tags>
-    <original><![CDATA[si las d’aimer la robe soupirante qui l’enveloppe]]></original>
+    <original><![CDATA[le bleu si las d’aimer la robe soupirante qui]]></original>
   </line>
   <line>
     <tags>
+      <tag class="noun-fem-sing-article">l’enveloppe</tag>
       <tag class="noun-masc-sing">soleil</tag>
+      <tag class="noun-masc-sing">moment</tag>
     </tags>
-    <original><![CDATA[le soleil qui pourrait d’un moment à l’autre]]></original>
+    <original><![CDATA[l’enveloppe le soleil qui pourrait d’un moment à]]></original>
   </line>
   <line>
     <tags>
       <tag class="noun-fem-sing">main</tag>
       <tag class="noun-fem-plur">griffes</tag>
     </tags>
-    <original><![CDATA[éclater dans sa main rentre ses griffes et s’endort à]]></original>
+    <original><![CDATA[l’autre éclater dans sa main rentre ses griffes et]]></original>
   </line>
   <line>
     <tags>
       <tag class="noun-fem-sing-article">l’ombre</tag>
       <tag class="noun-fem-sing">mante religieuse</tag>
     </tags>
-    <original><![CDATA[l’ombre qui dessine la mante religieuse grignotant une]]></original>
+    <original><![CDATA[s’endort à l’ombre qui dessine la mante religieuse]]></original>
   </line>
   <line>
     <tags>
       <tag class="noun-fem-sing">hostie</tag>
       <tag class="noun-fem-sing">courbe</tag>
-      <tag class="noun-fem-sing">chanson</tag>
     </tags>
-    <original><![CDATA[hostie mais si la courbe qu’agite la chanson pendue]]></original>
+    <original><![CDATA[grignotant une hostie mais si la courbe qu’agite la]]></original>
   </line>
   <line>
     <tags>
+      <tag class="noun-fem-sing">chanson</tag>
       <tag class="noun-masc-sing">bout</tag>
       <tag class="noun-masc-sing-article">l’hameçon</tag>
-      <tag class="noun-masc-sing">coeur</tag>
     </tags>
-    <original><![CDATA[au bout de l’hameçon s’enroule et mord au coeur le]]></original>
+    <original><![CDATA[chanson pendue au bout de l’hameçon s’enroule et]]></original>
   </line>
   <line>
     <tags>
+      <tag class="noun-masc-sing">cœur</tag>
       <tag class="noun-masc-sing">couteau</tag>
       <tag class="noun-masc-sing">charme</tag>
       <tag class="noun-fem-sing">colore</tag>
+    </tags>
+    <original><![CDATA[mord au cœur le couteau qui la charme et la colore]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-masc-sing">bouquet</tag>
-    </tags>
-    <original><![CDATA[couteau qui la charme et la colore et le bouquet]]></original>
-  </line>
-  <line>
-    <tags>
       <tag class="noun-fem-sing">détresse</tag>
-      <tag class="noun-fem-sing">coupe</tag>
     </tags>
-    <original><![CDATA[d’étoiles de mer crie sa détresse dans la coupe le]]></original>
+    <original><![CDATA[et le bouquet d’étoiles de mer crie sa détresse dans la]]></original>
   </line>
   <line>
     <tags>
+      <tag class="noun-fem-sing">coupe</tag>
       <tag class="noun-masc-sing">coup</tag>
       <tag class="noun-fem-sing">langue</tag>
       <tag class="noun-masc-sing">regard</tag>
-      <tag class="noun-fem-sing">ratatouille</tag>
     </tags>
-    <original><![CDATA[coup de langue de son regard éveille la ratatouille]]></original>
+    <original><![CDATA[coupe le coup de langue de son regard éveille la]]></original>
   </line>
   <line>
     <tags>
+      <tag class="noun-fem-sing">ratatouille</tag>
       <tag class="adj-fem-sing">tragique</tag>
       <tag class="noun-masc-sing">ballet</tag>
       <tag class="noun-fem-plur">mouches</tag>
-      <tag class="noun-masc-sing">rideau</tag>
     </tags>
-    <original><![CDATA[tragique du ballet des mouches dans le rideau de]]></original>
+    <original><![CDATA[ratatouille tragique du ballet des mouches dans le]]></original>
   </line>
   <line>
     <tags>
+      <tag class="noun-masc-sing">rideau</tag>
       <tag class="noun-fem-plur">flammes</tag>
       <tag class="noun-masc-sing">bord</tag>
       <tag class="noun-fem-sing">fenêtre</tag>
     </tags>
-    <original><![CDATA[flammes qui bout sur le bord de la fenêtre]]></original>
+    <original><![CDATA[rideau de flammes qui bout sur le bord de la fenêtre]]></original>
   </line>
 </output>

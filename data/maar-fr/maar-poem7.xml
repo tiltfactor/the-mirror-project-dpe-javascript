@@ -23,10 +23,15 @@
       <tag class="noun-fem-sing">scène</tag>
       <tag class="adj-fem-sing">tragique</tag>
       <tag class="adj-fem-sing">laide</tag>
+    </tags>
+    <original><![CDATA[Ensemble de scène tragique et laide.]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-fem-sing-article">L'amertume</tag>
       <tag class="noun-masc-plur">jours</tag>
     </tags>
-    <original><![CDATA[Ensemble de scène tragique et laide. L'amertume des jours nous a prédit.]]></original>
+    <original><![CDATA[L'amertume des jours nous a prédit.]]></original>
   </line>
   <line>
     <tags>

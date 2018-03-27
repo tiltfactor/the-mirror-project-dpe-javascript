@@ -18,10 +18,15 @@
     <tags>
       <tag class="noun-masc-sing">temps</tag>
       <tag class="noun-fem-sing">voiture</tag>
+    </tags>
+    <original><![CDATA[le temps d'accident de voiture,]]></original>
+  </line>
+  <line>
+    <tags>
       <tag class="noun-masc-sing">temps</tag>
       <tag class="adj-fem-sing">lente</tag>
     </tags>
-    <original><![CDATA[le temps d'accident de voiture, le temps d'attention lente]]></original>
+    <original><![CDATA[le temps d'attention lente]]></original>
   </line>
   <line>
     <tags>
@@ -70,7 +75,7 @@
     <tags>
       <tag class="noun-fem-plur">tempêtes</tag>
     </tags>
-    <original><![CDATA[des tempêtes approchant]]></original>
+    <original><![CDATA[l’approche des tempêtes]]></original>
   </line>
   <line>
     <tags>
@@ -78,7 +83,7 @@
       <tag class="noun-masc-sing">nuage</tag>
       <tag class="adj-masc-sing">sombre</tag>
     </tags>
-    <original><![CDATA[Forever est votre visage un nuage sombre]]></original>
+    <original><![CDATA[ton visage sera toujours un nuage sombre]]></original>
   </line>
   <line>
     <tags>
