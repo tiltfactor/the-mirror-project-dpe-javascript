@@ -27,13 +27,12 @@
     <tags>
       <tag class="noun-masc-plur">pieds</tag>
     </tags>
-    <original><![CDATA[À tes pieds? Tu devrais leur dire]]></original>
+    <original><![CDATA[A tes pieds? Tu devrais leur dire]]></original>
   </line>
   <line>
     <tags>
-      <tag class="Xnoun-fem-sing">agonie</tag>
     </tags>
-    <original><![CDATA[Je suis agonie—tu devrais]]></original>
+    <original><![CDATA[Je suis au supplice—tu devrais]]></original>
   </line>
   <line>
     <tags>
@@ -46,7 +45,7 @@
       <tag class="noun-masc-plur">yeux</tag>
       <tag class="adj-masc-plur">pâles</tag>
     </tags>
-    <original><![CDATA[<em>la fumée pâle attend</em>]]></original>
+    <original><![CDATA[<em>des yeux pâles attendent celui</em>]]></original>
   </line>
   <line>
     <tags>
@@ -57,9 +56,8 @@
   <line>
     <tags>
       <tag class="noun-masc-plur">yeux</tag>
-      <tag class="adj-masc-plur">noirs</tag>
-      <tag class="noun-masc-plur">anneaux</tag>
+      <tag class="adj-masc-plur">sombres</tag>
     </tags>
-    <original><![CDATA[<em>ses yeux noirs aux anneaux</em>]]></original>
+    <original><![CDATA[<em>ses yeux sombres</em>]]></original>
   </line>
 </output>

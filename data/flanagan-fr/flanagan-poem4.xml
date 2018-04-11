@@ -14,7 +14,7 @@
       <tag class="noun-fem-sing">porte</tag>
       <tag class="noun-masc-sing">lit</tag>
     </tags>
-    <original><![CDATA[À mon insu, une porte s'ouvre sous notre lit.]]></original>
+    <original><![CDATA[A mon insu, une porte s'ouvre sous notre lit.]]></original>
   </line>
   <line>
     <tags>
@@ -50,7 +50,7 @@
     <tags>
       <tag class="noun-fem-plur">clarinettes</tag>
     </tags>
-    <original><![CDATA[nous aurions pu être des clarinettes avec tout ce]]></original>
+    <original><![CDATA[nous aurions pu êtes des clarinettes avec tout ce]]></original>
   </line>
   <line>
     <tags>
@@ -71,7 +71,7 @@
     <tags>
       <tag class="noun-fem-sing">fille</tag>
     </tags>
-    <original><![CDATA[pas goûté, même suppurant. Là-bas avec cette fille]]></original>
+    <original><![CDATA[pas goutté, même suppurant. Là-bas avec cette fille]]></original>
   </line>
   <line>
     <tags>
@@ -79,7 +79,7 @@
       <tag class="Xnoun-fem-sing">domination</tag>
       <tag class="noun-masc-sing">fumoir</tag>
     </tags>
-    <original><![CDATA[géante, pas d'actes de domination. Un fumoir, cette]]></original>
+    <original><![CDATA[géante, pas d'acte de domination. Un fumoir, cette]]></original>
   </line>
   <line>
     <tags>
@@ -104,6 +104,6 @@
       <tag class="adj-fem-sing">terrible</tag>
       <tag class="Xnoun-fem-sing">jupe</tag>
     </tags>
-    <original><![CDATA[fatigués. Une insulte terrible cette jupe, coagulée d'or.]]></original>
+    <original><![CDATA[fatigués. Une insulte terrible, cette jupe coagulée d'or.]]></original>
   </line>
 </output>
