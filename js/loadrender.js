@@ -5,30 +5,6 @@ function LoadRender(){
     var self = this,
         selectedFiles = [];
 
-    this.loadAsync = function(){
-        var files = [
-            'data/pos_tags.json'
-        ];
-
-        files.forEach(function(path){
-            load(path, true, function(data){
-                window.options.postags = data;
-            });
-        });
-    };
-
-    this.loadLists = function(listFile1, listFile2){
-        load(listFile1, true, function(data){
-            renderFiles(data, document.querySelector('.choose .left'));
-        },
-        function(err){console.error("Couldn't load" + err)});
-
-        load(listFile2, true, function(data){
-            renderFiles(data, document.querySelector('.choose .right'));
-        },
-        function(err){console.error("Couldn't load" + err)});
-    };
-
     this.loadSequence = function(seqFile) {
         load(seqFile, true, function(data) {
             var evt = new CustomEvent('sequence-loaded', { detail : { sequence : data } });
@@ -56,72 +32,6 @@ function LoadRender(){
         };
         xhr.open("GET", path, true);
         xhr.send();
-    }
-
-    function renderFiles(files, el){
-        var docfrag = document.createDocumentFragment(),
-            ul = document.createElement('ul');
-
-        files.forEach(function(file){
-            var li = document.createElement("li"),
-                label = document.createElement("label"),
-                cb = document.createElement("input");
-
-            li.appendChild(label);
-            label.textContent = file.filename;
-            label.insertBefore(cb, label.firstChild);
-
-            cb.type = "checkbox";
-            cb.addEventListener("change", cbChangeHandler);
-            cb.dataset.path = file.path;
-            cb.dataset.directory = file.directory;
-            cb.dataset.filename = file.filename;
-
-            ul.appendChild(li);
-        });
-
-        docfrag.appendChild(ul);
-        el.appendChild(docfrag);
-    };
-
-    function cbChangeHandler(e){
-        var cb, inputs, chooseStart;
-
-        cb = e.currentTarget;
-        if(cb.checked){
-            selectedFiles.push(cb);
-            cb.parentNode.parentNode.classList.add('selected');
-        } else {
-            selectedFiles.forEach(function(selected, index){
-                if(selected === cb){
-                    selectedFiles.splice(index, 1);
-                }
-            });
-            cb.parentNode.parentNode.classList.remove('selected');
-        }
-
-        chooseStart = document.querySelector('.choose-start button');
-        if(selectedFiles.length >= 2){
-            document.querySelector('.choose').classList.add('complete');
-            inputs = document.querySelectorAll('.choose input[type="checkbox"]:not(:checked)');
-            [].forEach.call(inputs, function(el) {
-                el.disabled = "disabled";
-            });
-            chooseStart.disabled = false;
-            chooseStart.addEventListener('click', startHandler);
-        } else {
-            document.querySelector('.choose').classList.remove('complete');
-            inputs = document.querySelectorAll('.choose input[type="checkbox"]');
-            [].forEach.call(inputs, function(el) {
-                el.disabled = false;
-            });
-            chooseStart.disabled = "disabled";
-            chooseStart.removeEventListener('click', startHandler);
-        }
-    }
-
-    function startHandler(e){
-        self.loadPoemSet(selectedFiles[0].dataset, selectedFiles[1].dataset);
     }
 
     this.loadPoemSet = function(file1, file2) {

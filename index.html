@@ -11,48 +11,11 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/override.css">
     <link rel="stylesheet" type="text/css" href="css/borders.css">
-    <style>
-
-    </style>
-
 </head>
 <body>
+
     <section class="world">
         <canvas id="animations"></canvas>
-        <div class="world-start start-btn">
-            <button disabled="disabled" type="button">Start</button>
-        </div>
-        <div class="controls controls--pdf">
-            <button id="pdf-download" type="button">Download PDF</button>
-        </div>
-        <div class="controls controls--flight is-active">
-            <div class="slider">
-                <label class="slider-title"></label>
-                <input type="range" />
-                <span class="slider-value"></span>
-            </div>
-        </div>
-        <div class="controls controls--anim-mode is-active">
-            <div class="anim-mode">
-                <label class="input-template">
-                    <input name="anim-mode" type="radio" />
-                </label>
-            </div>
-        </div>
-        <div class="controls controls--poem is-active">
-            <div class="word-classes">
-                <label class="input-template">
-                    <input type="checkbox" />
-                </label>
-            </div>
-            <div class="debug"></div>
-        </div>
-        <!--
-        <dl class="debug">
-            <dt>Current class</dt>
-            <dd data-target="class"></dd>
-        </dl>
-        -->
         <div class="book">
             <div class="poem-container">
                 <p class="poem1">
@@ -72,29 +35,6 @@
             </div>
         </div>
     </section>
-
-    <section class="choose">
-        <div class="choose-start start-btn">
-            <button disabled="disabled" type="button">Start</button>
-        </div>
-        <div class="left">
-        </div>
-        <div class="right">
-        </div>
-    </section>
-
-    <form id="settings-panel">
-        <label for="font-size-slider">Font size:</label>
-        <output id="font-size-output" for="font-size-slider"></output>
-        <input id="font-size-slider" type="range"/>
-        <label for="poem-width-slider">Poem width:</label>
-        <output id="poem-width-output" for="poem-width-slider"></output>
-        <input id="poem-width-slider" type="range"/>
-        <label for="book-width-slider">Book width:</label>
-        <output id="book-width-output" for="book-width-slider"></output>
-        <input id="book-width-slider" type="range"/>
-    </form>
-    <button id="settings-button">Settings</button>
 
     <script>
         window.options = {
@@ -128,7 +68,6 @@
     <script src="js/utils.js"></script>
     <script src="js/world.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/controls.js"></script>
 
 </body>
 </html>

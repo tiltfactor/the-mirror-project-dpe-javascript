@@ -151,15 +151,6 @@ function World( options )  {
 
     this.start = function(){
 
-        var controls = document.querySelectorAll('.controls'),
-            worldEl = document.querySelector('.world');
-
-        [].forEach.call(controls, function(el){
-           el.classList.remove('is-active');
-        });
-
-        document.querySelector('.choose').style.display = 'none';
-        worldEl.style.display = 'block';
         // Add mode to body.
         document.body.classList.add(options.animationMode.split(":")[0]);
 
