@@ -1,4 +1,3 @@
-var gulp = require('gulp');
 var fs = require('fs');
 var glob = require('glob');
 var path = require('path');
