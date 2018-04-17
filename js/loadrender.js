@@ -2,16 +2,7 @@
 
 function LoadRender(){
 
-    var self = this,
-        selectedFiles = [];
-
-    this.loadConfig = function(configFile) {
-        Utils.load(configFile, true, function(data) {
-            var seq = data.sequence;
-            var evt = new CustomEvent('config-loaded', { detail : { sequence : seq } });
-            self.dispatchEvent(evt);
-        }, function(err) { console.error(err); });
-    };
+    var self = this;
 
     this.loadPoemSet = function(file1, file2) {
         loadPoem(file1, document.querySelector('.poem1'));

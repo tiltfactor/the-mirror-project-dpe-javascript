@@ -6,6 +6,27 @@ var world = new World(options.world),
     lr = new LoadRender();
 
 
+function parseConfig(data) {
+    poemSequence = data.sequence;
+    poemIndex = 0;
+
+    lr.loadPoemSet(poemSequence[poemIndex][0], poemSequence[poemIndex][1]);
+}
+
+var numLoaded = 0;
+lr.addEventListener('poem-loaded', function() {
+    numLoaded += 1;
+    if (numLoaded < 2) {
+        return;
+    }
+    numLoaded = 0;
+
+    TweenLite.to(document.querySelector('.world'), options.startFade, { opacity : 1 });
+    setTimeout(function() {
+        world.start();
+    }, (options.startFade + options.startDelay) * 1000);
+});
+
 function loadNextSet() {
     poemIndex += 1;
     if (poemIndex >= poemSequence.length) {
@@ -22,25 +43,5 @@ world.addEventListener('complete', function() {
     });
 });
 
-lr.addEventListener('config-loaded', function(evt) {
-    poemSequence = evt.detail.sequence;
-    poemIndex = 0;
 
-    lr.loadPoemSet(poemSequence[poemIndex][0], poemSequence[poemIndex][1]);
-});
-
-var numLoaded = 0;
-lr.addEventListener('poem-loaded', function() {
-    numLoaded += 1;
-    if (numLoaded < 2) {
-        return;
-    }
-    numLoaded = 0;
-
-    TweenLite.to(document.querySelector('.world'), options.startFade, { opacity : 1 });
-    setTimeout(function() {
-        world.start();
-    }, (options.startFade + options.startDelay) * 1000);
-});
-
-lr.loadConfig('settings.json');
+Utils.load('settings.json', true, parseConfig, console.error);
