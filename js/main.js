@@ -22,7 +22,7 @@ world.addEventListener('complete', function() {
     });
 });
 
-lr.addEventListener('sequence-loaded', function(evt) {
+lr.addEventListener('config-loaded', function(evt) {
     poemSequence = evt.detail.sequence;
     poemIndex = 0;
 
@@ -43,4 +43,4 @@ lr.addEventListener('poem-loaded', function() {
     }, (options.startFade + options.startDelay) * 1000);
 });
 
-lr.loadSequence('./data/sequence.json');
+lr.loadConfig('settings.json');

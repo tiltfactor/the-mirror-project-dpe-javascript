@@ -5,34 +5,13 @@ function LoadRender(){
     var self = this,
         selectedFiles = [];
 
-    this.loadSequence = function(seqFile) {
-        load(seqFile, true, function(data) {
-            var evt = new CustomEvent('sequence-loaded', { detail : { sequence : data } });
+    this.loadConfig = function(configFile) {
+        Utils.load(configFile, true, function(data) {
+            var seq = data.sequence;
+            var evt = new CustomEvent('config-loaded', { detail : { sequence : seq } });
             self.dispatchEvent(evt);
         }, function(err) { console.error(err); });
     };
-
-    function load(path, isJSON, success, error){
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function()
-        {
-            if(xhr.readyState === XMLHttpRequest.DONE){
-                if(xhr.status === 200) {
-                    if(success && isJSON){
-                        success(JSON.parse(xhr.responseText));
-                    } else {
-                        success(xhr.responseXML);
-                    }
-                } else {
-                    if(error){
-                        error(xhr);
-                    }
-                }
-            }
-        };
-        xhr.open("GET", path, true);
-        xhr.send();
-    }
 
     this.loadPoemSet = function(file1, file2) {
         loadPoem(file1, document.querySelector('.poem1'));
@@ -40,7 +19,7 @@ function LoadRender(){
     }
 
     function loadPoem(file, container){
-        load(file.path, false, function(data){
+        Utils.load(file.path, false, function(data){
             var fileName = file.path.split('/').pop();
             renderPoem(data.firstChild, container);
             container.setAttribute('data-filename', fileName.replace('.xml', ''));

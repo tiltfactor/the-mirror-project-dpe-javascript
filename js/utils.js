@@ -34,6 +34,28 @@ var Utils = Utils || {
     }
 };
 
+Utils.load = function(path, isJSON, success, error){
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function()
+    {
+        if(xhr.readyState === XMLHttpRequest.DONE){
+            if(xhr.status === 200) {
+                if(success && isJSON){
+                    success(JSON.parse(xhr.responseText));
+                } else {
+                    success(xhr.responseXML);
+                }
+            } else {
+                if(error){
+                    error(xhr);
+                }
+            }
+        }
+    };
+    xhr.open("GET", path, true);
+    xhr.send();
+}
+
 // Polyfill for safari, which doesn't seem to support Node.children.
 Utils.getChildren = function(childNodes){
     var children = [];
