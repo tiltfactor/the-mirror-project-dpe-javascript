@@ -68,11 +68,11 @@ function World( options )  {
             source, target, swap, lineIndex;
 
         // Swap source and target or set them in the first instance.
-        this.sourcePoem = tmpTarget || lr.poem1 || document.querySelector('.poem1');
-        this.targetPoem = tmpSource || lr.poem2 || document.querySelector('.poem2');
+        this.sourcePoem = tmpTarget;
+        this.targetPoem = tmpSource;
 
         // Get line index.
-        lineIndex = parseInt(this.sourcePoem.dataset.lastIndex || 0);
+        lineIndex = parseInt(this.sourcePoem.dataset.lastIndex);
 
         // Get the next source that hasn't been swapped during this pass/class.
         source = this.sourcePoem.querySelector('.line:not(.is-swapping):nth-child(n+'+(lineIndex+1)+') span[data-tag="'+wordClass+'"]:not(.was-target)');
@@ -156,6 +156,11 @@ function World( options )  {
 
         active = true;
         this.wordClassIndex = 0;
+
+        this.sourcePoem = lr.poem2 || document.querySelector('.poem2');
+        this.sourcePoem.dataset.lastIndex = 0;
+        this.targetPoem = lr.poem1 || document.querySelector('.poem1');
+        this.targetPoem.dataset.lastIndex = 0;
 
         this.next();
         this.animate();
