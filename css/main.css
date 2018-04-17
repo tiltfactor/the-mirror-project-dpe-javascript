@@ -24,25 +24,12 @@ body {
     font-size: 25px;
 }
 
-
-.start-btn {
-    margin: 20px;
-}
-
-.start-btn button {
-    width: 100%;
-    height: 30px;
-}
-
 .world {
-    display: none;
+    display: block;
+    opacity: 0;
     position: absolute;
     width: 100%;
     top: 0;
-}
-
-.world-start button:disabled {
-    opacity: 0.5;
 }
 
 .source--is-duplicate {
@@ -61,7 +48,7 @@ body {
 .line {
     display: inline-block;
     line-height: 1.25em;
-    white-space: pre;
+    white-space: pre-wrap;
     min-width: 100%;
 }
 
@@ -98,14 +85,22 @@ body {
   opacity: 0.5;
 }
 
+.book {
+    width: 90%;
+    padding: 100px 0;
+    margin: 100px auto;
+    overflow: auto;
+}
+
 .poem-container {
-    margin-top:200px;
+    margin-top: 0;
     width: 50%;
     float: left;
 }
 
 .poem1, .poem2 {
     margin: 0 auto;
+    width: 75%;
 }
 
 .grav-item {
@@ -128,132 +123,6 @@ body {
     position: absolute;
     top: auto;
     left: 200px;
-}
-
-.choose {
-    font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
-    font-size: 12px;
-    display: block;
-    line-height: 1.5em;
-}
-
-.choose-start button:disabled {
-    opacity: 0.5;
-}
-
-.choose .right,
-.choose .left {
-    float: left;
-    width: 50%;
-    display: block;
-}
-
-.choose .right ul,
-.choose .left ul{
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-}
-
-.choose input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.choose.complete li:not(.selected) {
-    opacity: 0.5;
-}
-
-.controls {
-    font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
-    font-size: 12px;
-    position: absolute;
-    font-size: 13px;
-    top: 70px;
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.controls.is-active {
-    pointer-events: auto;
-    opacity: 1;
-}
-
-.controls--poem {
-    right:0;
-    overflow: hidden;
-    padding-left: 100px;
-}
-
-.controls--anim-mode {
-    top: 160px;
-}
-
-.controls--pdf {
-    position: fixed;
-    top: auto;
-    bottom: 0;
-}
-
-.controls--poem .debug {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 0, 0, 0.7);
-    height: 20px;
-    line-height: 20px;
-    opacity: 0;
-}
-
-.controls .input-template {
-    display: none;
-}
-
-.controls .checkbox {
-    display: block;
-}
-
-.controls .checkbox {
-    display: block;
-}
-
-.controls--poem:not(.is-active){
-    opacity: 1;
-}
-
-.controls--poem:not(.is-active) .checkbox {
-    opacity: 0.5;
-}
-
-.controls--poem:not(.is-active) .checkbox input {
-    display: none;
-}
-
-.controls--poem .checkbox {
-    /* transition: transform 500ms, opacity 500ms; */
-}
-
-.controls--poem .checkbox.is-unused {
-    transform: translate(50px, 0);
-}
-
-.controls--poem .checkbox.is-active {
-    transform: translate(-20px, 0);
-    opacity: 1;
-}
-
-.slider:first-child {
-    display: none;
-}
-
-.slider input[type="range"] {
-    position: relative;
-    top: 8px;
-}
-
-.slider-title {
-    min-width: 100px;
-    display: inline-block;
 }
 
 canvas#animations {
