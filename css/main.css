@@ -48,7 +48,7 @@ body {
 .line {
     display: inline-block;
     line-height: 1.25em;
-    white-space: pre-wrap;
+    white-space: nowrap;
     min-width: 100%;
 }
 
