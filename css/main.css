@@ -95,6 +95,10 @@ body {
     float: left;
 }
 
+.poem1, .poem2 {
+    overflow-x: hidden;
+}
+
 .grav-item {
    position: absolute;
    display: block;
