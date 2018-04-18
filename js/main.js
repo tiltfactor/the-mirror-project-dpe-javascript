@@ -12,6 +12,15 @@ function parseConfig(data) {
     poemIndex = data.poem.index;
     isLooping = data.poem.looping;
 
+    document.body.style['font-size'] = data.layout.fontSize;
+    document.querySelector('.book').style['margin-top'] = data.layout.topMargin;
+    var poem1 = document.querySelector('.poem1');
+    poem1.style['margin-left'] = data.layout.outerMargin;
+    poem1.style['margin-right'] = data.layout.innerMargin;
+    var poem2 = document.querySelector('.poem2');
+    poem2.style['margin-left'] = data.layout.innerMargin;
+    poem2.style['margin-right'] = data.layout.outerMargin;
+
     world.setAnimationMode(data.animation.animationMode);
     world.setGravity(data.animation.gravity);
     world.setArcHeight(data.animation.arcHeight);

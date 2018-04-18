@@ -14,6 +14,13 @@
     ]
   },
 
+  "layout" : {
+    "fontSize" : "25px",
+    "innerMargin" : "70px",
+    "outerMargin" : "100px",
+    "topMargin" : "100px"
+  },
+
   "animation" : {
     "animationMode" : "canvas:copy",
     "gravity" : 0.035,

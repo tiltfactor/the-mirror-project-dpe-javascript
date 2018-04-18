@@ -86,9 +86,6 @@ body {
 }
 
 .book {
-    width: 90%;
-    padding: 100px 0;
-    margin: 100px auto;
     overflow: auto;
 }
 
@@ -96,11 +93,6 @@ body {
     margin-top: 0;
     width: 50%;
     float: left;
-}
-
-.poem1, .poem2 {
-    margin: 0 auto;
-    width: 75%;
 }
 
 .grav-item {
