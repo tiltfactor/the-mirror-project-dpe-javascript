@@ -10,8 +10,8 @@ function LoadRender(){
     }
 
     function loadPoem(file, container){
-        Utils.load(file.path, false, function(data){
-            var fileName = file.path.split('/').pop();
+        Utils.load(file, false, function(data) {
+            var fileName = file.split('/').pop();
             renderPoem(data.firstChild, container);
             container.setAttribute('data-filename', fileName.replace('.xml', ''));
             self.dispatchEvent({type:'poem-loaded'});

@@ -32,7 +32,7 @@ function parseConfig(data) {
     settings.startFade = data.animation.startFade;
     settings.endFade = data.animation.endFade;
 
-    lr.loadPoemSet(poemSequence[poemIndex][0], poemSequence[poemIndex][1]);
+    lr.loadPoemSet(poemSequence[poemIndex].left, poemSequence[poemIndex].right);
 }
 
 var numLoaded = 0;
