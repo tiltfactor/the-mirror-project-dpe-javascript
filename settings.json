@@ -1,12 +1,23 @@
 {
-  "sequence": [
-    [
-      {"path":"data/flanagan/A_Pure_Subjective_Commitment_is_Possible_.xml","filename":"A_Pure_Subjective_Commitment_is_Possible_.xml","directory":"./data/flanagan"},
-      {"path":"data/dickinson/OneSeries-ADay.xml","filename":"OneSeries-ADay.xml","directory":"./data/dickinson"}
-    ],
-    [
-      {"path":"data/flanagan/Throw_Away_Such_Pieces_.xml","filename":"Throw_Away_Such_Pieces_.xml","directory":"./data/flanagan"},
-      {"path":"data/dickinson/TwoSeries-XVII.xml","filename":"TwoSeries-XVII.xml","directory":"./data/dickinson"}
+  "poem" : {
+    "looping" : true,
+    "index" : 0,
+    "sequence" : [
+      [
+        {"path":"data/flanagan/A_Pure_Subjective_Commitment_is_Possible_.xml","filename":"A_Pure_Subjective_Commitment_is_Possible_.xml","directory":"./data/flanagan"},
+        {"path":"data/dickinson/OneSeries-ADay.xml","filename":"OneSeries-ADay.xml","directory":"./data/dickinson"}
+      ],
+      [
+        {"path":"data/flanagan/Throw_Away_Such_Pieces_.xml","filename":"Throw_Away_Such_Pieces_.xml","directory":"./data/flanagan"},
+        {"path":"data/dickinson/TwoSeries-XVII.xml","filename":"TwoSeries-XVII.xml","directory":"./data/dickinson"}
+      ]
     ]
-  ]
+  },
+
+  "animation" : {
+    "animationMode" : "canvas:copy",
+    "gravity" : 0.035,
+    "arcHeight" : 200,
+    "arcVariant" : 10
+  }
 }

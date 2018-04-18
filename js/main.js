@@ -1,14 +1,21 @@
 "use strict";
 
-var world = new World(options.world),
-    poemSequence = [],
+var world = new World(),
+    lr = new LoadRender(),
+    poemSequence,
     poemIndex = 0,
-    lr = new LoadRender();
+    isLooping = true;
 
 
 function parseConfig(data) {
-    poemSequence = data.sequence;
-    poemIndex = 0;
+    poemSequence = data.poem.sequence;
+    poemIndex = data.poem.index;
+    isLooping = data.poem.looping;
+
+    world.setAnimationMode(data.animation.animationMode);
+    world.setGravity(data.animation.gravity);
+    world.setArcHeight(data.animation.arcHeight);
+    world.setArcVariant(data.animation.arcVariant);
 
     lr.loadPoemSet(poemSequence[poemIndex][0], poemSequence[poemIndex][1]);
 }
@@ -30,7 +37,11 @@ lr.addEventListener('poem-loaded', function() {
 function loadNextSet() {
     poemIndex += 1;
     if (poemIndex >= poemSequence.length) {
-        poemIndex = 0;
+        if (isLooping) {
+            poemIndex = 0;
+        } else {
+            return;
+        }
     }
     lr.loadPoemSet(poemSequence[poemIndex][0], poemSequence[poemIndex][1]);
 }

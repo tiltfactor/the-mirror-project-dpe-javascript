@@ -166,6 +166,10 @@ function World( options )  {
         this.animate();
     };
 
+    this.setAnimationMode = function(mode) {
+        options.animationMode = mode;
+    }
+
     this.setArcVariant = function(h){
         this.arcVariant = parseInt(h);
     }
