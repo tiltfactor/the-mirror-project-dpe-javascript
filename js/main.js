@@ -3,14 +3,14 @@
 var world = new World(),
     lr = new LoadRender(),
     poemSequence,
-    poemIndex = 0,
-    isLooping = true;
+    poemIndex,
+    settings = {};
 
 
 function parseConfig(data) {
     poemSequence = data.poem.sequence;
     poemIndex = data.poem.index;
-    isLooping = data.poem.looping;
+    settings.isLooping = data.poem.looping;
 
     document.body.style['font-size'] = data.layout.fontSize;
     document.querySelector('.book').style['margin-top'] = data.layout.topMargin;
@@ -26,6 +26,11 @@ function parseConfig(data) {
     world.setArcHeight(data.animation.arcHeight);
     world.setArcVariant(data.animation.arcVariant);
 
+    settings.startDelay = data.animation.startDelay;
+    settings.endDelay = data.animation.endDelay;
+    settings.startFade = data.animation.startFade;
+    settings.endFade = data.animation.endFade;
+
     lr.loadPoemSet(poemSequence[poemIndex][0], poemSequence[poemIndex][1]);
 }
 
@@ -37,16 +42,16 @@ lr.addEventListener('poem-loaded', function() {
     }
     numLoaded = 0;
 
-    TweenLite.to(document.querySelector('.world'), options.startFade, { opacity : 1 });
+    TweenLite.to(document.querySelector('.world'), settings.startFade, { opacity : 1 });
     setTimeout(function() {
         world.start();
-    }, (options.startFade + options.startDelay) * 1000);
+    }, (settings.startFade + settings.startDelay) * 1000);
 });
 
 function loadNextSet() {
     poemIndex += 1;
     if (poemIndex >= poemSequence.length) {
-        if (isLooping) {
+        if (settings.isLooping) {
             poemIndex = 0;
         } else {
             return;
@@ -56,9 +61,9 @@ function loadNextSet() {
 }
 
 world.addEventListener('complete', function() {
-    TweenLite.to(document.querySelector('.world'), options.endFade, {
+    TweenLite.to(document.querySelector('.world'), settings.endFade, {
         opacity : 0,
-        delay : options.endDelay,
+        delay : settings.endDelay,
         onComplete: loadNextSet
     });
 });
