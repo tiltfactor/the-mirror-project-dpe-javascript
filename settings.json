@@ -2,6 +2,7 @@
   "poem" : {
     "looping" : true,
     "index" : 0,
+    "wordClasses" : ["NN"],
     "sequence" : [
       [
         {"path":"data/flanagan/A_Pure_Subjective_Commitment_is_Possible_.xml","filename":"A_Pure_Subjective_Commitment_is_Possible_.xml","directory":"./data/flanagan"},

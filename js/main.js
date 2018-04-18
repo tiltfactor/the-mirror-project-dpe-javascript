@@ -11,6 +11,7 @@ function parseConfig(data) {
     poemSequence = data.poem.sequence;
     poemIndex = data.poem.index;
     settings.isLooping = data.poem.looping;
+    world.setWordClasses(data.poem.wordClasses);
 
     document.body.style['font-size'] = data.layout.fontSize;
     document.querySelector('.book').style['margin-top'] = data.layout.topMargin;
