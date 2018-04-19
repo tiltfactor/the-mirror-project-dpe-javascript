@@ -8,6 +8,8 @@ var world = new World(),
 
 
 function parseConfig(data) {
+    settings.loggingEnabled = data.loggingEnabled;
+
     poemSequence = data.poem.sequence;
     poemIndex = data.poem.index;
     settings.isLooping = data.poem.looping;

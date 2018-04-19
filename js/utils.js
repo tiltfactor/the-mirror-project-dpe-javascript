@@ -4,15 +4,11 @@ Array.prototype.diff = function(a) {
     return this.filter(function(i) {return a.indexOf(i) < 0;});
 };
 
+window.logStart = Date.now();
 function log() {
-    if (window.options.logging && window.console && window.console.log) {
+    if (window.settings.loggingEnabled && window.console && window.console.log) {
         Function.prototype.bind.call(window.console.log, (window.console)).apply(window.console, [(Date.now() - window.logStart) + "ms", "dpe:"].concat([].slice.call(arguments, 0)));
     }
-}
-
-if(window.options && window.options.logging){
-    window.logging = true;
-    window.logStart = Date.now();
 }
 
 var Utils = Utils || {

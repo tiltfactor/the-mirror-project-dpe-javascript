@@ -1,4 +1,6 @@
 {
+  "loggingEnabled" : true,
+
   "poem" : {
     "looping" : true,
     "index" : 0,
