@@ -68,14 +68,6 @@ body {
     transition: opacity 250ms;
 }
 
-/* When changing capitalisation */
-/*
-.target.is-replacing {
-    opacity: 0 !important;
-    transition: opacity 500ms;
-}
-*/
-
 .line .target .letter-replacement {
     position: absolute;
 }

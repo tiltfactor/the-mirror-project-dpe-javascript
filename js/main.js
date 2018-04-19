@@ -27,6 +27,7 @@ function parseConfig(data) {
     world.setArcHeight(data.animation.arcHeight);
     world.setArcVariant(data.animation.arcVariant);
 
+    settings.fixCapitalization = data.animation.fixCapitalization;
     settings.startDelay = data.animation.startDelay;
     settings.endDelay = data.animation.endDelay;
     settings.startFade = data.animation.startFade;

@@ -27,6 +27,7 @@
     "gravity" : 0.035,
     "arcHeight" : 200,
     "arcVariant" : 10,
+    "fixCapitalization" : true,
     "startDelay" : 1,
     "endDelay" : 1,
     "startFade": 0.5,

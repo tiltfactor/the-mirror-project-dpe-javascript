@@ -62,7 +62,7 @@ function TargetLine(target, rtl){
 
         // If capitalisation change is needed then do this first,
         // otherwise remove extra markip immediately.
-        if(sourceStr !== replacementStr){
+        if(settings.fixCapitalization && sourceStr !== replacementStr){
             var firstLetterDup = Utils.duplicate(target.firstChild);
             firstLetterDup.textContent = replacementStr.substr(0, 1);
             firstLetterDup.style.opacity = 0;

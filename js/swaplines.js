@@ -16,23 +16,6 @@ function SwapLines(world, source, target){
     this.initTarget(target);
     this.initSource(source);
 
-    /*
-    this.sourceLine.addEventListener('ground', function(e){
-        var replacement = source.textContent,
-            isStringChanging = false, letter;
-
-        // If the capitalisation is different.
-        if(options.doCorrectCaps && isSourceCapitalised !== isTargetCapitalised){
-            letter = source.textContent.substr(0,1);
-            replacement = (isSourceCapitalised) ? letter.toLowerCase() : letter.toUpperCase();
-            replacement += source.textContent.substr(1)
-            isStringChanging = true;
-        }
-
-       targetLine.swap(source.textContent, replacement);
-    });
-    */
-
 };
 
 
