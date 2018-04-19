@@ -59,7 +59,7 @@ function loadNextSet() {
             return;
         }
     }
-    lr.loadPoemSet(poemSequence[poemIndex][0], poemSequence[poemIndex][1]);
+    lr.loadPoemSet(poemSequence[poemIndex].left, poemSequence[poemIndex].right);
 }
 
 world.addEventListener('complete', function() {
