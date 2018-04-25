@@ -1,29 +1,65 @@
+## Settings file for the Dynamic Poem Environment ##
+
+# Whether debugging info will be written to the web console (true, false)
 loggingEnabled: true
 
+
 poem:
+  # Whether the poem sequence will loop when it reaches the end (true, false)
   looping: true
+
+  # Index of starting poem pair (0 to length - 1)
   index: 0
+
+  # List of labels to be swapped between the poems. These should match the labels used in the poem files
   wordClasses:
     - NN
+
+  # List of poem pairs, each specified by their file location
   sequence:
     - left: data/flanagan/A_Pure_Subjective_Commitment_is_Possible_.xml
       right: data/dickinson/OneSeries-ADay.xml
     - left: data/flanagan/Throw_Away_Such_Pieces_.xml
       right: data/dickinson/TwoSeries-XVII.xml
 
+
 layout:
   fontSize: 25px
+
+  # Distance between the center of the page and the inside edge of the poems
   innerMargin: 70px
+
+  # Distance between the edge of the page and the outside edge of the poems
   outerMargin: 100px
+
+  # Distance between the top of the page and the top of the poems
   topMargin: 100px
 
+
 animation:
+  # One of "canvas:copy", "canvas:text", or "dom"
   animationMode: canvas:copy
+
+  # The speed at which letters fall
   gravity: 0.035
+
+  # The height of each letter's arc
   arcHeight: 200
+
+  # The amount by which letters may vary from the arc height
   arcVariant: 10
+
+  # Whether the capitalization of source words are changed to match the target words (true, false)
   fixCapitalization: true
+
+  # Delay between when a poem is shown and when words begin to move (in seconds)
   startDelay: 1
+
+  # Delay between when words finish moving and when the poem is hidden (in seconds)
   endDelay: 1
+
+  # Duration of the fade-in before a poem starts (in seconds)
   startFade: 0.5
+
+  # Duration of the fade-out after a poem ends (in seconds)
   endFade: 0.5
