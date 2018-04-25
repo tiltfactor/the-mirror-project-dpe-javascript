@@ -30,16 +30,15 @@ var Utils = Utils || {
     }
 };
 
-Utils.load = function(path, isJSON, success, error){
+Utils.load = function(path, fileType, success, error){
     var xhr = new XMLHttpRequest();
+    xhr.responseType = fileType;
     xhr.onreadystatechange = function()
     {
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200) {
-                if(success && isJSON){
-                    success(JSON.parse(xhr.responseText));
-                } else {
-                    success(xhr.responseXML);
+                if(success){
+                    success(xhr.response);
                 }
             } else {
                 if(error){

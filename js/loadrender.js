@@ -10,7 +10,7 @@ function LoadRender(){
     }
 
     function loadPoem(file, container){
-        Utils.load(file, false, function(data) {
+        Utils.load(file, 'document', function(data) {
             var fileName = file.split('/').pop();
             renderPoem(data.firstChild, container);
             container.setAttribute('data-filename', fileName.replace('.xml', ''));

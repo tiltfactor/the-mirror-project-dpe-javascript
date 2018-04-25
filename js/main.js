@@ -7,7 +7,9 @@ var world = new World(),
     settings = {};
 
 
-function parseConfig(data) {
+function parseConfig(rawData) {
+    var data = jsyaml.load(rawData);
+
     settings.loggingEnabled = data.loggingEnabled;
 
     poemSequence = data.poem.sequence;
@@ -72,5 +74,4 @@ world.addEventListener('complete', function() {
     });
 });
 
-
-Utils.load('settings.json', true, parseConfig, console.error);
+Utils.load('settings.yaml', 'text', parseConfig, console.error);
