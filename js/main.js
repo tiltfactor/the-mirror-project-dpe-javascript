@@ -4,6 +4,7 @@ var world = new World(),
     lr = new LoadRender(),
     poemSequence,
     poemIndex,
+    poemOutput = '',
     settings = {};
 
 
@@ -40,6 +41,18 @@ function parseConfig(rawData) {
     lr.loadPoemSet(poemSequence[poemIndex].left, poemSequence[poemIndex].right);
 }
 
+function recordPoems() {
+    var poemString = '';
+    document.querySelector('.poem1').childNodes.forEach(function(node) {
+        poemString += (node.textContent + '\n');
+    });
+    poemString += '\n\n';
+    document.querySelector('.poem2').childNodes.forEach(function(node) {
+        poemString += (node.textContent + '\n');
+    });
+    poemOutput += (poemString + '\n\n\n===\n\n\n');
+}
+
 var numLoaded = 0;
 lr.addEventListener('poem-loaded', function() {
     numLoaded += 1;
@@ -60,6 +73,7 @@ function loadNextSet() {
         if (settings.isLooping) {
             poemIndex = 0;
         } else {
+            Utils.createDownload(poemOutput);
             return;
         }
     }
@@ -67,6 +81,10 @@ function loadNextSet() {
 }
 
 world.addEventListener('complete', function() {
+    if (!settings.isLooping) {
+        recordPoems();
+    }
+
     TweenLite.to(document.querySelector('.world'), settings.endFade, {
         opacity : 0,
         delay : settings.endDelay,

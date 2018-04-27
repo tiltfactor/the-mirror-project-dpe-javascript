@@ -70,6 +70,12 @@ Utils.setHistory = function(files){
     history.pushState(stateObj, "", encodeURIComponent(files[0].path)+'/'+encodeURIComponent(files[1].path));
 };
 
+Utils.createDownload = function(text){
+    // var blob = new Blob(['\ufeff', text], {type: 'text/plain'});
+    // document.location.href = URL.createObjectURL(blob);
+    document.location.href = 'data:text/plain,\ufeff' + encodeURIComponent(text);
+}
+
 Utils.downloadPDF = function(){
 
     var doc = new jsPDF(),
