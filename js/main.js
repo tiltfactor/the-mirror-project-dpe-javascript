@@ -11,10 +11,12 @@ var world = new World(),
 function parseConfig(rawData) {
     var data = jsyaml.load(rawData);
 
+    settings.fileExportEnabled = data.fileExportEnabled;
     settings.loggingEnabled = data.loggingEnabled;
 
     poemSequence = data.poem.sequence;
-    poemIndex = data.poem.index;
+    // If we are exporting to file, ignore the poem index
+    poemIndex = settings.fileExportEnabled ? 0 : data.poem.index;
     settings.isLooping = data.poem.looping;
     world.setWordClasses(data.poem.wordClasses);
 
@@ -61,35 +63,42 @@ lr.addEventListener('poem-loaded', function() {
     }
     numLoaded = 0;
 
-    TweenLite.to(document.querySelector('.world'), settings.startFade, { opacity : 1 });
-    setTimeout(function() {
+    if (settings.fileExportEnabled) {
         world.start();
-    }, (settings.startFade + settings.startDelay) * 1000);
+    } else {
+        TweenLite.to(document.querySelector('.world'), settings.startFade, { opacity : 1 });
+        setTimeout(function() {
+            world.start();
+        }, (settings.startFade + settings.startDelay) * 1000);
+    }
 });
 
 function loadNextSet() {
     poemIndex += 1;
     if (poemIndex >= poemSequence.length) {
-        if (settings.isLooping) {
-            poemIndex = 0;
-        } else {
+        if (settings.fileExportEnabled) {
             Utils.createDownload(poemOutput);
             return;
+        } else if (!settings.isLooping) {
+            return;
+        } else {
+            poemIndex = 0;
         }
     }
     lr.loadPoemSet(poemSequence[poemIndex].left, poemSequence[poemIndex].right);
 }
 
 world.addEventListener('complete', function() {
-    if (!settings.isLooping) {
+    if (settings.fileExportEnabled) {
         recordPoems();
+        loadNextSet();
+    } else {
+        TweenLite.to(document.querySelector('.world'), settings.endFade, {
+            opacity : 0,
+            delay : settings.endDelay,
+            onComplete: loadNextSet
+        });
     }
-
-    TweenLite.to(document.querySelector('.world'), settings.endFade, {
-        opacity : 0,
-        delay : settings.endDelay,
-        onComplete: loadNextSet
-    });
 });
 
 Utils.load('settings.yaml', 'text', parseConfig, console.error);

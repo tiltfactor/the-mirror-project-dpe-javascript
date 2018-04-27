@@ -101,14 +101,20 @@ function World( options )  {
             this.sourcePoem.dataset['lastIndex'] = k;
         }
 
-        // Instance of a line swap. Listening for completion.
-        swap = new SwapLines(this, source, target);
-        swap.addEventListener('complete', function(){
-            // We recursively call next() here and pass the last source
-            // incase we discover there is no viable swap and need to fade
-            // the last source back in.
-            self.next.call(self, source);
-        });
+        if (settings.fileExportEnabled) {
+            target.classList.add('was-target');
+            target.textContent = source.textContent;
+            this.next(source);
+        } else {
+            // Instance of a line swap. Listening for completion.
+            swap = new SwapLines(this, source, target);
+            swap.addEventListener('complete', function(){
+                // We recursively call next() here and pass the last source
+                // incase we discover there is no viable swap and need to fade
+                // the last source back in.
+                self.next.call(self, source);
+            });
+        }
 
     };
 

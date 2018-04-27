@@ -3,12 +3,16 @@
 # Whether debugging info will be written to the web console (true, false)
 loggingEnabled: true
 
+# If true, exports an output file instead of running an animation (true, false)
+fileExportEnabled: false
+
 
 poem:
   # Whether the poem sequence will loop when it reaches the end (true, false)
   looping: true
 
   # Index of starting poem pair (0 to length - 1)
+  # This is ignored if file export is enabled (see above)
   index: 0
 
   # List of labels to be swapped between the poems. These should match the labels used in the poem files
