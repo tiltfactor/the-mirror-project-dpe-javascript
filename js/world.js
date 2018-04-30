@@ -195,8 +195,8 @@ function World( options )  {
         var canvas;
         if(!animContext){
             canvas = document.getElementById('animations');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            canvas.width = document.documentElement.clientWidth;
+            canvas.height = document.documentElement.clientHeight;
             animContext = canvas.getContext('2d');
         }
         return animContext;
