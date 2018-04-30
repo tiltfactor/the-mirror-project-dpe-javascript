@@ -71,9 +71,9 @@ Utils.setHistory = function(files){
 };
 
 Utils.createDownload = function(text){
-    // var blob = new Blob(['\ufeff', text], {type: 'text/plain'});
-    // document.location.href = URL.createObjectURL(blob);
-    document.location.href = 'data:text/plain,\ufeff' + encodeURIComponent(text);
+    var blob = new Blob(['\ufeff', text], {type: 'text/plain'});
+    document.location.href = URL.createObjectURL(blob);
+    // document.location.href = 'data:text/plain,\ufeff' + encodeURIComponent(text);
 }
 
 Utils.downloadPDF = function(){
