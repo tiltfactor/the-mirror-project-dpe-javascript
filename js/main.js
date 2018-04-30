@@ -43,16 +43,17 @@ function parseConfig(rawData) {
     lr.loadPoemSet(poemSequence[poemIndex].left, poemSequence[poemIndex].right);
 }
 
+function collectPoem(parentElement) {
+    var poemLines = Array.from(parentElement.childNodes, node => node.textContent);
+    return poemLines.join('\n');
+}
+
 function recordPoems() {
-    var poemString = '';
-    document.querySelector('.poem1').childNodes.forEach(function(node) {
-        poemString += (node.textContent + '\n');
-    });
-    poemString += '\n\n';
-    document.querySelector('.poem2').childNodes.forEach(function(node) {
-        poemString += (node.textContent + '\n');
-    });
-    poemOutput += (poemString + '\n\n\n===\n\n\n');
+    var poemString = collectPoem(document.querySelector('.poem1'));
+    poemString += '\n\n\n';
+    poemString += collectPoem(document.querySelector('.poem2'));
+    poemString += '\n\n\n===\n\n\n';
+    poemOutput += poemString;
 }
 
 var numLoaded = 0;
