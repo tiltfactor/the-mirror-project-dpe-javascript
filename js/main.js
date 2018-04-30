@@ -45,6 +45,7 @@ function parseConfig(rawData) {
 
 function collectPoem(parentElement) {
     var poemLines = Array.from(parentElement.childNodes, node => node.textContent);
+    poemLines[0] = '[[' + poemLines[0] + ']]';
     return poemLines.join('\n');
 }
 
