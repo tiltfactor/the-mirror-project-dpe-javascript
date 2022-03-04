@@ -25,7 +25,7 @@ moved.
 When starting Google Chrome you **must** provide the `--allow-file-access-from-files`
 command line flag in order for this site to work.
 
-This can be done through the command line by using the following commands:
+This can be done through the command line by using one of the following commands:
 
 **Mac:** `open -a "Google Chrome" --args --allow-file-access-from-files`
 
