@@ -36,14 +36,8 @@ Utils.load = function(path, fileType, success, error){
     xhr.onreadystatechange = function()
     {
         if(xhr.readyState === XMLHttpRequest.DONE){
-            if(xhr.status === 200) {
-                if(success){
-                    success(xhr.response);
-                }
-            } else {
-                if(error){
-                    error(xhr);
-                }
+            if (success) {
+                success(xhr.response);
             }
         }
     };
